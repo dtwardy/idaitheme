@@ -15,7 +15,30 @@
   -->
 
 <locale name="en_US" full_name="U.S. English">
-	<message key="plugins.themes.cedistheme.name">CeDiS Theme Pluginn</message>
+	<message key="plugins.themes.cedistheme.name">CeDiS Theme Plugin</message>
 	<message key="plugins.themes.cedistheme.description">Customizable CeDiS Theme Plugin</message>
 	<message key="plugins.themes.cedistheme.options.emptyTheme.label">CeDiS Theme Plugin</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.mainColourLabel">Key Colour</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.mainColourDescription">Key colour for the main design</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.secondColourLabel">Secondary Colour</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.secondColourDescription">Secondary colour for the design</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroLabel">Status Hero</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroDescription">Converting the homepage image to a hero image</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroEnabled">Enabled</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroDisabled">Disabled</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionLabel">Journal Description Options</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionDescription">Choose, wether the journal description text should be displayed and where</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionAbove">above announcements</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionBelow">below announcements</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionOff">do not show</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontLabel">Headline Font</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontDescription">Choose from a selection of fonts for all headlines</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontFont1">Font1</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontFont2">Font2</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontFont3">Font3</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontLabel">Body Font</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontDescription">Choose from a selection of fonts for all other texts</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontFont1">Font1</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontFont2">Font2</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontFont3">Font3</message>
 </locale>

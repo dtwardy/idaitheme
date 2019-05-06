@@ -14,7 +14,7 @@
   * Localization strings ***********************************************
   -->
 
-<locale name="de_DE" full_name="Deutsch">
+<locale name="de_DE" full_name="Deutsch (Deutschland)">
 	<message key="plugins.themes.cedistheme.name">CeDiS Theme Pluginn</message>
 	<message key="plugins.themes.cedistheme.description">Anpassbares CeDiS Theme Plugin</message>
 	<message key="plugins.themes.cedistheme.options.emptyTheme.label">CeDiS Theme Plugin</message>

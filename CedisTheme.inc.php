@@ -26,27 +26,59 @@ class CedisTheme extends ThemePlugin {
   public function init() {
     // Register options
 
+    // Colour Scheme#
+    $this->addOption('mainColour', 'colour', array(
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.mainColourLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.mainColourDescription',
+      'default' => '#1E6292'
+    ));
+    $this->addOption('secondColour', 'colour', array(
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.secondColourLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.secondColourDescription',
+      'default' => '#1E6292'
+    ));
     // Hero Option
     $this->addOption('hero', 'radio', array(
-      'label' => 'plugins.themes.cedistheme.options.cedisTheme.heroLabel',
-      'description' => 'plugins.themes.cedistheme.options.cedisTheme.heroDescription',
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.heroLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.heroDescription',
       'options' => array(
-          'enabled' => 'plugins.themes.cedistheme.options.cedisTheme.heroEnabled',
-          'disabled' => 'plugins.themes.cedistheme.options.cedisTheme.heroDisabled'
-      ),
-      'default' => 'disabled'
+          'enabled' => 'plugins.themes.cedistheme.option.cedisTheme.heroEnabled',
+          'disabled' => 'plugins.themes.cedistheme.option.cedisTheme.heroDisabled'
+      )
     ));
 
     // Journal Description Position Option
     $this->addOption('jourdescription', 'radio', array(
-        'label' => 'plugins.themes.cedistheme.options.cedisTheme.jourdescriptionLabel',
-        'description' => 'plugins.themes.cedistheme.options.cedisTheme.jourdescriptionDescription',
+        'label' => 'plugins.themes.cedistheme.option.cedisTheme.jourdescriptionLabel',
+        'description' => 'plugins.themes.cedistheme.option.cedisTheme.jourdescriptionDescription',
         'options' => array(
-            'above' => 'plugins.themes.cedistheme.options.cedisTheme.jourdescriptionAbove',
-            'below' => 'plugins.themes.cedistheme.options.cedisTheme.jourdescriptionBelow'
+            'above' => 'plugins.themes.cedistheme.option.cedisTheme.jourdescriptionAbove',
+            'below' => 'plugins.themes.cedistheme.option.cedisTheme.jourdescriptionBelow',
+            'off' => 'plugins.themes.cedistheme.option.cedisTheme.jourdescriptionOff'
         )
     ));
 
+    // Journal Headling font
+    $this->addOption('headlineFont', 'radio', array(
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.headlineFontLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.headlineFontDescription',
+      'options' => array(
+        'font1' => 'plugins.themes.cedistheme.option.cedisTheme.headlineFontFont1',
+        'font2' => 'plugins.themes.cedistheme.option.cedisTheme.headlineFontFont2',
+        'font3' => 'plugins.themes.cedistheme.option.cedisTheme.headlineFontFont3'
+      )
+    ));
+
+    // Journal Body font
+    $this->addOption('bodyFont', 'radio', array(
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.bodyFontLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.bodyFontDescription',
+      'options' => array(
+        'font1' => 'plugins.themes.cedistheme.option.cedisTheme.bodyFontFont1',
+        'font2' => 'plugins.themes.cedistheme.option.cedisTheme.bodyFontFont2',
+        'font3' => 'plugins.themes.cedistheme.option.cedisTheme.bodyFontFont3'
+      )
+    ));
 
     // Load jQuery from a CDN or, if CDNs are disabled, from a local copy.
     $min = Config::getVar('general', 'enable_minified') ? '.min' : '';
@@ -77,26 +109,31 @@ class CedisTheme extends ThemePlugin {
 		$this->addScript('jQuery', $jquery, array('baseUrl' => ''));
 		$this->addScript('jQueryUI', $jqueryUI, array('baseUrl' => ''));
 		$this->addScript('jQueryTagIt', $request->getBaseUrl() . '/lib/pkp/js/lib/jquery/plugins/jquery.tag-it.js', array('baseUrl' => ''));
-
 		// Load Bootsrap's dropdown
 		$this->addScript('popper', 'js/lib/popper/popper.js');
 		$this->addScript('bsUtil', 'js/lib/bootstrap/util.js');
 		$this->addScript('bsDropdown', 'js/lib/bootstrap/dropdown.js');
-
 		// Load custom JavaScript for this theme
-		$this->addScript('default', 'js/main.js');
-
+    $this->addScript('default', 'js/main.js');
+    
 		// Add navigation menu areas for this theme
 		$this->addMenuArea(array('primary', 'user'));
 
-    // Use an empty `baseUrl` argument to prevent the theme from looking for
-    // the files within the theme directory
-    /* $this->addScript('jQuery', $jquery, array('baseUrl' => ''));
-    $this->addScript('jQueryUI', $jqueryUI, array('baseUrl' => ''));
-    $this->addScript('jQueryTagIt', $request->getBaseUrl() . '/lib/pkp/js/lib/jquery/plugins/jquery.tag-it.js', array('baseUrl' => ''));*/
 
     // Load primary stylesheet
-		$this->addStyle('stylesheet', 'styles/index.less');
+    $this->addStyle('stylesheet', 'styles/index.less');
+    
+    // Variable to hold Less variables
+    $additionalLessVariables = array();
+
+    // READING LESS VARIABLES AND SETTING THEM COMES HERE
+    // $additionalLessVariables[] = '@variableName' . $this->getOption('optionName') . ';'
+
+    // Pass additional LESS variables based on options
+		if (!empty($additionalLessVariables)) {
+			$this->modifyStyle('stylesheet', array('addLessVariables' => join($additionalLessVariables)));
+		}
+
   }
   function getContextSpecificPluginSettingsFile() {
     return $this->getPluginPath() . '/settings.xml';
