@@ -25,9 +25,26 @@ class CedisTheme extends ThemePlugin {
   
   public function init() {
     // Register options
-    $this->addOption('hero', 'checkbox', array(
-      'label' => 'plugins.themes.cedistheme.options.cedisTheme.label',
-      'description' => 'plugins.themes.cedistheme.options.cedisTheme.description'
+
+    // Hero Option
+    $this->addOption('hero', 'radio', array(
+      'label' => 'plugins.themes.cedistheme.options.cedisTheme.heroLabel',
+      'description' => 'plugins.themes.cedistheme.options.cedisTheme.heroDescription',
+      'options' => array(
+          'enabled' => 'plugins.themes.cedistheme.options.cedisTheme.heroEnabled',
+          'disabled' => 'plugins.themes.cedistheme.options.cedisTheme.heroDisabled'
+      ),
+      'default' => 'disabled'
+    ));
+
+    // Journal Description Position Option
+    $this->addOption('jourdescription', 'radio', array(
+        'label' => 'plugins.themes.cedistheme.options.cedisTheme.jourdescriptionLabel',
+        'description' => 'plugins.themes.cedistheme.options.cedisTheme.jourdescriptionDescription',
+        'options' => array(
+            'above' => 'plugins.themes.cedistheme.options.cedisTheme.jourdescriptionAbove',
+            'below' => 'plugins.themes.cedistheme.options.cedisTheme.jourdescriptionBelow'
+        )
     ));
 
 
