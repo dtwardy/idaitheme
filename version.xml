@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
+
+<!--
+    plugins/themes/cedistheme/settings.xml
+
+    Copyright (c) 2019 by Free University of Berlin
+    Developed by Dennis Twardy (kontakt@dennistwardy.com)
+
+    based on PKP's code by John Willinsky and Simon Fraser University,
+    see https://www.github.com/pkp/ojs for original code base.
+
+    distributed under GNU GPL v3 licence
+    see https://www.gnu.org/licenses/gpl-3.0.en.html for full terms
+-->
+
+<version>
+	<application>cedistheme</application>
+	<type>plugins.themes</type>
+	<release>0.0.0.1</release>
+	<date>2019-04-13</date>
+	<lazy-load>1</lazy-load>
+	<class>CedisTheme</class>
+  <author>Dennis Twardy</author>
+  <contact>kontakt@dennistwardy.com</contact>
+  <git>github.com/dtwardy/cedistheme</git>
+  <description>A small dummy theme plugin to start with a basic structure</description>
+</version>
