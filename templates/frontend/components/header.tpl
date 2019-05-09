@@ -73,6 +73,8 @@
 					{/if}
 				</div>
 
+				{include file="frontend/components/hero.tpl"}
+
 				{* Primary site navigation *}
 				{if $currentContext}
 					<nav class="pkp_navigation_primary_row" aria-label="{translate|escape key="common.navigation.site"}">
@@ -89,7 +91,7 @@
 					{load_menu name="user" id="navigationUser" ulClass="pkp_navigation_user" liClass="profile"}
 				</nav>
 
-				{include file="frontend/components/hero.tpl"}
+
 			</div><!-- .pkp_head_wrapper -->
 		</header><!-- .pkp_structure_head -->
 
