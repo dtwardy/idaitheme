@@ -25,7 +25,7 @@
 	{call_hook name="Templates::Index::journal"}
 
 	{if $homepageImage}
-		<div class="homepage-image">
+		<div class="homepage_image">
 			<img class="img-responsive" src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
 		</div>
 	{/if}

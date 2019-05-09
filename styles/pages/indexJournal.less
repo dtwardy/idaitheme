@@ -48,7 +48,7 @@
 			&:extend(.pkp_screen_reader all);
 		}
 
-		> .obj_announcement_summary {
+		>.obj_announcement_summary {
 			position: relative;
 			padding: @triple @base;
 		}
@@ -67,7 +67,7 @@
 
 		@media(min-width: @screen-phone) {
 
-			> .obj_announcement_summary,
+			>.obj_announcement_summary,
 			.more .obj_announcement_summary {
 				padding-left: @double;
 				padding-right: @double;
@@ -76,7 +76,7 @@
 
 		@media(min-width: @screen-tablet) {
 
-			> .obj_announcement_summary {
+			>.obj_announcement_summary {
 				float: left;
 				width: 65%;
 
@@ -113,7 +113,7 @@
 
 		@media(min-width: @screen-desktop) {
 
-			> .obj_announcement_summary,
+			>.obj_announcement_summary,
 			.more .obj_announcement_summary {
 				padding-left: @triple;
 				padding-right: @triple;
@@ -155,19 +155,45 @@
 			padding-right: @triple;
 		}
 
-		> p:first-child {
+		>p:first-child {
 			margin-top: 0;
 		}
 
-		> p:last-child {
+		>p:last-child {
 			margin-bottom: 0;
 		}
 	}
 
 	@media(min-width: @screen-tablet) {
 
-		.cmp_announcements + .additional_content {
+		.cmp_announcements+.additional_content {
 			border-top: none;
 		}
+	}
+}
+
+// Hero Image Condition
+.homepage_image when (@hero =true) {
+	display: none;
+}
+
+// Switching Journal Description Position
+& when (@descriptionTextAbove =false) {
+	.journal-description-above {
+		display: none;
+	}
+
+	.journal-description-below {
+		display: block;
+	}
+}
+
+& when (@descriptionTextAbove =true) {
+	.journal-description-above {
+		display: block;
+	}
+
+	.journal-description-below {
+		display: none;
 	}
 }

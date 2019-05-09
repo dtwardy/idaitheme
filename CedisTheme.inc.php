@@ -129,6 +129,20 @@ class CedisTheme extends ThemePlugin {
     // READING LESS VARIABLES AND SETTING THEM COMES HERE
     // $additionalLessVariables[] = '@variableName' . $this->getOption('optionName') . ';'
 
+    $heroState = $this->getOption('hero');
+    if (empty($heroState) || $heroState === 'disabled') {
+      $additionalLessVariables[] = '@hero: false;';
+    } else {
+      $additionalLessVariables[] = '@hero: true;';
+    }
+     
+    $descriptionTextPosition = $this->getOption('jourdescription');
+    if (empty($descriptionTextPosition) || $descriptionTextPosition === 'above') {
+      $additionalLessVariables[] = '@descriptionTextAbove: true;';
+    } else {
+      $additionalLessVariables[] = '@descriptionTextAbove: false;';  
+    }
+
     // Pass additional LESS variables based on options
 		if (!empty($additionalLessVariables)) {
 			$this->modifyStyle('stylesheet', array('addLessVariables' => join($additionalLessVariables)));

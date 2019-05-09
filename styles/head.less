@@ -14,6 +14,7 @@
 .pkp_structure_head {
 	background-color: @bg-base;
 	border-bottom: @bg-border;
+	//height: 80vh;
 }
 
 .pkp_head_wrapper {
@@ -35,7 +36,7 @@
 	margin-bottom: 0;
 	text-align: center;
 
-	> a {
+	>a {
 		padding-top: @base;
 		padding-bottom: @base;
 
@@ -52,7 +53,7 @@
 		}
 
 		img {
-			display:block;
+			display: block;
 			max-height: 80px; // must match height - padding of .is_img
 			max-width: 100%;
 			width: auto;
@@ -88,9 +89,9 @@
 .pkp_navigation_primary {
 	text-align: center;
 
-	> li {
+	>li {
 
-		> a {
+		>a {
 			margin: 0 1em;
 			padding: @pkp_nav_primary_row_el_padding 0 (@pkp_nav_primary_row_el_padding - 2); // -2 to account for border size
 			border-bottom: 2px solid transparent;
@@ -119,7 +120,7 @@
 		}
 	}
 
-	> li:hover ul {
+	>li:hover ul {
 		left: 14px;
 	}
 
@@ -207,7 +208,7 @@
 		color: @text-light;
 	}
 
-	.search_cancel{
+	.search_cancel {
 
 		&:before {
 			.fa();
@@ -380,7 +381,7 @@
 		line-height: @line-sml;
 	}
 
-	> li > a:focus {
+	>li>a:focus {
 		outline: 0;
 	}
 
@@ -388,15 +389,15 @@
 		width: 10em;
 	}
 
-	> li > a,
-	> li.in_focus > a,
-	> li > a:hover,
-	> li > a:focus {
+	>li>a,
+	>li.in_focus>a,
+	>li>a:hover,
+	>li>a:focus {
 		color: @text-bg-base;
 	}
 
 	// Align to the right edge of the container
-	> li:last-child > a {
+	>li:last-child>a {
 		padding-right: 0;
 	}
 
@@ -406,13 +407,13 @@
 		height: 20px;
 		margin-left: 0.5em;
 		border-radius: 50%;
-		background: rgba(255,255,255,0.3);
+		background: rgba(255, 255, 255, 0.3);
 		line-height: 20px;
 		text-align: center;
 		font-size: 12px; // helps visually center the number
 	}
 
-	> li > ul a {
+	>li>ul a {
 
 		.task_count {
 			background: #ddd;

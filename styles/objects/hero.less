@@ -1,0 +1,40 @@
+.heroContainer {
+	display: none;
+}
+
+.heroContainer when (@hero =true) {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 25% 25% 25% 25%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	height: 400px;
+	overflow: hidden;
+
+	.heroImage {
+		grid-column-start: 1;
+		grid-column-end: 5;
+		grid-row-start: 1;
+		grid-row-end: 2;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	.heroClaim {
+		grid-column-start: 2;
+		grid-column-end: 4;
+		grid-row-start: 1;
+		grid-row-end: 2;
+		align-items: end;
+		justify-items: center;
+
+		font-size: 60px;
+		font-weight: bold;
+		//text-justify: center;
+		text-align: center;
+		line-height: 100%;
+		vertical-align: middle;
+	}
+}

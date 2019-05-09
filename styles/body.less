@@ -39,16 +39,16 @@ a {
 	padding-left: @base;
 	padding-right: @base;
 
-	@media( min-width: @screen-tablet ) {
+	@media(min-width: @screen-tablet ) {
 		width: @screen-tablet-container;
 		padding: 0;
 	}
 
-	@media( min-width: @screen-desktop ) {
+	@media(min-width: @screen-desktop ) {
 		width: @screen-desktop-container;
 	}
 
-	@media( min-width: @screen-lg-desktop ) {
+	@media(min-width: @screen-lg-desktop ) {
 		width: @screen-lg-desktop-container;
 	}
 }
@@ -65,21 +65,33 @@ a {
 		position: relative;
 		width: 100%;
 		margin: 0 auto;
-		padding-left: @base;
-		padding-right: @base;
+		//padding-left: @base;
+		//padding-right: @base;
+		padding-left: 0;
+		padding-right: 0;
 
-		@media( min-width: @screen-tablet ) {
-			width: @screen-tablet-container;
+		@media(min-width: @screen-tablet ) {
+			//width: @screen-tablet-container;
+			width: 100%;
 			padding-left: 0;
 			padding-right: 0;
+			margin: 0px;
 		}
 
-		@media( min-width: @screen-desktop ) {
-			width: @screen-desktop-container;
+		@media(min-width: @screen-desktop ) {
+			//width: @screen-desktop-container;
+			width: 100%;
+			padding-left: 0;
+			padding-right: 0;
+			margin: 0px;
 		}
 
-		@media( min-width: @screen-lg-desktop ) {
-			width: @screen-lg-desktop-container;
+		@media(min-width: @screen-lg-desktop ) {
+			//width: @screen-lg-desktop-container;
+			width: 100%;
+			padding-left: 0;
+			padding-right: 0;
+			margin: 0px;
 		}
 	}
 }
@@ -89,14 +101,14 @@ a {
 	padding: @base;
 }
 
-@media( min-width: @screen-phone ) {
+@media(min-width: @screen-phone ) {
 
 	.pkp_structure_main {
 		padding: @double;
 	}
 }
 
-@media( min-width: @screen-tablet ) {
+@media(min-width: @screen-tablet ) {
 
 	// Full-height borders wrapping primary content column
 	.pkp_structure_main {
@@ -118,7 +130,7 @@ a {
 	}
 }
 
-@media( min-width: @screen-desktop ) {
+@media(min-width: @screen-desktop ) {
 
 	.pkp_structure_content {
 		padding-top: @triple;
@@ -140,7 +152,7 @@ a {
 	}
 }
 
-@media( min-width: @screen-lg-desktop ) {
+@media(min-width: @screen-lg-desktop ) {
 
 	.pkp_structure_main {
 		width: @screen-lg-desktop-container - @sidebar-width;
@@ -162,6 +174,7 @@ a {
 
 		// Aligns the left and right borders
 		@no-sidebar-margins: @sidebar-width / 2;
+
 		&:before {
 			left: @no-sidebar-margins;
 		}
