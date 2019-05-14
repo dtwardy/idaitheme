@@ -14,6 +14,8 @@
 /**********************************************************************/
 
 import('lib.pkp.classes.plugins.ThemePlugin');
+import('classes.file.PublicFileManager');
+
 class CedisTheme extends ThemePlugin {
   /**
 	 * @copydoc ThemePlugin::isActive()
@@ -30,13 +32,39 @@ class CedisTheme extends ThemePlugin {
     $this->addOption('mainColour', 'colour', array(
       'label' => 'plugins.themes.cedistheme.option.cedisTheme.mainColourLabel',
       'description' => 'plugins.themes.cedistheme.option.cedisTheme.mainColourDescription',
-      'default' => '#1E6292'
+      'default' => '#B56357'
     ));
-    $this->addOption('secondColour', 'colour', array(
+    $this->addOption('secondaryColour', 'colour', array(
       'label' => 'plugins.themes.cedistheme.option.cedisTheme.secondColourLabel',
       'description' => 'plugins.themes.cedistheme.option.cedisTheme.secondColourDescription',
-      'default' => '#1E6292'
+      'default' => '#B4DBC0'
     ));
+    $this->addOption('neutralColour', 'colour', array(
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.neutralColourLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.neutralColourDescription',
+      'default' => '#8D8E8A'
+    ));
+
+    // Header Bright/Dark
+    $this->addOption('headerBright', 'radio', array(
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.headerBrightLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.headerBrightDescription',
+      'options' => array(
+        'bright' => 'plugins.themes.cedistheme.option.cedisTheme.headerBrightBright',
+        'dark' => 'plugins.themes.cedistheme.option.cedisTheme.headerBrightDark'
+      )
+    ));
+
+    // Logo as header background
+    $this->addOption('headerBackground', 'radio', array(
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.headerBackgroundLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.headerBackgroundDescription',
+      'options' => array(
+        'logo' => 'plugins.themes.cedistheme.option.cedisTheme.headerBackgroundLogo',
+        'banner' => 'plugins.themes.cedistheme.option.cedisTheme.headerBackgroundBanner'
+      )
+    ));
+
     // Hero Option
     $this->addOption('hero', 'radio', array(
       'label' => 'plugins.themes.cedistheme.option.cedisTheme.heroLabel',
@@ -45,6 +73,10 @@ class CedisTheme extends ThemePlugin {
           'enabled' => 'plugins.themes.cedistheme.option.cedisTheme.heroEnabled',
           'disabled' => 'plugins.themes.cedistheme.option.cedisTheme.heroDisabled'
       )
+    ));
+    $this->addOption('heroClaim', 'text', array(
+        'label' => 'plugins.themes.cedistheme.option.cedisTheme.heroClaimLabel',
+        'description' => 'plugins.themes.cedistheme.option.cedisTheme.heroClaimDescription'
     ));
 
     // Journal Description Position Option
@@ -56,6 +88,17 @@ class CedisTheme extends ThemePlugin {
             'below' => 'plugins.themes.cedistheme.option.cedisTheme.jourdescriptionBelow',
             'off' => 'plugins.themes.cedistheme.option.cedisTheme.jourdescriptionOff'
         )
+    ));
+
+    // Sidebar Position
+    $this->addOption('sidebarPosition', 'radio', array(
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.sidebarPositionLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.sidebarPositionDescription',
+      'options' => array(
+        'right' => 'plugins.themes.cedistheme.option.cedisTheme.sidebarPositionRight',
+        'left' => 'plugins.themes.cedistheme.option.cedisTheme.sidebarPositionLeft',
+        'off' => 'plugins.themes.cedistheme.option.cedisTheme.sidebarPositionOff'
+      )
     ));
 
     // Journal Headling font
@@ -77,6 +120,17 @@ class CedisTheme extends ThemePlugin {
         'font1' => 'plugins.themes.cedistheme.option.cedisTheme.bodyFontFont1',
         'font2' => 'plugins.themes.cedistheme.option.cedisTheme.bodyFontFont2',
         'font3' => 'plugins.themes.cedistheme.option.cedisTheme.bodyFontFont3'
+      )
+    ));
+
+    // Border Styles
+    $this->addOption('borderStyles', 'radio', array(
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesDescription',
+      'options' => array(
+        'off' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesOff',
+        'horizontal' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal',
+        'default' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault'
       )
     ));
 
@@ -126,21 +180,55 @@ class CedisTheme extends ThemePlugin {
     // Variable to hold Less variables
     $additionalLessVariables = array();
 
+    $primColour = $this->getOption('mainColour');
+    $secondColour = $this->getOption('secondaryColour');
+    $neutColour = $this->getOption('neutralColour');
+    $additionalLessVariables[] = '@highlightColour: ' . $primColour . ';';
+    $additionalLessVariables[] = '@contrastColour: ' . $secondColour . ';';
+    $additionalLessVariables[] = '@neutralColour: ' . $neutColour . ';';
+
+    $headerShade = $this->getOption('headerBright');
+    if (empty($headerShade) || $headerShade === 'dark') {
+      $additionalLessVariables[] = '@headerLight: false;';
+    } else {
+      $additionalLessVariables[] = 'headerLight: true;';
+    }
+
     // READING LESS VARIABLES AND SETTING THEM COMES HERE
     // $additionalLessVariables[] = '@variableName' . $this->getOption('optionName') . ';'
+    $currentJournal = $request->getJournal();
+    $primLocale = $currentJournal->getPrimaryLocale();
+    $pubFileManager = new PublicFileManager();
+		$pubFilesDir = $request->getBaseUrl() . '/' . $pubFileManager->getJournalFilesPath($currentJournal->getId());
+		//$pubFilesDir = $request->getBaseUrl() . '/' . $request->getJournal();
 
     $heroState = $this->getOption('hero');
     if (empty($heroState) || $heroState === 'disabled') {
       $additionalLessVariables[] = '@hero: false;';
     } else {
       $additionalLessVariables[] = '@hero: true;';
+      $additionalLessVariables[] = '@heroBackground: url(\'' . $pubFilesDir . '/homepageImage_'  . $primLocale  . '.jpg\');';
     }
-     
+
+    $heroClaimText = $this->getOption('heroClaim');
+    if (!empty($heroClaimText)) {
+      $additionalLessVariables[] = '@heroClaimText: \'' . $heroClaimText . '\';';
+    }
+      
     $descriptionTextPosition = $this->getOption('jourdescription');
     if (empty($descriptionTextPosition) || $descriptionTextPosition === 'above') {
       $additionalLessVariables[] = '@descriptionTextAbove: true;';
     } else {
       $additionalLessVariables[] = '@descriptionTextAbove: false;';  
+    }
+
+    $sidebarSetting = $this->getOption('sidebarPosition');
+    if (empty($sidebarSetting) || $sidebarSetting === 'right') {
+      $additionalLessVariables[] = '@sidebarPosition: \'right\';';
+    } elseif ($sidebarSetting === 'left') {
+      $additionalLessVariables[] = '@sidebarPosition: \'left\';';
+    } else {
+      $additionalLessVariables[] = '@sidebarPosition: \'off\';';
     }
 
     // Pass additional LESS variables based on options

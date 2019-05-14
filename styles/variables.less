@@ -102,8 +102,80 @@
 @base-url: ''; // Leave empty
 
 
+// Colour Variables
+@highlightColour: #B56357;
+@shadedHighlightColour: lighten(@highlightColour, 33%);
+@contrastColour: #B4DBC0;
+@shadedContrastColour: lighten(@contrastColour, 33%);
+@neutralColour: #8D8E8A;
+@shadedLighterNeutralColour: lighten(@neutralColour, 33%);
+@shadedDarkerNeutralColour: darken(@neutralColour, 33%);
+
+// Header dark/light
+@headerLight: true;
+
 // Hero Claim
 @hero: false;
+@heroClaimText: '';
+@heroBackground: '';
 
 // Description Text Position
 @descriptionTextAbove: false;
+@descriptionTextVisible: true;
+
+// Sidebar position
+@sidebarPosition: '';
+
+// Grid mixins and variables
+@gridColumns: 12;
+
+.gridSetup(@gridColumnCount) {
+	display: grid;
+	grid-template-columns: repeat(@gridColumnCount, 100% / @gridColumnCount);
+	grid-template-rows: 3fr;
+}
+
+.gridWidthOne(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + 1;
+}
+
+.gridWidthTwo(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + 2;
+}
+
+.gridWidthQuarter(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + (@gridColumns / 4);
+}
+
+.gridWidthThird(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + (@gridColumns / 3);
+}
+
+.gridWithHalf(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + (@gridColumns / 2);
+}
+
+.gridWidthTwoThird(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + (@gridColumns / 3 * 2);
+}
+
+.gridWidthThreeQuarter(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + (@gridColumns / 4 * 3);
+}
+
+.gridWidthFull() {
+	grid-column-start: 1;
+	grid-column-end: @gridColumns + 1;
+}
+
+.gridWidthCustom(@gridStart; @gridLength) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + @gridLength;
+}

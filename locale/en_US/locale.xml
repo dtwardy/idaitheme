@@ -22,8 +22,20 @@
   <message key="plugins.themes.cedistheme.option.cedisTheme.mainColourDescription">Key colour for the main design</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.secondColourLabel">Secondary Colour</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.secondColourDescription">Secondary colour for the design</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.neutralColourLabel">Neutral Colour</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.neutralColourDescription">Neutral colour for the design</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBrightLabel">Header Bright/Dark</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBrightDescription">Switching the colour scheme of the header</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBrightBright">Bright</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBrightDark">Dark</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBackgroundLabel">Header Logo Behaviour</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBackgroundDescription">Switching between logo or banner mode</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBackgroundLogo">Logo</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBackgroundBanner">Banner</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.heroLabel">Status Hero</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.heroDescription">Converting the homepage image to a hero image</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroClaimLabel">Hero Claim</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroClaimDescription">Hero Claim displayed ontop of hero image on journal index</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.heroEnabled">Enabled</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.heroDisabled">Disabled</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionLabel">Journal Description Options</message>
@@ -31,6 +43,10 @@
   <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionAbove">above announcements</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionBelow">below announcements</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionOff">do not show</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionLabel">Sidebar Position</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionDescription">Determine the position of the sidebar</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionRight">Right</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionLeft">Left</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontLabel">Headline Font</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontDescription">Choose from a selection of fonts for all headlines</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontFont1">Font1</message>
@@ -41,4 +57,9 @@
   <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontFont1">Font1</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontFont2">Font2</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontFont3">Font3</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesLabel">Border Style</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDescription">Determine the style of the borders throughout the site</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesOff">Off</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal">Horizontal</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault">Default</message>
 </locale>

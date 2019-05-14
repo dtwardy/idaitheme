@@ -5,36 +5,40 @@
 .heroContainer when (@hero =true) {
 	display: grid;
 	grid-template-rows: 1fr;
-	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-columns: repeat(12, 100% / @gridColumns);
 	width: 100%;
 	margin: 0px;
 	padding: 0px;
 	border: 0px;
 	height: 400px;
 	overflow: hidden;
-
-	.heroImage {
-		grid-column-start: 1;
-		grid-column-end: 5;
-		grid-row-start: 1;
-		grid-row-end: 2;
-		width: 100%;
-		object-fit: cover;
-	}
+	background-image: @heroBackground;
+	background-position: center;
+	background-repeat: no-repeat;
 
 	.heroClaim {
-		grid-column-start: 2;
-		grid-column-end: 4;
-		grid-row-start: 1;
-		grid-row-end: 2;
-		align-items: end;
-		justify-items: center;
+		display: contents;
+		grid-column-start: 3;
+		grid-column-end: 11;
+		grid-row: 1;
+		//vertical-align: middle;
+	}
+
+	.heroClaim::after {
+		content: @heroClaimText;
+		grid-column-start: 3;
+		grid-column-end: 11;
+		grid-row: 1;
 
 		font-size: 60px;
 		font-weight: bold;
-		//text-justify: center;
-		text-align: center;
 		line-height: 100%;
-		vertical-align: middle;
+		//vertical-align: center;
+		text-align: center;
+		justify-items: center;
+		align-items: center;
+		margin-top: auto;
+		margin-bottom: auto;
+		color: @shadedLighterNeutralColour;
 	}
 }
