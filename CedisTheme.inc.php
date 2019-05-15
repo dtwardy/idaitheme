@@ -199,15 +199,24 @@ class CedisTheme extends ThemePlugin {
     $currentJournal = $request->getJournal();
     $primLocale = $currentJournal->getPrimaryLocale();
     $pubFileManager = new PublicFileManager();
-		$pubFilesDir = $request->getBaseUrl() . '/' . $pubFileManager->getJournalFilesPath($currentJournal->getId());
-		//$pubFilesDir = $request->getBaseUrl() . '/' . $request->getJournal();
+		$pubFilesUrl = $request->getBaseUrl() . '/' . $pubFileManager->getJournalFilesPath($currentJournal->getId());
+    $pubFilesDir = BASE_SYS_DIR . '/public/journals/' . $currentJournal->getId();
+
+    //echo($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.png');
+
+    if (file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.png')) {
+      $additionalLessVariables[] = '@headerHasLogo: true;';
+      //echo('true');
+    } else {
+      $additionalLessVariables[] = '@headerHasLogo: false;';
+    }
 
     $heroState = $this->getOption('hero');
     if (empty($heroState) || $heroState === 'disabled') {
       $additionalLessVariables[] = '@hero: false;';
     } else {
       $additionalLessVariables[] = '@hero: true;';
-      $additionalLessVariables[] = '@heroBackground: url(\'' . $pubFilesDir . '/homepageImage_'  . $primLocale  . '.jpg\');';
+      $additionalLessVariables[] = '@heroBackground: url(\'' . $pubFilesUrl . '/homepageImage_'  . $primLocale  . '.jpg\');';
     }
 
     $heroClaimText = $this->getOption('heroClaim');
