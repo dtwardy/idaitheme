@@ -202,11 +202,12 @@ class CedisTheme extends ThemePlugin {
 		$pubFilesUrl = $request->getBaseUrl() . '/' . $pubFileManager->getJournalFilesPath($currentJournal->getId());
     $pubFilesDir = BASE_SYS_DIR . '/public/journals/' . $currentJournal->getId();
 
-    //echo($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.png');
-
-    if (file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.png')) {
+    if (file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.png') ||
+        file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.jpg') ||
+        file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.webp') ||
+        file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.svg')) {
       $additionalLessVariables[] = '@headerHasLogo: true;';
-      //echo('true');
+      
     } else {
       $additionalLessVariables[] = '@headerHasLogo: false;';
     }
