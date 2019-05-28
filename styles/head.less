@@ -143,7 +143,7 @@
 
 	.dropdown-menu a:focus,
 	.dropdown-menu a:hover {
-		border-color: @highlightColour;
+		border-color: @contrastColour;;
 	}
 
 	display: inline-block;
@@ -152,9 +152,15 @@
 }
 
 .pkp_search {
-	display: inline-block;
-	float: right;
-	align-content: right;
+	display: inline;
+	float: left;
+	align-content: left;
+
+	input,
+	button {
+		display: inline;
+		float: left;
+	}
 
 	.search_controls {
 		display: none;

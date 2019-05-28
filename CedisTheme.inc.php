@@ -78,6 +78,11 @@ class CedisTheme extends ThemePlugin {
         'label' => 'plugins.themes.cedistheme.option.cedisTheme.heroClaimLabel',
         'description' => 'plugins.themes.cedistheme.option.cedisTheme.heroClaimDescription'
     ));
+    $this->addOption('heroClaimColour', 'colour', array(
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.heroClaimColour',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.heroClaimColour',
+      'default' => '#FFF'
+    ));
 
     // Journal Description Position Option
     $this->addOption('jourdescription', 'radio', array(
@@ -186,6 +191,9 @@ class CedisTheme extends ThemePlugin {
     $additionalLessVariables[] = '@highlightColour: ' . $primColour . ';';
     $additionalLessVariables[] = '@contrastColour: ' . $secondColour . ';';
     $additionalLessVariables[] = '@neutralColour: ' . $neutColour . ';';
+    //$additionalLessVariables[] = '@bg-base: ' . $primColour . ';';
+    $additionalLessVariables[] = '@primary: ' . $primColour . ';';
+    $additionalLessVariables[] = '@bg-base: #FF4040;';
 
     $headerShade = $this->getOption('headerBright');
     if (empty($headerShade) || $headerShade === 'dark') {
@@ -223,6 +231,10 @@ class CedisTheme extends ThemePlugin {
     $heroClaimText = $this->getOption('heroClaim');
     if (!empty($heroClaimText)) {
       $additionalLessVariables[] = '@heroClaimText: \'' . $heroClaimText . '\';';
+    }
+    $heroColour = $this->getOption('heroClaimColour');
+    if (!empty($heroColour)) {
+      $additionalLessVariables[] = '@heroClaimColour: ' . $heroColour . ';';
     }
       
     $descriptionTextPosition = $this->getOption('jourdescription');

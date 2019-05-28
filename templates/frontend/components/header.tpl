@@ -83,7 +83,7 @@
 							{load_menu name="primary" id="navigationPrimary" ulClass="pkp_navigation_primary"}
 
 							{* Search form *}
-							<!--{include file="frontend/components/searchForm_simple.tpl"}-->
+							{include file="frontend/components/searchForm_simple.tpl"}
 						</div>
 					</nav>
 				{/if}
@@ -91,9 +91,9 @@
 					{load_menu name="user" id="navigationUser" ulClass="pkp_navigation_user" liClass="profile"}
 				</nav>
 
-				<div class="pkp_search_wrapper">
+				<!--<div class="pkp_search_wrapper">
 					{include file="frontend/components/searchForm_simple.tpl"}
-				</div>
+				</div>-->
 
 			</div><!-- .pkp_head_wrapper -->
 		</header><!-- .pkp_structure_head -->
