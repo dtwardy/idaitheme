@@ -45,7 +45,8 @@
 	}
 
 	.is_text {
-		display: none;
+		display: none !important;
+		visibility: hidden;
 	}
 
 	.is_text when (@headerHasLogo =false) {
@@ -65,15 +66,16 @@
 		}
 	}
 
-	/*@media (max-width: @screen-phone) {
+	@media (max-width: @screen-phone) {
 		.is_img {
 			display: none;
 		}
 
 		.is_text {
-			display: block;
+			display: block !important;
+			visibility: visible;
 		}
-	}*/
+	}
 }
 
 
