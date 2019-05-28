@@ -194,6 +194,13 @@ class CedisTheme extends ThemePlugin {
     $additionalLessVariables[] = '@bg-base: ' . $primColour . ';';
     $additionalLessVariables[] = '@primary: ' . $primColour . ';';
 
+    // Calculate mainColour's brightness and change menu font colour accordingly
+    if (hexdec(substr($primColour, 1, 2)) + hexdec(substr($primColour, 3, 2)) + hexdec(substr($primColour, 5, 2)) > 384) {
+      $additionalLessVariables[] = '@menuColour: #111;';
+    } else {
+      $additionalLessVariables[] = '@menuColour: #FFF;';
+    }
+
     $headerShade = $this->getOption('headerBright');
     if (empty($headerShade) || $headerShade === 'dark') {
       $additionalLessVariables[] = '@headerLight: false;';

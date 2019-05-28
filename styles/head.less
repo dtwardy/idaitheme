@@ -98,13 +98,14 @@
 			margin: 0 1em;
 			padding: @pkp_nav_primary_row_el_padding 0 (@pkp_nav_primary_row_el_padding - 2); // -2 to account for border size
 			border-bottom: 2px solid transparent;
-			color: @shadedDarkerNeutralColour;
+			color: @menuColour;
 
 			&:hover,
 			&:focus {
-				color: @shadedDarkerNeutralColour;
+				filter: invert(100%);
+
 				outline: 0;
-				border-color: @shadedDarkerNeutralColour;
+				border-color: @menuColour;
 			}
 		}
 
