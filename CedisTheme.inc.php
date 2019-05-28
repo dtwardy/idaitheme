@@ -191,9 +191,8 @@ class CedisTheme extends ThemePlugin {
     $additionalLessVariables[] = '@highlightColour: ' . $primColour . ';';
     $additionalLessVariables[] = '@contrastColour: ' . $secondColour . ';';
     $additionalLessVariables[] = '@neutralColour: ' . $neutColour . ';';
-    //$additionalLessVariables[] = '@bg-base: ' . $primColour . ';';
+    $additionalLessVariables[] = '@bg-base: ' . $primColour . ';';
     $additionalLessVariables[] = '@primary: ' . $primColour . ';';
-    $additionalLessVariables[] = '@bg-base: #FF4040;';
 
     $headerShade = $this->getOption('headerBright');
     if (empty($headerShade) || $headerShade === 'dark') {
