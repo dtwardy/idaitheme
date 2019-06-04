@@ -12,13 +12,13 @@
 // Site logo/name
 .pkp_site_name {
 	font-size: 2em; // Prevents extra vertical space after logos
-	margin-top: 0;
-	margin-bottom: 0;
+	margin: 0 !important;
 	text-align: center;
 
 	>a {
 		padding-top: @base;
 		padding-bottom: @base;
+		float: left;
 
 		&:focus {
 			outline: 0;
@@ -156,16 +156,29 @@
 }
 
 .pkp_search {
-	display: inline;
-	float: left;
-	align-content: left;
+	//display: inline;
+	//float: left;
+	//align-content: left;
+	//width: 250px;
+	margin: auto 0;
+	padding: 9px 0px 9px 0px;
 
 	input,
 	button {
-		display: none;
+		display: inline !important;
+		margin: auto 0;
+	}
+
+	input {
+		float: left;
+		width: 160px;
+	}
+
+	button {
+		float: right;
 	}
 
 	.search_controls {
-		display: inline;
+		display: none !important;
 	}
 }

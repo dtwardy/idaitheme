@@ -102,7 +102,7 @@ class CedisTheme extends ThemePlugin {
       'options' => array(
         'right' => 'plugins.themes.cedistheme.option.cedisTheme.sidebarPositionRight',
         'left' => 'plugins.themes.cedistheme.option.cedisTheme.sidebarPositionLeft',
-        'off' => 'plugins.themes.cedistheme.option.cedisTheme.sidebarPositionOff'
+        //'off' => 'plugins.themes.cedistheme.option.cedisTheme.sidebarPositionOff'
       )
     ));
 
@@ -201,6 +201,13 @@ class CedisTheme extends ThemePlugin {
       $additionalLessVariables[] = '@menuColour: #FFF;';
     }
 
+    // Calculate neutralColour's brightness and change footer font colour accordingly
+    if (hexdec(substr($primColour, 1, 2)) + hexdec(substr($neutColour, 3, 2)) + hexdec(substr($neutColour, 5, 2)) > 384) {
+      $additionalLessVariables[] = '@footerColour: #111;';
+    } else {
+      $additionalLessVariables[] = '@footerColour: #FFF;';
+    }
+
     $headerShade = $this->getOption('headerBright');
     if (empty($headerShade) || $headerShade === 'dark') {
       $additionalLessVariables[] = '@headerLight: false;';
@@ -230,8 +237,19 @@ class CedisTheme extends ThemePlugin {
     if (empty($heroState) || $heroState === 'disabled') {
       $additionalLessVariables[] = '@hero: false;';
     } else {
-      $additionalLessVariables[] = '@hero: true;';
-      $additionalLessVariables[] = '@heroBackground: url(\'' . $pubFilesUrl . '/homepageImage_'  . $primLocale  . '.jpg\');';
+      if (file_exists($pubFilesDir . '/homepageImage_' . $primLocale . '.jpg')) {
+        $additionalLessVariables[] = '@hero: true;';
+        $additionalLessVariables[] = '@heroBackground: url(\'' . $pubFilesUrl . '/homepageImage_'  . $primLocale  . '.jpg\');';
+      } elseif (file_exists($pubFilesDir . '/homepageImage_' . $primLocale . '.png')) {
+        $additionalLessVariables[] = '@hero: true;';
+        $additionalLessVariables[] = '@heroBackground: url(\'' . $pubFilesUrl . '/homepageImage_'  . $primLocale  . '.png\');';
+      } elseif (file_exists($pubFilesDir . '/homepageImage_' . $primLocale . '.webp')) {
+        $additionalLessVariables[] = '@hero: true;';
+        $additionalLessVariables[] = '@heroBackground: url(\'' . $pubFilesUrl . '/homepageImage_'  . $primLocale  . '.webp\');';
+      } elseif (file_exists($pubFilesDir . '/homepageImage_' . $primLocale . '.svg')) {
+        $additionalLessVariables[] = '@hero: true;';
+        $additionalLessVariables[] = '@heroBackground: url(\'' . $pubFilesUrl . '/homepageImage_'  . $primLocale  . '.svg\');';
+      }
     }
 
     $heroClaimText = $this->getOption('heroClaim');
