@@ -9,6 +9,9 @@
 
 .pkp_head_wrapper when (@headerLogoState ='banner') {
 	background: @headerBackground;
+	background-repeat: no-repeat;
+	background-position-y: bottom;
+	background-position-x: center;
 }
 
 
@@ -16,13 +19,16 @@
 // Site logo/name
 .pkp_site_name {
 	font-size: 2em; // Prevents extra vertical space after logos
-	margin: 0 !important;
-	text-align: center;
+	//text-align: center;
+	margin: auto 0 !important;
+	position: initial;
 
 	>a {
 		padding-top: @base;
 		padding-bottom: @base;
 		float: left;
+
+		margin: auto 0;
 
 		&:focus {
 			outline: 0;
@@ -38,13 +44,9 @@
 
 		img {
 			display: block;
-			max-height: 80px; // must match height - padding of .is_img
-			max-width: 100%;
-			width: auto;
-			height: auto;
+			height: 120px;
 
-			margin-top: auto;
-			margin-bottom: auto;
+			margin: auto 0 !important;
 		}
 	}
 
@@ -55,23 +57,30 @@
 	.is_text {
 		display: none !important;
 		visibility: hidden;
-	}
 
-	.is_text when (@headerHasLogo =false) {
+		position: static;
+		margin: auto 0 !important;
+		padding: 30px 0px;
+		height: 100%;
+
 		font-family: @font-site-title;
-		display: block;
-		position: relative;
 		font-size: @font-header;
 		font-weight: @bold;
 		line-height: @line-header;
-		color: @shadedDarkerNeutralColour;
-		margin-top: auto;
-		margin-bottom: auto;
-		text-decoration: none;
+		color: @highlightColour;
+		text-decoration: none !important;
+
 
 		&:focus {
-			text-decoration: underline;
+			text-decoration: none;
 		}
+	}
+
+	.is_text when (@headerHasLogo =false) {
+
+		display: block !important;
+		visibility: visible;
+
 	}
 
 	.is_text when (@headerLogoState ='banner') {
