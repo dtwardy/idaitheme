@@ -98,17 +98,15 @@ body {
 .pkp_structure_sidebar {
 	grid-row-start: 2;
 	grid-row-end: 3;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
 }
 
 .pkp_structure_content when (@sidebarPosition ='off') {
 	.pkp_structure_main {
 		.gridWidthCustom(2, 10);
-		width: 100%;
-		padding: 0;
-		margin: 0;
-		//.gridSetup(10);
-		//grid-template-rows: 1fr 1fr 1fr 1fr;
-		display: inline-block;
 
 		div,
 		section {
@@ -130,19 +128,13 @@ body {
 	}
 
 	.pkp_structure_sidebar {
-		visibility: hidden;
+		display: none;
 	}
 }
 
 .pkp_structure_content when (@sidebarPosition='right') {
 	.pkp_structure_main {
 		.gridWidthCustom(2, 7);
-		//.gridSetup(7);
-		//grid-template-rows: 1fr 1fr 1fr 1fr;
-		padding: 0;
-		width: 100%;
-		margin: 0;
-		display: inline-block;
 
 		div,
 		section {
@@ -163,13 +155,6 @@ body {
 
 	.pkp_structure_sidebar {
 		.gridWidthCustom(10, 2);
-		//.gridSetup(2);
-		//grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-
-		width: 100%;
-		padding: 0;
-		margin: 0;
-		display: block;
 
 		.pkp_block {
 			display: block;
@@ -194,8 +179,7 @@ body {
 
 		div,
 		section {
-			grid-column-start: 1;
-			grid-column-end: 8;
+			grid-column: 1 / 8;
 			width: 100%;
 		}
 
@@ -213,12 +197,6 @@ body {
 
 	.pkp_structure_sidebar {
 		.gridWidthCustom(2, 2);
-		//.gridSetup(2);
-		//grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-		width: 100%;
-		padding: 0;
-		margin: 0;
-		display: block;
 
 		.pkp_block {
 			display: block;
@@ -233,6 +211,63 @@ body {
 			padding-bottom: 30px;
 		}
 	}
+}
+
+.page {
+	// display: contents; ToDo: fix current grid layout in grid.less
+
+	// HACK: 
+	grid-column-start: 2;
+	grid-column-end: 9;
+	grid-row: 3;
+
+	display: grid;
+	grid-template-columns: repeat(7, 100% / 7);
+	//grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	grid-auto-rows: minmax(min-content, max-content);
+
+	.cmp_breadcrumbs {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 1;
+	}
+}
+
+.page_article {
+	.obj_article_details {
+		display: contents;
+
+		.page_title {
+			grid-column-start: 1;
+			grid-column-end: 8;
+			grid-row: 2;
+		}
+
+		.subtitle {
+			grid-column-start: 1;
+			grid-column-end: 8;
+			grid-row: 3;
+		}
+
+		.row {
+			display: contents;
+
+			.main_entry {
+				grid-column-start: 1;
+				grid-column-end: 6;
+				grid-row-start: 4;
+				grid-row-end: 5;
+			}
+
+			.entry_details {
+				grid-column-start: 6;
+				grid-column-end: 8;
+				grid-row-start: 4;
+				grid-row-end: 5;
+			}
+		}
+	}
+
 }
 
 .pkp_structure_footer {
