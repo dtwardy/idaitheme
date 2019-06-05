@@ -195,14 +195,14 @@ class CedisTheme extends ThemePlugin {
     $additionalLessVariables[] = '@primary: ' . $primColour . ';';
 
     // Calculate mainColour's brightness and change menu font colour accordingly
-    if (hexdec(substr($primColour, 1, 2)) + hexdec(substr($primColour, 3, 2)) + hexdec(substr($primColour, 5, 2)) > 384) {
+    if (hexdec(substr($primColour, 1, 2)) + hexdec(substr($primColour, 3, 2)) + hexdec(substr($primColour, 5, 2)) > 430) {
       $additionalLessVariables[] = '@menuColour: #111;';
     } else {
       $additionalLessVariables[] = '@menuColour: #FFF;';
     }
 
     // Calculate neutralColour's brightness and change footer font colour accordingly
-    if (hexdec(substr($primColour, 1, 2)) + hexdec(substr($neutColour, 3, 2)) + hexdec(substr($neutColour, 5, 2)) > 384) {
+    if (hexdec(substr($primColour, 1, 2)) + hexdec(substr($neutColour, 3, 2)) + hexdec(substr($neutColour, 5, 2)) > 430) {
       $additionalLessVariables[] = '@footerColour: #111;';
     } else {
       $additionalLessVariables[] = '@footerColour: #FFF;';
@@ -221,7 +221,9 @@ class CedisTheme extends ThemePlugin {
     $primLocale = $currentJournal->getPrimaryLocale();
     $pubFileManager = new PublicFileManager();
 		$pubFilesUrl = $request->getBaseUrl() . '/' . $pubFileManager->getJournalFilesPath($currentJournal->getId());
-    $pubFilesDir = BASE_SYS_DIR . '/public/journals/' . $currentJournal->getId();
+    $SysPubDir = Config::getVar('files', 'public_files_dir');
+    $pubFilesDir = BASE_SYS_DIR . '/'. $SysPubDir . '/' . 'journals/' . $currentJournal->getId();
+    
 
     if (file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.png') ||
         file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.jpg') ||
@@ -232,6 +234,26 @@ class CedisTheme extends ThemePlugin {
     } else {
       $additionalLessVariables[] = '@headerHasLogo: false;';
     }
+
+    $headerLogoState = $this->getOption('headerBackground');
+    if (empty($headerLogoState) || $headerLogoState === 'logo') {
+      $additionalLessVariables[] = '@headerLogoState: \'logo\';';
+      $additionalLessVariables[] = '@headerBackground: \'none\';';
+      
+    } else {
+      $additionalLessVariables[] = '@headerLogoState: \'banner\';';
+
+      if (file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.png')) {
+        $additionalLessVariables[] = '@headerBackground: url(\'' . $pubFilesUrl . '/pageHeaderLogoImage_' . $primLocale . '.png\');';
+      } elseif (file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.jpg')) {
+        $additionalLessVariables[] = '@headerBackground: url(\'' . $pubFilesUrl . '/pageHeaderLogoImage_' . $primLocale . '.jpg\');';
+      } elseif (file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.webp')) {
+        $additionalLessVariables[] = '@headerBackground: url(\'' . $pubFilesUrl . '/pageHeaderLogoImage_' . $primLocale . '.webp\');';
+      } elseif (file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.svg')) {
+        $additionalLessVariables[] = '@headerBackground: url(\'' . $pubFilesUrl . '/pageHeaderLogoImage_' . $primLocale . '.svg\');';
+      }
+    }
+
 
     $heroState = $this->getOption('hero');
     if (empty($heroState) || $heroState === 'disabled') {
@@ -263,9 +285,11 @@ class CedisTheme extends ThemePlugin {
       
     $descriptionTextPosition = $this->getOption('jourdescription');
     if (empty($descriptionTextPosition) || $descriptionTextPosition === 'above') {
-      $additionalLessVariables[] = '@descriptionTextAbove: true;';
+      $additionalLessVariables[] = '@descriptionTextState: \'above\';';
+    } elseif ($descriptionTextPosition === 'below') {
+      $additionalLessVariables[] = '@descriptionTextState: \'below\';';  
     } else {
-      $additionalLessVariables[] = '@descriptionTextAbove: false;';  
+      $additionalLessVariables[] = '@descriptionTextState: \'off\';';
     }
 
     $sidebarSetting = $this->getOption('sidebarPosition');

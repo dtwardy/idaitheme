@@ -178,7 +178,7 @@
 }
 
 // Switching Journal Description Position
-& when (@descriptionTextAbove =false) {
+& when (@descriptionTextState ='below') {
 	.journal-description-above {
 		display: none;
 	}
@@ -188,11 +188,19 @@
 	}
 }
 
-& when (@descriptionTextAbove =true) {
+& when (@descriptionTextState ='above') {
 	.journal-description-above {
 		display: block;
 	}
 
+	.journal-description-below {
+		display: none;
+	}
+}
+
+& when (@descriptionTextState ='off') {
+
+	.journal-description-above,
 	.journal-description-below {
 		display: none;
 	}

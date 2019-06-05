@@ -7,6 +7,10 @@
 	background-color: white;
 }
 
+.pkp_head_wrapper when (@headerLogoState ='banner') {
+	background: @headerBackground;
+}
+
 
 
 // Site logo/name
@@ -44,6 +48,10 @@
 		}
 	}
 
+	.is_img when (@headerLogoState ='banner') {
+		display: none;
+	}
+
 	.is_text {
 		display: none !important;
 		visibility: hidden;
@@ -64,6 +72,11 @@
 		&:focus {
 			text-decoration: underline;
 		}
+	}
+
+	.is_text when (@headerLogoState ='banner') {
+		display: block !important;
+		visibility: visible;
 	}
 
 	@media (max-width: @screen-phone) {
