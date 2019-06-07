@@ -76,23 +76,53 @@ body {
 			display: contents;
 
 			.pkp_navigation_primary {
-				.gridWidthCustom(2, 7);
+				.gridWidthCustom(2, 12);
 				grid-row: 1;
 
 				align-items: center;
 			}
 
 			.pkp_search {
-				.gridWidthCustom(10, 2);
+				/*.gridWidthCustom(10, 2);
 				grid-row: 1;
 				align-items: center;
-
+				*/
 				display: none;
 			}
 		}
 	}
 }
 
+
+.pkp_structure_footer {
+	.gridWidthFull();
+	width: 100%;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	display: grid;
+	.gridSetup(@gridColumns);
+
+	.pkp_footer_content {
+		.gridWidthCustom(2, 7);
+		grid-row-start: 1;
+		grid-row-end: 3;
+		margin-top: auto;
+		margin-bottom: auto;
+
+		display: inline-block;
+		align-items: center;
+	}
+
+	.pkp_brand_footer {
+		.gridWidthCustom(10, 2);
+		grid-row-start: 1;
+		grid-row-end: 3;
+
+		display: inline-block;
+		align-items: center;
+		justify-items: center;
+	}
+}
 
 .pkp_structure_main,
 .pkp_structure_sidebar {
@@ -234,11 +264,11 @@ body {
 }*/
 
 // NOTE: switch to global .page setting after alle subsites are being addressed
-//.page
-.page_issue,
+//.page_issue,
 //.page_issue_archive,
-.page_article,
-.page_submissions {
+//.page_article,
+//.page_submissions 
+.page {
 	grid-column-start: 2;
 	grid-column-end: 9;
 	grid-row: 3;
@@ -252,6 +282,12 @@ body {
 		grid-column-end: 8;
 		grid-row: 1;
 	}
+
+	.page_content_wrapper {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 2;
+	}
 }
 
 .page_issue {
@@ -263,7 +299,17 @@ body {
 }
 
 .page_issue_archive {
+	.issues_archive {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 2;
+	}
 
+	.cmp_pagination {
+		grid-column-start: 6;
+		grid-column-end: 8;
+		grid-row: 3;
+	}
 }
 
 .page_article {
@@ -300,35 +346,100 @@ body {
 			}
 		}
 	}
-
 }
 
-.pkp_structure_footer {
-	.gridWidthFull();
-	width: 100%;
-	grid-row-start: 3;
-	grid-row-end: 4;
-	display: grid;
-	.gridSetup(@gridColumns);
 
-	.pkp_footer_content {
-		.gridWidthCustom(2, 7);
-		grid-row-start: 1;
-		grid-row-end: 3;
-		margin-top: auto;
-		margin-bottom: auto;
+.page_announcements {
+	.cmp_announcements {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 2;
+	}
+}
 
-		display: inline-block;
-		align-items: center;
+.page_about {
+	.about_journal_wrapper {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 2;
+	}
+}
+
+.page_submissions {
+	.cmp_notification {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 2;
 	}
 
-	.pkp_brand_footer {
-		.gridWidthCustom(10, 2);
-		grid-row-start: 1;
-		grid-row-end: 3;
+	.submission_checklist {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 3;
+	}
 
-		display: inline-block;
-		align-items: center;
-		justify-items: center;
+	.privacy_statement {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 4;
+	}
+}
+
+.page_editorial_team {
+	.editorial_team_wrapper {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 2;
+	}
+}
+
+.page_privacy {
+	.privacy_statement_wrapper {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 2;
+	}
+}
+
+.page_contact {
+	.contact_section {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 2;
+	}
+}
+
+.page_search {
+	.cmp_form {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 2;
+	}
+
+	.search_results {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 4;
+	}
+
+	.cmp_notification {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 3;
+	}
+
+	.cmp_pagination {
+		grid-column-start: 6;
+		grid-column-end: 8;
+		grid-row: 5;
+	}
+}
+
+.page_register,
+.page_login {
+	.cmp_form {
+		grid-column-start: 1;
+		grid-column-end: 8;
+		grid-row: 2;
 	}
 }
