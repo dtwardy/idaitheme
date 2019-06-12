@@ -95,6 +95,7 @@
 //
 @base: 10px;
 @half: @base / 2;
+@quarter: @base / 4;
 @double: @base * 2;
 @triple: @base * 3;
 @quadruple: @base * 4;
@@ -298,7 +299,7 @@
 @contrastColour: #B4DBC0;
 @shadedContrastColour: lighten(@contrastColour, 33%);
 @neutralColour: #8D8E8A;
-@shadedLighterNeutralColour: lighten(@neutralColour, 33%);
+@shadedLighterNeutralColour: lighten(@neutralColour, 66%);
 @shadedDarkerNeutralColour: darken(@neutralColour, 33%);
 @menuColour: #000;
 @footerColour: #FFF;
@@ -327,5 +328,8 @@
 // Sidebar position
 @sidebarPosition: '';
 
-// Grid mixins and variables
+// Grid variables
 @gridColumns: 12;
+
+// Structure Style variables
+@structureStyle: 'clean';

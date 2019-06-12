@@ -49,18 +49,22 @@ h6 {
 
 h1 {
 	font-size: @headings-font-size-1  !important;
+	color: @highlightColour  !important;
 }
 
 h2 {
 	font-size: @headings-font-size-2  !important;
+	color: @highlightColour  !important;
 }
 
 h3 {
 	font-size: @headings-font-size-3  !important;
+	color: @highlightColour  !important;
 }
 
 h4 {
 	font-size: @headings-font-size-4  !important;
+	color: @highlightColour  !important;
 }
 
 h5 {
@@ -246,6 +250,42 @@ a {
 	//font-weight: bold;
 	line-height: 100%;
 
+}
+
+.pkp_block {
+	ul>li {
+		padding: @half 0 0 0 !important;
+	}
+
+	ul:first-child>li {
+		padding: 0 0 0 0 !important;
+	}
+}
+
+.block_make_submission {
+	a {
+		box-shadow: none !important;
+		background: none !important;
+		border: 1px solid @highlightColour  !important;
+		border-radius: 3px !important;
+	}
+
+	a:hover {
+		background: @highlightColour  !important;
+		color: @shadedHighlightColour  !important;
+	}
+}
+
+& when (@structureStyle ='blocks') {
+	.pkp_block {
+		background-color: @shadedLighterNeutralColour  !important;
+		padding: @double  !important;
+		border-radius: 2px;
+	}
+
+	.block_make_submission>div>a {
+		margin: auto 0 !important;
+	}
 }
 
 /*.read_more {

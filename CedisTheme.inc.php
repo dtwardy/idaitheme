@@ -154,13 +154,13 @@ class CedisTheme extends ThemePlugin {
     ));
 
     // Border Styles
-    $this->addOption('borderStyles', 'radio', array(
+    $this->addOption('structureStyle', 'radio', array(
       'label' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesLabel',
       'description' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesDescription',
       'options' => array(
-        'off' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesOff',
-        'horizontal' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal',
-        'default' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault'
+        'clean' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesOff',
+        'horizontalBorders' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal',
+        'blocks' => 'plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault'
       )
     ));
 
@@ -384,8 +384,20 @@ class CedisTheme extends ThemePlugin {
       $additionalLessVariables[] = '@base: ' . $baseSizeOpt . ';';
     }
 
+    $structureStyleOpt = $this->getOption('structureStyle');
+    if (empty($structureStyleOpt) || $structureStyleOpt === 'clean' ) {
+      $additionalLessVariables[] = '@structureStyle: \'clean\';';
+    } elseif ($structureStyleOpt === 'horizontalBorders') {
+      $additionalLessVariables[] = '@structureStyle: \'horizontalBorders\';';
+    } elseif ($structureStyleOpt === 'blocks') {
+      $additionalLessVariables[] = '@structureStyle: \'blocks\';';
+    }
+
+
+    // ---
     // Pass additional LESS variables based on options
-		if (!empty($additionalLessVariables)) {
+    // ---
+    if (!empty($additionalLessVariables)) {
 			$this->modifyStyle('stylesheet', array('addLessVariables' => join($additionalLessVariables)));
 		}
 

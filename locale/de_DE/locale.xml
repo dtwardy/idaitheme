@@ -65,9 +65,9 @@
   <message key="plugins.themes.cedistheme.option.cedisTheme.FontMerriweatherSans">Merriweather Sans</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.baseSizeLabel">Basis Größe</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.baseSizeDescription">Beeinflusst die Basiseinheit, auf der das Layout beruht (default: 8px) </message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesLabel">Rahmenstil</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDescription">Schaltet zwischen verschiedenen Rahmenstilen um</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesOff">Aus</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal">Horizontal</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault">Default</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesLabel">Visuelle Strukturierung</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDescription">Schaltet zwischen den verschiedenen Optionen zur visuellen Struktur um</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesOff">Clean</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal">Horizontale Trennlinien</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault">Blöckefault</message>
 </locale>

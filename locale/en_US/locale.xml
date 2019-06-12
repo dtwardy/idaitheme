@@ -65,9 +65,9 @@
   <message key="plugins.themes.cedistheme.option.cedisTheme.FontMerriweatherSans">Merriweather Sans</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.baseSizeLabel">Base Size</message>
   <message key="plugins.themes.cedistheme.option.cedisTheme.baseSizeDescription">Define the base size that defines all spacings as a valid css expression in px (default: 10px) </message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesLabel">Border Style</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDescription">Determine the style of the borders throughout the site</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesOff">Off</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal">Horizontal</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault">Default</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesLabel">Structure Style</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDescription">Determines the site is visually structured either without further elements, with horizontal borders or with sidebar blocks</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesOff">Clean</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal">Horizontal Borders</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault">Blocks</message>
 </locale>
