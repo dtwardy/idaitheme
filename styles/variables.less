@@ -9,6 +9,56 @@
  *  fully separated interface for defining variables, so that changes desired on
  *  the frontend won't impact the backend.
  */
+
+
+@pubFiles: '';
+
+
+@headlineFont: '';
+@bodyFont: '';
+
+& when (@headlineFont ='NotoSans'),
+(@bodyFont ='NotoSans') {
+	.loadFont('NotoSans', normal, normal);
+	.loadFont('NotoSans', normal, italic);
+	.loadFont('NotoSans', 700, normal);
+	.loadFont('NotoSans', 700, italic);
+}
+
+& when (@headlineFont ='NotoSerif'),
+(@bodyFont ='NotoSerif') {
+	.loadFont('NotoSerif', normal, normal);
+	.loadFont('NotoSerif', 700, normal);
+}
+
+& when (@headlineFont ='FiraSans'),
+(@bodyFont ='FiraSans') {
+	.loadFont('FiraSans', normal, normal);
+	.loadFont('FiraSans', 300, normal);
+	.loadFont('FiraSans', 700, normal);
+}
+
+& when (@headlineFont ='Merriweather'),
+(@bodyFont ='Merriweather') {
+	.loadFont('Merriweather', normal, normal);
+	.loadFont('Merriweather', 300, normal);
+	.loadFont('Merriweather', 700, normal);
+}
+
+& when (@headlineFont ='MerriweatherSans'),
+(@bodyFont ='MerriweatherSans') {
+	.loadFont('MerriweatherSans', normal, normal);
+	.loadFont('MerriweatherSans', 300, normal);
+	.loadFont('MerriweatherSans', 700, normal);
+}
+
+& when (@headlineFont ='SourceSansPro'),
+(@bodyFont ='SourceSansPro') {
+	.loadFont('SourceSansPro', normal, normal);
+	.loadFont('SourceSansPro', 600, normal);
+	.loadFont('SourceSansPro', 700, normal);
+}
+
 //
 // Colors
 //
@@ -53,9 +103,25 @@
 //
 // Typography
 //
-@font: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
-@font-heading: @font;
+
+@font: @bodyFont, "Noto Sans",
+	-apple-system,
+	BlinkMacSystemFont,
+	"Segoe UI",
+	"Roboto",
+	"Oxygen-Sans",
+	"Ubuntu",
+	"Cantarell",
+	"Helvetica Neue",
+	sans-serif;
+
+.journal-description-above::before {
+	content: @font;
+}
+
+@font-heading: @headlineFont, @font;
 @font-site-title: @font-heading;
+
 @font-sml: 13px;
 @line-sml: @double;
 @font-base: 14px;
@@ -67,6 +133,130 @@
 @line-lead: @triple;
 @font-header: 24px;
 @line-header: @triple;
+
+
+
+/*& when (@bodyFont ='Arial') {
+	@font: @bodyFont,
+	"Roboto",
+	"Helvetica Neue",
+	sans-serif;
+}
+
+& when (@bodyFont ='Georgia') {
+	@font: @bodyFont,
+	"Times",
+	"Times New Roman",
+	serif;
+}
+
+& when (@bodyFont ='NotoSans') {
+	@font: @bodyFont,
+	"Helvetica Neue",
+	"Open Sans",
+	"Arial",
+	sans-serif;
+}
+
+& when (@bodyFont ='NotoSerif') {
+	@font: @bodyFont,
+	"Times",
+	"Times New Roman",
+	"Georgia",
+	serif;
+}
+
+& when (@bodyFont ='FiraSans') {
+	@font: @bodyFont,
+	"Roboto",
+	"Helvetica Neue",
+	"Arial",
+	sans-serif;
+}
+
+& when (@bodyFont ='SourceSansPro') {
+	@font: @bodyFont,
+	"Roboto",
+	"Helvetica Neue",
+	"Arial",
+	sans-serif;
+}
+
+& when (@bodyFont ='MerriweatherSans') {
+	@font: @bodyFont,
+	"Roboto",
+	"Helvetica Neue",
+	"Arial",
+	sans-serif;
+}
+
+& when (@bodyFont ='Merriweather') {
+	@font: @bodyFont,
+	"Times",
+	"Times New Roman",
+	"Georgia",
+	serif;
+}
+
+& when (@headlineFont ='Arial') {
+	@font-heading: @font;
+}
+
+& when (@headlineFont ='Georgia') {
+	@font-heading: @headlineFont,
+	"Times",
+	"Times New Roman",
+	serif;
+}
+
+& when (@headlineFont ='NotoSans') {
+	@font-heading: @headlineFont,
+	"Helvetica Neue",
+	"Open Sans",
+	"Arial",
+	sans-serif;
+}
+
+& when (@headlineFont ='NotoSerif') {
+	@font-heading: @headlineFont,
+	"Times",
+	"Times New Roman",
+	"Georgia",
+	serif;
+}
+
+& when (@headlineFont ='FiraSans') {
+	@font-heading: @headlineFont,
+	"Roboto",
+	"Helvetica Neue",
+	"Arial",
+	sans-serif;
+}
+
+& when (@headlineFont ='SourceSansPro') {
+	@font-heading: @headlineFont,
+	"Roboto",
+	"Helvetica Neue",
+	"Arial",
+	sans-serif;
+}
+
+& when (@headlineFont ='MerriweatherSans') {
+	@font-heading: @headlineFont,
+	"Roboto",
+	"Helvetica Neue",
+	"Arial",
+	sans-serif;
+}
+
+& when (@headlineFont ='Merriweather') {
+	@font-heading: @headlineFont,
+	"Times",
+	"Times New Roman",
+	"Georgia",
+	serif;
+}*/
+
 
 // Font weights
 @normal: 400;
@@ -127,6 +317,7 @@
 @heroClaimText: '';
 @heroBackground: '';
 @heroClaimColour: #FFF;
+@heroSize: 350px;
 
 // Description Text Position
 @descriptionTextAbove: false;
@@ -137,54 +328,3 @@
 
 // Grid mixins and variables
 @gridColumns: 12;
-
-.gridSetup(@gridColumnCount) {
-	display: grid;
-	grid-template-columns: repeat(@gridColumnCount, 100% / @gridColumnCount);
-	grid-template-rows: 3fr;
-}
-
-.gridWidthOne(@gridStart) {
-	grid-column-start: @gridStart;
-	grid-column-end: @gridStart + 1;
-}
-
-.gridWidthTwo(@gridStart) {
-	grid-column-start: @gridStart;
-	grid-column-end: @gridStart + 2;
-}
-
-.gridWidthQuarter(@gridStart) {
-	grid-column-start: @gridStart;
-	grid-column-end: @gridStart + (@gridColumns / 4);
-}
-
-.gridWidthThird(@gridStart) {
-	grid-column-start: @gridStart;
-	grid-column-end: @gridStart + (@gridColumns / 3);
-}
-
-.gridWidthHalf(@gridStart) {
-	grid-column-start: @gridStart;
-	grid-column-end: @gridStart + (@gridColumns / 2);
-}
-
-.gridWidthTwoThird(@gridStart) {
-	grid-column-start: @gridStart;
-	grid-column-end: @gridStart + (@gridColumns / 3 * 2);
-}
-
-.gridWidthThreeQuarter(@gridStart) {
-	grid-column-start: @gridStart;
-	grid-column-end: @gridStart + (@gridColumns / 4 * 3);
-}
-
-.gridWidthFull() {
-	grid-column-start: 1;
-	grid-column-end: @gridColumns + 1;
-}
-
-.gridWidthCustom(@gridStart; @gridLength) {
-	grid-column-start: @gridStart;
-	grid-column-end: @gridStart + @gridLength;
-}

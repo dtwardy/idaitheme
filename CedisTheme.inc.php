@@ -16,7 +16,10 @@
 import('lib.pkp.classes.plugins.ThemePlugin');
 import('classes.file.PublicFileManager');
 
+include('debug.php');
+
 class CedisTheme extends ThemePlugin {
+
   /**
 	 * @copydoc ThemePlugin::isActive()
 	 */
@@ -79,9 +82,14 @@ class CedisTheme extends ThemePlugin {
         'description' => 'plugins.themes.cedistheme.option.cedisTheme.heroClaimDescription'
     ));
     $this->addOption('heroClaimColour', 'colour', array(
-      'label' => 'plugins.themes.cedistheme.option.cedisTheme.heroClaimColour',
-      'description' => 'plugins.themes.cedistheme.option.cedisTheme.heroClaimColour',
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.heroClaimColourLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.heroClaimColourDescription',
       'default' => '#FFF'
+    ));
+    $this->addOption('heroSize', 'text', array (
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.heroSizeLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.heroSizeDescription',
+      'default' => '350px'
     ));
 
     // Journal Description Position Option
@@ -111,9 +119,14 @@ class CedisTheme extends ThemePlugin {
       'label' => 'plugins.themes.cedistheme.option.cedisTheme.headlineFontLabel',
       'description' => 'plugins.themes.cedistheme.option.cedisTheme.headlineFontDescription',
       'options' => array(
-        'font1' => 'plugins.themes.cedistheme.option.cedisTheme.headlineFontFont1',
-        'font2' => 'plugins.themes.cedistheme.option.cedisTheme.headlineFontFont2',
-        'font3' => 'plugins.themes.cedistheme.option.cedisTheme.headlineFontFont3'
+        'Arial' => 'plugins.themes.cedistheme.option.cedisTheme.FontArial',
+        'Georgia' => 'plugins.themes.cedistheme.option.cedisTheme.FontGeorgia',
+        'NotoSans' => 'plugins.themes.cedistheme.option.cedisTheme.FontNotoSans',
+        'NotoSerif' => 'plugins.themes.cedistheme.option.cedisTheme.FontNotoSerif',
+        'FiraSans' => 'plugins.themes.cedistheme.option.cedisTheme.FontFiraSans',
+        'SourceSansPro' => 'plugins.themes.cedistheme.option.cedisTheme.FontSourceSansPro',
+        'Merriweather' => 'plugins.themes.cedistheme.option.cedisTheme.FontMerriweather',
+        'MerriweatherSans' => 'plugins.themes.cedistheme.option.cedisTheme.FontMerriweatherSans'
       )
     ));
 
@@ -122,10 +135,22 @@ class CedisTheme extends ThemePlugin {
       'label' => 'plugins.themes.cedistheme.option.cedisTheme.bodyFontLabel',
       'description' => 'plugins.themes.cedistheme.option.cedisTheme.bodyFontDescription',
       'options' => array(
-        'font1' => 'plugins.themes.cedistheme.option.cedisTheme.bodyFontFont1',
-        'font2' => 'plugins.themes.cedistheme.option.cedisTheme.bodyFontFont2',
-        'font3' => 'plugins.themes.cedistheme.option.cedisTheme.bodyFontFont3'
+        'Arial' => 'plugins.themes.cedistheme.option.cedisTheme.FontArial',
+        'Georgia' => 'plugins.themes.cedistheme.option.cedisTheme.FontGeorgia',
+        'NotoSans' => 'plugins.themes.cedistheme.option.cedisTheme.FontNotoSans',
+        'NotoSerif' => 'plugins.themes.cedistheme.option.cedisTheme.FontNotoSerif',
+        'FiraSans' => 'plugins.themes.cedistheme.option.cedisTheme.FontFiraSans',
+        'SourceSansPro' => 'plugins.themes.cedistheme.option.cedisTheme.FontSourceSansPro',
+        'Merriweather' => 'plugins.themes.cedistheme.option.cedisTheme.FontMerriweather',
+        'MerriweatherSans' => 'plugins.themes.cedistheme.option.cedisTheme.FontMerriweatherSans'
       )
+    ));
+
+    // Base size
+    $this->addOption('baseSize', 'text', array(
+      'label' => 'plugins.themes.cedistheme.option.cedisTheme.baseSizeLabel',
+      'description' => 'plugins.themes.cedistheme.option.cedisTheme.baseSizeDescription',
+      'default' => '10px'
     ));
 
     // Border Styles
@@ -220,10 +245,13 @@ class CedisTheme extends ThemePlugin {
     $currentJournal = $request->getJournal();
     $primLocale = $currentJournal->getPrimaryLocale();
     $pubFileManager = new PublicFileManager();
-		$pubFilesUrl = $request->getBaseUrl() . '/' . $pubFileManager->getJournalFilesPath($currentJournal->getId());
+    $baseUrl = $request->getBaseUrl();
+    $pubFilesUrl = $baseUrl . '/' . $pubFileManager->getJournalFilesPath($currentJournal->getId());
     $SysPubDir = Config::getVar('files', 'public_files_dir');
     $pubFilesDir = BASE_SYS_DIR . '/'. $SysPubDir . '/' . 'journals/' . $currentJournal->getId();
-    
+    $SysPubUrl = $baseUrl . '/' . $SysPubDir . '/';
+
+    $additionalLessVariables[] = '@pubFiles: \'' . $SysPubUrl .'\';';
 
     if (file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.png') ||
         file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.jpg') ||
@@ -277,10 +305,20 @@ class CedisTheme extends ThemePlugin {
     $heroClaimText = $this->getOption('heroClaim');
     if (!empty($heroClaimText)) {
       $additionalLessVariables[] = '@heroClaimText: \'' . $heroClaimText . '\';';
+    } else {
+      $additionalLessVariables[] = '@heroClaimText: \' \’;';
     }
     $heroColour = $this->getOption('heroClaimColour');
     if (!empty($heroColour)) {
       $additionalLessVariables[] = '@heroClaimColour: ' . $heroColour . ';';
+    } else {
+      $additionalLessVariables[] = '@heroClaimColour: #FFF;';
+    }
+    $heroSizeOpt = $this->getOption('heroSize');
+    if (!empty($heroSizeOpt)) {
+      $additionalLessVariables[] = '@heroSize: ' . $heroSizeOpt  . ';';
+    } else {
+      $additionalLessVariables[] = '@heroSize: 350px;';
     }
       
     $descriptionTextPosition = $this->getOption('jourdescription');
@@ -299,6 +337,51 @@ class CedisTheme extends ThemePlugin {
       $additionalLessVariables[] = '@sidebarPosition: \'left\';';
     } else {
       $additionalLessVariables[] = '@sidebarPosition: \'off\';';
+    }
+
+    $headlineFontOpt = $this->getOption('headlineFont');
+    //ChromePhp::log('$headlineFontOpt: ' . $headlineFontOpt);
+    if (empty($headlineFontOpt) || $headlineFontOpt === 'MerriweatherSans') {
+      $additionalLessVariables[] = '@headlineFont: \'MerriweatherSans\';';
+    } elseif ($headlineFontOpt === 'Georgia') {
+      $additionalLessVariables[] = '@headlineFont: \'Georgia\';';
+    } elseif ($headlineFontOpt === 'NotoSans') {
+      $additionalLessVariables[] = '@headlineFont: \'NotoSans\';';
+    } elseif ($headlineFontOpt === 'NotoSerif') {
+      $additionalLessVariables[] = '@headlineFont: \'NotoSerif\';';
+    } elseif ($headlineFontOpt === 'FiraSans') {
+      $additionalLessVariables[] = '@headlineFont: \'FiraSans\';';
+    } elseif ($headlineFontOpt === 'SourceSansPro') {
+      $additionalLessVariables[] = '@headlineFont: \'SourceSansPro\';';
+    } elseif ($headlineFontOpt === 'Merriweather') {
+      $additionalLessVariables[] = '@headlineFont: \'Merriweather\';';
+    } else {
+      $additionalLessVariables[] = '@headlineFont: \'Arial\';';
+    }
+
+    $bodyFontOpt = $this->getOption('bodyFont');
+    //ChromePhp::log('$bodyFontOpt: ' . $bodyFontOpt);
+    if (empty($headlineFontOpt) || $bodyFontOpt === 'MerriweatherSans') {
+      $additionalLessVariables[] = '@bodyFont: \'MerriweatherSans\';';
+    } elseif ($bodyFontOpt === 'Georgia') {
+      $additionalLessVariables[] = '@bodyFont: \'Georgia\';';
+    } elseif ($bodyFontOpt === 'NotoSans') {
+      $additionalLessVariables[] = '@bodyFont: \'NotoSans\';';
+    } elseif ($bodyFontOpt === 'NotoSerif') {
+      $additionalLessVariables[] = '@bodyFont: \'NotoSerif\';';
+    } elseif ($bodyFontOpt === 'FiraSans') {
+      $additionalLessVariables[] = '@bodyFont: \'FiraSans\';';
+    } elseif ($bodyFontOpt === 'SourceSansPro') {
+      $additionalLessVariables[] = '@bodyFont: \'SourceSansPro\';';
+    } elseif ($bodyFontOpt === 'Merriweather') {
+      $additionalLessVariables[] = '@bodyFont: \'Merriweather\';';
+    } else {
+      $additionalLessVariables[] = '@bodyFont: \'Arial\';';
+    }
+
+    $baseSizeOpt = $this->getOption('baseSize');
+    if (!empty($baseSizeOpt)) {
+      $additionalLessVariables[] = '@base: ' . $baseSizeOpt . ';';
     }
 
     // Pass additional LESS variables based on options

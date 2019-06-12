@@ -1,0 +1,70 @@
+//
+// grid related mixins
+//
+
+.gridSetup(@gridColumnCount) {
+	display: grid;
+	grid-template-columns: repeat(@gridColumnCount, 100% / @gridColumnCount);
+	grid-template-rows: 3fr;
+}
+
+.gridWidthOne(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + 1;
+}
+
+.gridWidthTwo(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + 2;
+}
+
+.gridWidthQuarter(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + (@gridColumns / 4);
+}
+
+.gridWidthThird(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + (@gridColumns / 3);
+}
+
+.gridWidthHalf(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + (@gridColumns / 2);
+}
+
+.gridWidthTwoThird(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + (@gridColumns / 3 * 2);
+}
+
+.gridWidthThreeQuarter(@gridStart) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + (@gridColumns / 4 * 3);
+}
+
+.gridWidthFull() {
+	grid-column-start: 1;
+	grid-column-end: @gridColumns + 1;
+}
+
+.gridWidthCustom(@gridStart; @gridLength) {
+	grid-column-start: @gridStart;
+	grid-column-end: @gridStart + @gridLength;
+}
+
+//
+// font and typography related mixins
+//
+
+.loadFont(@fontName, @fontWeight, @fontStyle) {
+	@font-face {
+		font-family: @fontName;
+		src: url('@{pubFiles}fonts/@{fontName}-@{fontWeight}-@{fontStyle}.eot');
+		src: url('@{pubFiles}fonts/@{fontName}-@{fontWeight}-@{fontStyle}.eot#iefix') format('embedded-opentype'),
+		url('@{pubFiles}fonts/@{fontName}-@{fontWeight}-@{fontStyle}.woff') format('woff'),
+		url('@{pubFiles}fonts/@{fontName}-@{fontWeight}-@{fontStyle}.ttf') format('truetype');
+		font-weight: @fontWeight;
+		font-style: @fontStyle;
+	}
+}

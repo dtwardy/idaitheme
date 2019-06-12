@@ -137,24 +137,6 @@ body {
 .pkp_structure_content when (@sidebarPosition ='off') {
 	.pkp_structure_main {
 		.gridWidthCustom(2, 10);
-
-		div,
-		section {
-			//grid-column-start: 1;
-			//grid-column-end: 11;
-			width: 100%;
-		}
-
-		.homepage_image,
-		.additional_content,
-		.cmp_announcements,
-		.journal-description-above,
-		.journal-description-above {
-			margin-top: 45px;
-			margin-bottom: 45px;
-			margin-left: 0px;
-			margin-right: 0px;
-		}
 	}
 
 	.pkp_structure_sidebar {
@@ -165,109 +147,74 @@ body {
 .pkp_structure_content when (@sidebarPosition='right') {
 	.pkp_structure_main {
 		.gridWidthCustom(2, 7);
-
-		div,
-		section {
-			//grid-column-start: 1;
-			//grid-column-end: 8;
-			width: 100%;
-		}
-
-		.homepage_image,
-		.additional_content,
-		.cmp_announcements,
-		.journal-description-above,
-		.journal-description-above {
-			margin-top: 45px;
-			margin-bottom: 45px;
-		}
 	}
 
 	.pkp_structure_sidebar {
 		.gridWidthCustom(10, 2);
-
-		.pkp_block {
-			display: block;
-			width: 100%;
-			padding: 0;
-			margin: 0;
-
-			//margin-top: 45px;
-			//margin-bottom: 45px;
-			padding-top: 45px;
-			padding-bottom: 45px;
-		}
-
 	}
 }
 
 .pkp_structure_content when (@sidebarPosition ='left') {
 	.pkp_structure_main {
 		.gridWidthCustom(5, 7);
-		.gridSetup(7);
-		grid-template-rows: 1fr 1fr 1fr 1fr;
-
-		div,
-		section {
-			grid-column: 1 / 8;
-			width: 100%;
-		}
-
-		.homepage_image,
-		.additional_content,
-		.cmp_announcements,
-		.journal-description-above,
-		.journal-description-above {
-			margin-top: 45px;
-			margin-bottom: 45px;
-			margin-left: 0px;
-			margin-right: 0px;
-		}
 	}
 
 	.pkp_structure_sidebar {
 		.gridWidthCustom(2, 2);
+	}
+}
 
+
+.pkp_structure_content {
+	.pkp_structure_main {
+		.gridSetup(7);
+		grid-auto-rows: minmax(min-content, max-content);
+		margin-top: @triple;
+
+		div,
+		section {
+			grid-column-start: 1;
+			grid-column-end: 8;
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			margin-bottom: @triple;
+		}
+
+		.homepage_image {
+			grid-row: 1;
+		}
+
+		.journal-description-above {
+			grid-row: 2;
+		}
+
+		.cmp_announcements {
+			grid-row: 3;
+		}
+
+		.journal-description-below {
+			grid-row: 4;
+		}
+
+		.additional_content {
+			grid-row: 5;
+		}
+	}
+
+	.pkp_structure_sidebar {
 		.pkp_block {
 			display: block;
 			width: 100%;
 			padding: 0;
 			margin: 0;
 
-			margin-top: 30px;
-			margin-bottom: 30px;
-
-			padding-top: 30px;
-			padding-bottom: 30px;
+			margin-top: @quintuple;
+			margin-bottom: @quintuple;
 		}
 	}
 }
 
-/*.page {
-	// display: contents; ToDo: fix current grid layout in grid.less
-
-	// HACK: 
-	grid-column-start: 2;
-	grid-column-end: 9;
-	grid-row: 3;
-
-	display: grid;
-	grid-template-columns: repeat(7, 100% / 7);
-	//grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-	grid-auto-rows: minmax(min-content, max-content);
-
-	.cmp_breadcrumbs {
-		grid-column-start: 1;
-		grid-column-end: 8;
-		grid-row: 1;
-	}
-}*/
-
-// NOTE: switch to global .page setting after alle subsites are being addressed
-//.page_issue,
-//.page_issue_archive,
-//.page_article,
-//.page_submissions 
 .page {
 	grid-column-start: 2;
 	grid-column-end: 9;
@@ -442,4 +389,10 @@ body {
 		grid-column-end: 8;
 		grid-row: 2;
 	}
+}
+
+.cmp_notification {
+	width: 100% !important;
+	padding: @double  !important;
+	margin: @double  !important;
 }
