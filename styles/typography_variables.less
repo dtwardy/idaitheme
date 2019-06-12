@@ -1,0 +1,442 @@
+// Default values for color
+//-----------
+
+// Color
+// ---------------------------------------------------------------------------
+// Text
+@color-text: #000;
+@color-text-secondary: lighten(@color-text, 60%);
+@color-text-disabled: lighten(@color-text, 40%);
+@color-link: @highlightColour;
+@color-link-hover: @shadedHighlightColour ;
+@color-text-headings: @color-text ;
+
+// Links
+@link-text-decoration: none;
+@link-hover-text-decoration: underline;
+
+
+// Default Values for Arial as bodyFont and headlineFont
+//-----------
+
+// Font
+// Font Family
+@font-family-text: Arial, Helvetica, sans-serif;
+@font-family-heading: Arial, Helvetica, sans-serif;
+
+@font-family-text: @bodyFont;
+@font-family-heading: @headlineFont;
+
+
+// Font Size
+@base-font-size: 1em; // 16px
+
+@base-font-size-x: 1em * 1.1; // vor other fonts later
+
+@font-size-smaller: 0.60rem;
+@font-size-small: 0.80rem;
+@font-size-large: 1.25rem;
+@font-size-larger: 1.50rem;
+
+// Line-Height
+@base-line-height: 1.5;
+
+// Font Size
+// Headings
+@headings-font-size-1: 2rem;
+@headings-font-size-2: 1.75rem;
+@headings-font-size-3: 1.50rem;
+@headings-font-size-4: 1.25rem;
+@headings-font-size-5: 1rem;
+@headings-font-size-6: 0.75rem;
+
+// Line-Height
+// Headings
+
+@headings-line-height: 1.4;
+
+// Text weight
+@headings-font-weight: normal;
+
+// Text Margins
+@margin-text-default: @base-font-size * 0.75;
+@margin-text-headings: @base-font-size * 0.6;
+
+// ---
+// GEORGIA
+// ---
+& when (@bodyFont ='Georgia') {
+	// Font
+	// Font Family
+	@font-family-text: @bodyFont,
+	serif;
+
+	// Font Size
+	@base-font-size: 1em; // 16px
+
+	@base-font-size-x: 1em * 1.1; // vor other fonts later
+
+	@font-size-smaller: 0.60rem;
+	@font-size-small: 0.80rem;
+	@font-size-large: 1.25rem;
+	@font-size-larger: 1.50rem;
+
+	// Line-Height
+	@base-line-height: 1.5;
+
+	// Text Margins
+	@margin-text-default: @base-font-size * 0.75;
+}
+
+& when (@headlineFont ='Georgia') {
+	// Font
+	// Font Family
+	@font-family-heading: @headlineFont,
+	serif;
+
+	// Font Size
+	@headings-font-size-1: 2rem;
+	@headings-font-size-2: 1.75rem;
+	@headings-font-size-3: 1.50rem;
+	@headings-font-size-4: 1.25rem;
+	@headings-font-size-5: 1rem;
+	@headings-font-size-6: 0.75rem;
+
+	// Line-Height
+
+	@headings-line-height: 1.4;
+
+	// Text weight
+	@headings-font-weight: normal;
+
+	// Text margins
+	@margin-text-headings: @base-font-size * 0.6;
+}
+
+// ---
+// Fira Sans
+// ---
+
+& when (@bodyFont ='FiraSans') {
+	// Font
+	// Font Family
+	@font-family-text: @bodyFont,
+	Arial,
+	Helvetica,
+	sans-serif;
+
+	// Font Size
+	@base-font-size: 1em; // 16px
+
+	@base-font-size-x: 1em * 1.1; // vor other fonts later
+
+	@font-size-smaller: 0.60rem;
+	@font-size-small: 0.80rem;
+	@font-size-large: 1.25rem;
+	@font-size-larger: 1.50rem;
+
+	// Line-Height
+	@base-line-height: 1.5;
+
+
+
+	// Text Margins
+	@margin-text-default: @base-font-size * 0.75;
+}
+
+& when (@headlineFont ='FiraSans') {
+	// Font
+	// Font Family
+	@font-family-heading: @headlineFont,
+	Arial,
+	Helvetica,
+	sans-serif;
+
+	// Font Size
+	@headings-font-size-1: 2rem;
+	@headings-font-size-2: 1.75rem;
+	@headings-font-size-3: 1.50rem;
+	@headings-font-size-4: 1.25rem;
+	@headings-font-size-5: 1rem;
+	@headings-font-size-6: 0.75rem;
+
+	// Line-Height
+	@headings-line-height: 1.4;
+
+	// Text weight
+	@headings-font-weight: normal;
+	@margin-text-headings: @base-font-size * 0.6;
+}
+
+// ---
+// Merriweather Sans
+// ---
+& when (@bodyFont ='MerriweatherSans') {
+	// Font
+	// Font Family
+	@font-family-text: @bodyFont,
+	Arial,
+	Helvetica,
+	sans-serif;
+
+	// Font Size
+	@base-font-size: 1em; // 16px
+
+	@base-font-size-x: 1em * 1.1; // vor other fonts later
+
+	@font-size-smaller: 0.60rem;
+	@font-size-small: 0.80rem;
+	@font-size-large: 1.25rem;
+	@font-size-larger: 1.50rem;
+
+	// Line-Height
+	@base-line-height: 1.6; // different from the others
+
+	// Text Margins
+	@margin-text-default: @base-font-size * 0.75;
+}
+
+& when (@headlineFont ='MerriweatherSans') {
+	// Font
+	// Font Family
+	@font-family-heading: @headlineFont,
+	Arial,
+	Helvetica,
+	sans-serif;
+
+	// Font Size
+	@headings-font-size-1: 2rem;
+	@headings-font-size-2: 1.75rem;
+	@headings-font-size-3: 1.50rem;
+	@headings-font-size-4: 1.25rem;
+	@headings-font-size-5: 1rem;
+	@headings-font-size-6: 0.75rem;
+
+	// Line-Height
+
+	@headings-line-height: 1.6; // different from the others
+
+	// Text weight
+	@headings-font-weight: normal;
+
+	// Text headings
+	@margin-text-headings: @base-font-size * 0.6;
+}
+
+// ---
+// Merriweather Serif
+// ---
+& when (@bodyFont ='MerriweatherSerif') {
+	// Font
+	// Font Family
+	@font-family-text: @bodyFont,
+	Arial,
+	Helvetica,
+	sans-serif;
+
+	// Font Size
+	@base-font-size: 1em; // 16px
+
+	@base-font-size-x: 1em * 1.1; // vor other fonts later
+
+	@font-size-smaller: 0.60rem;
+	@font-size-small: 0.80rem;
+	@font-size-large: 1.25rem;
+	@font-size-larger: 1.50rem;
+
+	// Line-Height
+	@base-line-height: 1.6; // different from the others
+
+	// Text Margins
+	@margin-text-default: @base-font-size * 0.75;
+}
+
+& when (@headlineFont ='MerriweatherSerif') {
+	// Font
+	// Font Family
+	@font-family-heading: @headlineFont,
+	Arial,
+	Helvetica,
+	sans-serif;
+
+	// Font Size
+	@headings-font-size-1: 2rem;
+	@headings-font-size-2: 1.75rem;
+	@headings-font-size-3: 1.50rem;
+	@headings-font-size-4: 1.25rem;
+	@headings-font-size-5: 1rem;
+	@headings-font-size-6: 0.75rem;
+
+	// Line-Height
+
+	@headings-line-height: 1.6; // different from the others
+
+	// Text weight
+	@headings-font-weight: normal;
+
+	// Text headings
+	@margin-text-headings: @base-font-size * 0.6;
+}
+
+// ---
+// Source Sans Pro
+// ---
+& when (@bodyFont ='SourceSansPro') {
+	// Font
+	// Font Family
+	@font-family-text: @bodyFont,
+	Arial,
+	Helvetica,
+	sans-serif;
+
+	// Font Size
+	@base-font-size: 1em; // 16px
+
+	@base-font-size-x: 1em * 1.1; // vor other fonts later
+
+	@base-font-size: @base-font-size-x; // Special for this Font
+
+	@font-size-smaller: 0.60rem;
+	@font-size-small: 0.80rem;
+	@font-size-large: 1.25rem;
+	@font-size-larger: 1.50rem;
+
+	// Line-Height
+	@base-line-height: 1.5;
+
+	// Text Margins
+	@margin-text-default: @base-font-size * 0.75;
+}
+
+& when (@headlineFont ='SourceSansPro') {
+	// Font
+	// Font Family
+	@font-family-heading: @headlineFont,
+	Arial,
+	Helvetica,
+	sans-serif;
+
+	// Font Size
+	@headings-font-size-1: 2rem;
+	@headings-font-size-2: 1.75rem;
+	@headings-font-size-3: 1.50rem;
+	@headings-font-size-4: 1.25rem;
+	@headings-font-size-5: 1rem;
+	@headings-font-size-6: 0.75rem;
+
+	// Line-Height
+	@headings-line-height: 1.4;
+
+	// Text weight
+	@headings-font-weight: normal;
+
+	// Text Margins
+	@margin-text-headings: @base-font-size * 0.6;
+}
+
+// ---
+// Noto Sans
+// ---
+& when (@bodyFont ='NotoSans') {
+	// Font
+	// Font Family
+	@font-family-text: @bodyFont,
+	Arial,
+	Helvetica,
+	sans-serif;
+
+	// Font Size
+	@base-font-size: 1em; // 16px
+
+	@base-font-size-x: 1em * 1.1; // vor other fonts later
+
+	@font-size-smaller: 0.60rem;
+	@font-size-small: 0.80rem;
+	@font-size-large: 1.25rem;
+	@font-size-larger: 1.50rem;
+
+	// Line-Height
+	@base-line-height: 1.5;
+
+	// Text Margins
+	@margin-text-default: @base-font-size * 0.75;
+}
+
+& when (@headlineFont ='NotoSans') {
+	// Font
+	// Font Family
+	@font-family-heading: @headlineFont,
+	Arial,
+	Helvetica,
+	sans-serif;
+
+
+	// Font Size
+	@headings-font-size-1: 2rem;
+	@headings-font-size-2: 1.75rem;
+	@headings-font-size-3: 1.50rem;
+	@headings-font-size-4: 1.25rem;
+	@headings-font-size-5: 1rem;
+	@headings-font-size-6: 0.75rem;
+
+	// Line-Height
+	@headings-line-height: 1.4;
+
+	// Text weight
+	@headings-font-weight: normal;
+
+	// Text Margins
+	@margin-text-headings: @base-font-size * 0.6;
+}
+
+// ---
+// Noto Serif
+// ---
+& when (@bodyFont ='NotoSerif') {
+	// Font
+	// Font Family
+	@font-family-text: @bodyFont,
+	Georgia,
+	serif;
+
+	// Font Size
+	@base-font-size: 1em; // 16px
+
+	@base-font-size-x: 1em * 1.1; // vor other fonts later
+
+	@font-size-smaller: 0.60rem;
+	@font-size-small: 0.80rem;
+	@font-size-large: 1.25rem;
+	@font-size-larger: 1.50rem;
+
+	// Line-Height
+	@base-line-height: 1.5;
+
+	// Text Margins
+	@margin-text-default: @base-font-size * 0.75;
+}
+
+& when (@headlineFont ='NotoSerif') {
+	// Font
+	// Font Family
+	@font-family-heading: @headlineFont,
+	Georgia,
+	serif;
+
+	// Font Size
+	@headings-font-size-1: 2rem;
+	@headings-font-size-2: 1.75rem;
+	@headings-font-size-3: 1.50rem;
+	@headings-font-size-4: 1.25rem;
+	@headings-font-size-5: 1rem;
+	@headings-font-size-6: 0.75rem;
+
+	// Line-Height
+	@headings-line-height: 1.5;
+
+	// Text weight
+	@headings-font-weight: normal;
+
+	// Text Margins
+	@margin-text-headings: @base-font-size * 0.6;
+}

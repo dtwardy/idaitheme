@@ -1,8 +1,138 @@
-.pkp_site_name {
-	font-size: 30px;
+// TYPO
+// ---------------------------------------------------------------------------
+
+html {
+	font-size: @base-font-size  !important;
+	line-height: @base-line-height  !important;
+}
+
+body {
+	font-family: @font-family-text  !important;
+	color: @color-text  !important;
+}
+
+.site-name {
+	h1 {
+		color: @color-text-secondary  !important;
+	}
+}
+
+// TYPO
+// ---------------------------------------------------------------------------
+
+// Links
+a {
+	color: @color-link  !important;
+	text-decoration: @link-text-decoration  !important;
+}
+
+a:hover {
+	color: @color-link-hover  !important;
+	text-decoration: @link-hover-text-decoration  !important;
+}
+
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: @font-family-heading  !important;
+	font-weight: @headings-font-weight  !important;
+	color: @color-text-headings  !important;
+	line-height: @headings-line-height  !important;
+	margin-top: @margin-text-headings  !important;
+	margin-bottom: @margin-text-headings  !important;
+}
+
+h1 {
+	font-size: @headings-font-size-1  !important;
+}
+
+h2 {
+	font-size: @headings-font-size-2  !important;
+}
+
+h3 {
+	font-size: @headings-font-size-3  !important;
+}
+
+h4 {
+	font-size: @headings-font-size-4  !important;
+}
+
+h5 {
+	font-size: @headings-font-size-5  !important;
+}
+
+h6 {
+	font-size: @headings-font-size-6  !important;
+}
+
+h5 {
+	font-weight: bold !important;
+}
+
+h6 {
+	text-transform: uppercase !important;
+	letter-spacing: .01em !important;
+}
+
+h1+h2,
+h1+h3,
+h1+h4,
+h1+h5,
+h2+h3,
+h2+h4,
+h2+h5,
+h3+h4,
+h3+h5,
+h4+h5 {
+	margin-top: 0 !important;
+}
+
+// Blocks
+p,
+blockquote,
+hr,
+pre,
+ol,
+ul,
+dl,
+figure,
+address {
+	margin: 0 0 @margin-text-default 0 !important;
+}
+
+// Lists
+ul,
+ol {
+	margin-left: 0 !important;
+	padding-left: 30px !important;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+// Special Styling
+//-----------------
+
+.title {
+	font-weight: bold !important;
+}
+
+/*.pkp_site_name {
+	font-size: 30px !important;
 
 	.is_text {
-		font-size: 30px;
+		font-size: 30px !important;
 	}
 }
 
@@ -16,63 +146,117 @@ p,
 a,
 span,
 .date {
-	margin: 0 !important;
-	padding: 0 !important;
+	margin: 0 !important !important;
+	padding: 0 !important !important;
 }
 
 h1,
 h2,
 h3 {
-	margin-top: @base  !important;
-	margin-bottom: @double  !important;
-	padding-left: @double  !important;
+	margin-top: @base  !important !important;
+	margin-bottom: @double  !important !important;
+	padding-left: @double  !important !important;
 }
 
 h4,
 h5,
 h6 {
-	margin-top: @base  !important;
-	margin-bottom: @base  !important;
+	margin-top: @base  !important !important;
+	margin-bottom: @base  !important !important;
 }
 
 .date {
-	margin-top: @base  !important;
-	margin-bottom: @base  !important;
-	padding-left: @base  !important;
+	margin-top: @base  !important !important;
+	margin-bottom: @base  !important !important;
+	padding-left: @base  !important !important;
 }
 
 p,
 a {
+	margin-bottom: @base  !important !important;
+}*/
+
+.pkp_navigation_primary {
+	padding: 0 !important;
+	height: 100%;
+
+	li {
+		height: 100%;
+	}
+
+	>li>a {
+		height: 100%;
+		margin: @base 1em @half auto !important;
+		margin-top: @base * 1.25 !important;
+		margin-bottom: @base * 1.25 !important;
+		padding: @half 0 0 0 !important; //padding: @base 0 8px !important;
+		color: @menuColour  !important;
+
+		font-size: @headings-font-size-5;
+		font-weight: 700;
+		//text-transform: uppercase;
+	}
+
+	>li:first-child>a {
+		margin-left: 0 !important;
+	}
+
+	>li>a:hover {
+		text-decoration: none !important;
+		border-width: 4px;
+	}
+
+	>li:hover ul {
+		padding-left: 0 !important;
+		top: 120%;
+		left: -14px;
+	}
+}
+
+.title {
 	margin-bottom: @base  !important;
+	font-size: @headings-font-size-5  !important;
 }
 
-.pkp_navigation_primary>li>a {
-	margin: 0 1em !important;
-	padding: @base 0 8px !important;
-}
 
-.pkp_navigation_primary>li:first-child>a {
+.doi,
+.authors {
+	padding: 0 !important;
 	margin-left: 0 !important;
 }
 
-.read_more {
-	padding-right: @triple  !important;
+.doi {
+	margin-top: @double  !important;
+}
+
+.cmp_breadcrumbs {
+	font-family: @font-family-text  !important;
+	font-size: @base-font-size  !important;
+
+	h1 {
+		font-family: @font-family-text  !important;
+		font-size: @base-font-size  !important;
+	}
+}
+
+/*.read_more {
+	padding-right: @triple  !important !important;
 }
 
 .obj_galley_link {
-	padding: 0 1em !important;
+	padding: 0 1em !important !important;
 }
 
 .cover {
-	padding: @base @base @base 0 !important;
-	margin-right: @double  !important;
+	padding: @base @base @base 0 !important !important;
+	margin-right: @double  !important !important;
 }
 
 .issues_archive {
-	margin-left: 0 !important;
-	margin-right: 0 !important;
+	margin-left: 0 !important !important;
+	margin-right: 0 !important !important;
 
 	li {
-		padding: 0 !important;
+		padding: 0 !important !important;
 	}
-}
+}*/
