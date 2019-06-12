@@ -2,7 +2,7 @@
 <!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
 
 <!--
-  * plugins/themes/cedistheme/locale/en_US/locale.xml ******************
+  * plugins/themes/cedistheme/locale/de_DE/locale.xml ******************
   **********************************************************************
   * Copyright (c) 2019 by Free University of Berlin ********************
   * developed by Dennis Twardy *****************************************
@@ -15,7 +15,59 @@
   -->
 
 <locale name="de_DE" full_name="Deutsch (Deutschland)">
-	<message key="plugins.themes.cedistheme.name">CeDiS Theme Pluginn</message>
+	<message key="plugins.themes.cedistheme.name">CeDiS Theme Plugin</message>
 	<message key="plugins.themes.cedistheme.description">Anpassbares CeDiS Theme Plugin</message>
 	<message key="plugins.themes.cedistheme.options.emptyTheme.label">CeDiS Theme Plugin</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.mainColourLabel">Primärfarbe</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.mainColourDescription">Primärfarbe für das Hauptdesign</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.secondColourLabel">Sekundärfarbe</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.secondColourDescription">Sekundärfarbe für das Hauptdesign</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.neutralColourLabel">Neutralfarbe</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.neutralColourDescription">Neutralfarbe für das Hauptdesign</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBrightLabel">Header hell/dunkel</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBrightDescription">Schaltet die Headerfarbgebung zwischen hell und dunkel</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBrightBright">Hell</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBrightDark">Dunkel</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBackgroundLabel">Header Logo Verhalten</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBackgroundDescription">Schaltet das Verhalten des hochgeladenen Headerbildes um</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBackgroundLogo">Logo</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBackgroundBanner">Banner</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroLabel">Status Hero</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroDescription">Wandelt das hochgeladene Homepagebild zum Herobild</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroEnabled">Ein</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroDisabled">Aus</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroClaimLabel">Hero Claim</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroClaimDescription">Der Hero Claim würd über dem Herobild zentral angezeigt</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroClaimColourLabel">Hero Claim Farbe</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroClaimColourDescription">Definiert die Farbe des Hero Claims</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroSizeLabel">Hero Größe</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.heroSizeDescription">Definiert die Höhe des Herobildes, Angaben nur mit gültiger CSS Einheit(default: 350px)</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionLabel">Zeitschriftenbeschreibung</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionDescription">Schaltet zwischen den Anzeigeoptionen des Zeitschriftenbeschreibungstextes um</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionAbove">Über Announcements</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionBelow">Unter Announcements</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionOff">Nicht anzeigen</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionLabel">Position der Seitenleiste</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionDescription">Schaltet die Position der Seitenleiste um</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionRight">Rechts</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionLeft">Links</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontLabel">Schriftart für Überschriften</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontDescription">Auswahl an Schriftart, die auf sämtliche Überschriften angewendet wird</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontLabel">Schriftarten für Fließtext</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontDescription">Auswahl an Schriftarten, die auf Fließtexte angewendet wird</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.FontArial">Arial</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.FontGeorgia">Georgia</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.FontNotoSans">Noto Sans</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.FontNotoSerif">Noto Serif</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.FontFiraSans">Fira Sans</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.FontSourceSansPro">Source Sans Pro</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.FontMerriweather">Merriweather</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.FontMerriweatherSans">Merriweather Sans</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.baseSizeLabel">Basis Größe</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.baseSizeDescription">Beeinflusst die Basiseinheit, auf der das Layout beruht (default: 8px) </message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesLabel">Rahmenstil</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDescription">Schaltet zwischen verschiedenen Rahmenstilen um</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesOff">Aus</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal">Horizontal</message>
+  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault">Default</message>
 </locale>
