@@ -306,7 +306,7 @@ class CedisTheme extends ThemePlugin {
     if (!empty($heroClaimText)) {
       $additionalLessVariables[] = '@heroClaimText: \'' . $heroClaimText . '\';';
     } else {
-      $additionalLessVariables[] = '@heroClaimText: \' \’;';
+      $additionalLessVariables[] = '@heroClaimText: \' \';';
     }
     $heroColour = $this->getOption('heroClaimColour');
     if (!empty($heroColour)) {
