@@ -3,7 +3,8 @@
 	.journal-description,
 	.cmp_announcements,
 	.current_issue,
-	.pkp_block {
+	.entry_details .item,
+	.issues_archive li {
 		border-bottom: 1px solid @contrastColour  !important;
 	}
 
@@ -12,4 +13,12 @@
 			border: none !important;
 		}
 	}
+
+	@media (min-width: 768px) {
+		.obj_article_details .entry_details .item {
+			border-bottom: 1px solid @contrastColour  !important;
+			margin-right: 0 !important;
+		}
+	}
+
 }

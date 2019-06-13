@@ -253,6 +253,10 @@ a {
 }
 
 .pkp_block {
+	ul {
+		padding-left: 0 !important;
+	}
+
 	ul>li {
 		padding: @half 0 0 0 !important;
 	}
@@ -276,8 +280,51 @@ a {
 	}
 }
 
+ul.galley_links {
+	margin-left: @double  !important;
+	padding: 0 !important;
+	margin-right: 0 !important;
+}
+
+.sections {
+	margin-top: @double  !important;
+}
+
+.sections:first-child .section {
+	margin-top: 0 !important;
+}
+
+.cmp_article_list {
+	margin-bottom: 0 !important;
+
+	.obj_article_summary {
+		padding-bottom: 0 !important;
+
+		ul.galley_links {
+			padding-left: 0 !important;
+			margin-right: @double  !important;
+		}
+	}
+}
+
+.obj_article_summary {
+	ul.galleys_links {
+		padding-left: 0 !important;
+
+		li {
+			margin-right: @double  !important;
+		}
+	}
+}
+
+.issues_archive .obj_issue_summary {
+	padding-bottom: 0 !important;
+}
+
 & when (@structureStyle ='blocks') {
-	.pkp_block {
+
+	.pkp_block,
+	.entry_details {
 		background-color: @shadedLighterNeutralColour  !important;
 		padding: @double  !important;
 		border-radius: 2px;
