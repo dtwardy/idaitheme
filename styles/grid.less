@@ -93,6 +93,22 @@ body {
 	}
 }
 
+.pkp_site_name_wrapper when (@headerLogoState ='banner') {
+	grid-column-start: 1 !important;
+	grid-column-end: 13 !important;
+
+	//.gridSetup(@gridColumns);
+	display: grid !important;
+	grid-template-columns: repeat(@gridColumns, 1fr) !important;
+	grid-auto-rows: minmax(min-content, max-content) !important;
+
+	.pkp_site_name {
+		grid-column-start: 2 !important;
+		grid-column-end: 9 !important;
+		grid-row: 1 !important;
+	}
+}
+
 
 .pkp_structure_footer {
 	.gridWidthFull();

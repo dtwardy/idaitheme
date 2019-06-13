@@ -7,7 +7,7 @@
 	background-color: white;
 }
 
-.pkp_head_wrapper when (@headerLogoState ='banner') {
+.pkp_site_name_wrapper when (@headerLogoState ='banner') {
 	background: @headerBackground;
 	background-repeat: no-repeat;
 	background-position-y: bottom;
@@ -37,6 +37,7 @@
 
 	.is_img {
 		display: block;
+		margin: auto 0 !important;
 
 		&:focus {
 			box-shadow: 0 0 1px @shadedDarkerNeutralColour;
@@ -44,9 +45,12 @@
 
 		img {
 			display: block;
-			height: 120px;
+			height: auto;
+			max-height: 120px;
+			max-width: 100%;
+			object-fit: contain;
 
-			margin: auto 0 !important;
+			margin: @double 0 !important;
 		}
 	}
 
