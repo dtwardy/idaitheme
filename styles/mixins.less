@@ -5,7 +5,7 @@
 .gridSetup(@gridColumnCount) {
 	display: grid;
 	grid-template-columns: repeat(@gridColumnCount, 100% / @gridColumnCount);
-	grid-template-rows: 3fr;
+	grid-auto-rows: minmax(min-content, max-content);
 }
 
 .gridWidthOne(@gridStart) {
