@@ -2,18 +2,18 @@
 // ---------------------------------------------------------------------------
 
 html {
-	font-size: @base-font-size  !important;
-	line-height: @base-line-height  !important;
+	font-size: @base-font-size;
+	line-height: @base-line-height;
 }
 
 body {
-	font-family: @font-family-text  !important;
-	color: @color-text  !important;
+	font-family: @font-family-text;
+	color: @color-text;
 }
 
 .site-name {
 	h1 {
-		color: @color-text-secondary  !important;
+		color: @color-text-secondary;
 	}
 }
 
@@ -22,13 +22,13 @@ body {
 
 // Links
 a {
-	color: @color-link  !important;
-	text-decoration: @link-text-decoration  !important;
+	color: @color-link;
+	text-decoration: @link-text-decoration;
 }
 
 a:hover {
-	color: @color-link-hover  !important;
-	text-decoration: @link-hover-text-decoration  !important;
+	color: @color-link-hover;
+	text-decoration: @link-hover-text-decoration;
 }
 
 
@@ -39,49 +39,49 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: @font-family-heading  !important;
-	font-weight: @headings-font-weight  !important;
-	color: @color-text-headings  !important;
-	line-height: @headings-line-height  !important;
-	margin-top: @margin-text-headings  !important;
-	margin-bottom: @margin-text-headings  !important;
+	font-family: @font-family-heading;
+	font-weight: @headings-font-weight;
+	color: @color-text-headings;
+	line-height: @headings-line-height;
+	margin-top: @margin-text-headings;
+	margin-bottom: @margin-text-headings;
 }
 
 h1 {
-	font-size: @headings-font-size-1  !important;
-	color: @highlightColour  !important;
+	font-size: @headings-font-size-1;
+	color: @highlightColour;
 }
 
 h2 {
-	font-size: @headings-font-size-2  !important;
-	color: @highlightColour  !important;
+	font-size: @headings-font-size-2;
+	color: @highlightColour;
 }
 
 h3 {
-	font-size: @headings-font-size-3  !important;
-	color: @highlightColour  !important;
+	font-size: @headings-font-size-3;
+	color: @highlightColour;
 }
 
 h4 {
-	font-size: @headings-font-size-4  !important;
-	color: @highlightColour  !important;
+	font-size: @headings-font-size-4;
+	color: @highlightColour;
 }
 
 h5 {
-	font-size: @headings-font-size-5  !important;
+	font-size: @headings-font-size-5;
 }
 
 h6 {
-	font-size: @headings-font-size-6  !important;
+	font-size: @headings-font-size-6;
 }
 
 h5 {
-	font-weight: bold !important;
+	font-weight: bold;
 }
 
 h6 {
-	text-transform: uppercase !important;
-	letter-spacing: .01em !important;
+	text-transform: uppercase;
+	letter-spacing: .01em;
 }
 
 h1+h2,
@@ -94,7 +94,7 @@ h2+h5,
 h3+h4,
 h3+h5,
 h4+h5 {
-	margin-top: 0 !important;
+	margin-top: 0;
 }
 
 // Blocks
@@ -107,29 +107,30 @@ ul,
 dl,
 figure,
 address {
-	margin: 0 0 @margin-text-default 0 !important;
+	margin: 0 0 @margin-text-default 0;
 }
 
 // Lists
 ul,
 ol {
-	margin-left: 0 !important;
-	padding-left: 30px !important;
+	margin-left: 0;
+	padding-left: 30px;
+	list-style: none;
 }
 
 ul ul,
 ul ol,
 ol ul,
 ol ol {
-	margin-top: 0 !important;
-	margin-bottom: 0 !important;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 // Special Styling
 //-----------------
 
 .title {
-	font-weight: bold !important;
+	font-weight: bold;
 }
 
 /*.pkp_site_name {
@@ -181,7 +182,7 @@ a {
 }*/
 
 .pkp_navigation_primary {
-	padding: 0 !important;
+	padding: 0;
 	height: 100%;
 
 	li {
@@ -190,11 +191,11 @@ a {
 
 	>li>a {
 		height: 100%;
-		margin: @base 1em @half auto !important;
-		margin-top: @base * 1.25 !important;
-		margin-bottom: @base * 1.25 !important;
-		padding: @half 0 0 0 !important; //padding: @base 0 8px !important;
-		color: @menuColour  !important;
+		margin: @base 1em @half auto;
+		margin-top: @base * 1.25;
+		margin-bottom: @base * 1.25;
+		padding: @half 0 0 0; //padding: @base 0 8px !important;
+		color: @menuColour;
 
 		font-size: @headings-font-size-5;
 		font-weight: 700;
@@ -202,50 +203,50 @@ a {
 	}
 
 	>li:first-child>a {
-		margin-left: 0 !important;
+		margin-left: 0;
 	}
 
 	>li>a:hover {
-		text-decoration: none !important;
+		text-decoration: none;
 		border-width: 4px;
 	}
 
 	>li:hover ul {
-		padding-left: 0 !important;
+		padding-left: 0;
 		top: 120%;
 		left: -14px;
 	}
 }
 
 .title {
-	margin-bottom: @base  !important;
-	font-size: @headings-font-size-5  !important;
+	margin-bottom: @base;
+	font-size: @headings-font-size-5;
 }
 
 
 .doi,
 .authors {
-	padding: 0 !important;
-	margin-left: 0 !important;
+	padding: 0;
+	margin-left: 0;
 }
 
 .doi {
-	margin-top: @double  !important;
+	margin-top: @double;
 }
 
 .cmp_breadcrumbs {
-	font-family: @font-family-text  !important;
-	font-size: @base-font-size  !important;
+	font-family: @font-family-text;
+	font-size: @base-font-size;
 
 	h1 {
-		font-family: @font-family-text  !important;
-		font-size: @base-font-size  !important;
+		font-family: @font-family-text;
+		font-size: @base-font-size;
 	}
 }
 
 .heroContainer .heroClaim::after {
-	font-family: @font-family-heading  !important;
-	font-weight: 700 !important;
+	font-family: @font-family-heading;
+	font-weight: 700;
 	font-size: 60px;
 	//font-weight: bold;
 	line-height: 100%;
@@ -254,85 +255,90 @@ a {
 
 .pkp_block {
 	ul {
-		padding-left: 0 !important;
+		padding-left: 0;
 	}
 
 	ul>li {
-		padding: @half 0 0 0 !important;
+		padding: @half 0 0 0;
 	}
 
 	ul:first-child>li {
-		padding: 0 0 0 0 !important;
+		padding: 0 0 0 0;
 	}
 }
 
 .block_make_submission {
 	a {
-		box-shadow: none !important;
-		background: none !important;
-		border: 1px solid @highlightColour  !important;
-		border-radius: 3px !important;
+		box-shadow: none;
+		background: none;
+		border: 1px solid @highlightColour;
+		border-radius: @radius;
 	}
 
 	a:hover {
-		background: @highlightColour  !important;
-		color: @shadedHighlightColour  !important;
+		background: @highlightColour;
+		color: @shadedHighlightColour;
 	}
 }
 
 ul.galley_links {
-	margin-left: @double  !important;
-	padding: 0 !important;
-	margin-right: 0 !important;
+	margin-left: @double;
+	padding: 0;
+	margin-right: 0;
 }
 
 .sections {
-	margin-top: @double  !important;
+	margin-top: @double;
 }
 
 .sections:first-child .section {
-	margin-top: 0 !important;
+	margin-top: 0;
 }
 
 .cmp_article_list {
-	margin-bottom: 0 !important;
+	margin-bottom: 0;
 
 	.obj_article_summary {
-		padding-bottom: 0 !important;
+		padding-bottom: 0;
 
 		ul.galley_links {
-			padding-left: 0 !important;
-			margin-right: @double  !important;
+			padding-left: 0;
+			margin-right: @double;
 		}
 	}
 }
 
 .obj_article_summary {
 	ul.galleys_links {
-		padding-left: 0 !important;
+		padding-left: 0;
 
 		li {
-			margin-right: @double  !important;
+			margin-right: @double;
 		}
 	}
 }
 
 .issues_archive .obj_issue_summary {
-	padding-bottom: 0 !important;
+	padding-bottom: 0;
 }
 
 & when (@structureStyle ='blocks') {
 
 	.pkp_block,
 	.entry_details {
-		background-color: @shadedLighterNeutralColour  !important;
-		padding: @double  !important;
-		border-radius: 2px;
+		background-color: @shadedLighterNeutralColour;
+		padding: @double;
+		border-radius: @radius;
 	}
 
 	.block_make_submission>div>a {
-		margin: auto 0 !important;
+		margin: auto 0;
 	}
+}
+
+.galleys_links {
+	list-style-type: none;
+
 }
 
 /*.read_more {
@@ -356,3 +362,31 @@ ul.galley_links {
 		padding: 0 !important !important;
 	}
 }*/
+
+// buttons
+
+.obj_galley_link,
+.block_make_submission_link,
+.cmp_button {
+	.makeButton();
+	padding-left: @base;
+	padding-right: @base;
+}
+
+.obj_galley_link:hover,
+.block_make_submission_link:hover,
+.cmp_button:hover {
+	.makeButtonHover();
+}
+
+// sidebar blocks
+
+.pkp_block>div>ul {
+	list-style: none;
+}
+
+.pkp_block {
+	.title {
+		font-size: @headings-font-size-4;
+	}
+}

@@ -8,169 +8,145 @@
  * @brief Styles applying to the front page of the journal
  * @link templates/frontend/pages/indexJournal.tpl
  */
-.pkp_page_index {
+
+
+.page_index_journal {
 
 	.homepage_image,
+	.journal-description,
+	.cmp_announcements,
+	.current_issue,
 	.additional_content {
-		margin-left: -@base;
-		margin-right: -@base;
-
-		@media (min-width: @screen-phone) {
-			margin-left: -@double;
-			margin-right: -@double;
-		}
-
-		@media (min-width: @screen-desktop) {
-			margin-left: -@triple;
-			margin-right: -@triple;
-		}
+		grid-column-start: 1;
+		grid-column-end: 8;
+		padding-top: @triple;
+		padding-bottom: @triple;
 	}
 
+
 	.homepage_image {
-
-		img {
-			display: block;
-			width: 100%;
-			height: auto;
-		}
-
-		@media (min-width: @screen-desktop) {
-			margin-top: -@triple; // flush with top nav
-		}
+		width: 100%;
+		height: auto;
+		padding: @double;
 	}
 
 	.cmp_announcements {
-		.pkp_helpers_clear();
-		border-top: @bg-border;
-		border-bottom: @bg-border;
-
-		h2 {
-			&:extend(.pkp_screen_reader all);
-		}
-
-		>.obj_announcement_summary {
-			position: relative;
-			padding: @triple @base;
-		}
-
-		.more {
-			position: relative;
-
-			.obj_announcement_summary {
-				padding: @base;
-			}
-
-			h4 {
-				font-size: @font-sml;
-			}
-		}
-
-		@media(min-width: @screen-phone) {
-
-			>.obj_announcement_summary,
-			.more .obj_announcement_summary {
-				padding-left: @double;
-				padding-right: @double;
-			}
-		}
-
-		@media(min-width: @screen-tablet) {
-
-			>.obj_announcement_summary {
-				float: left;
-				width: 65%;
-
-				// Right border
-				&:before {
-					content: ' ';
-					position: absolute;
-					top: 0;
-					right: -1px;
-					width: 1px;
-					height: 100%;
-					border-left: @bg-border;
-				}
-			}
-
-			.more {
-				float: right;
-				width: 35%;
-				padding-top: @double;
-				padding-bottom: @double;
-
-				// Left border
-				&:before {
-					content: ' ';
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 1px;
-					height: 100%;
-					border-left: @bg-border;
-				}
-			}
-		}
-
-		@media(min-width: @screen-desktop) {
-
-			>.obj_announcement_summary,
-			.more .obj_announcement_summary {
-				padding-left: @triple;
-				padding-right: @triple;
-			}
+		.media-list {
+			padding-bottom: 0;
 		}
 	}
 
 	.current_issue {
+		display: grid;
+		grid-template-columns: repeat(7, 100% / 7);
+		grid-auto-rows: minmax(min-content, max-content);
+		//margin-top: @base;
+
+		.page-header {
+			grid-column-start: 1;
+			grid-column-end: 8;
+			grid-row: 1;
+			margin-top: -1 * @margin-text-headings;
+			margin-bottom: @base-line-height;
+		}
 
 		.current_issue_title {
-			margin: @double 0;
-			font-weight: @bold;
+			grid-column-start: 1;
+			grid-column-end: 8;
+			grid-row: 2;
+			font-size: @headings-font-size-4;
+			margin-bottom: @base;
 		}
 
-		.read_more {
-			.cmp_button_text(@fa-var-chevron-right);
-			margin-bottom: @double;
-		}
+		.obj_issue_toc {
+			display: contents;
 
-		@media(min-width: @screen-tablet) {
+			.heading {
+				display: contents;
 
-			.section:last-child {
-				margin-bottom: 0;
+				.cover {
+					grid-column-start: 1;
+					grid-column-end: 3;
+					grid-row: 4;
+					padding: 0;
+					padding-right: @double;
+
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+
+				.description {
+					grid-column-start: 3;
+					grid-column-end: 8;
+					grid-row: 4;
+					margin: 0;
+					padding: 0;
+					padding-left: @double;
+				}
+
+				.published {
+					grid-column-start: 1;
+					grid-column-end: 3;
+					grid-row: 3;
+					padding: 0;
+					margin: 0;
+					margin-bottom: @double * 1.5;
+				}
 			}
 		}
-	}
 
-	.additional_content {
-		padding: @triple @base 0 @base;
-		border-top: @bg-border;
+		.sections {
+			grid-column-start: 1;
+			grid-column-end: 8;
+			grid-row: 5;
 
-		@media (min-width: @screen-phone) {
-			padding-left: @double;
-			padding-right: @double;
+			.section:first-child {
+				margin-top: @base;
+			}
+
+			.section {
+				padding-bottom: 0;
+
+				.articles {
+					.obj_article_summary {
+						margin: 0;
+						padding: 0;
+					}
+
+					.title {
+						margin-top: @base;
+						padding: 0;
+					}
+
+					.meta {
+						padding: 0;
+						margin-top: @base;
+
+						.authors {
+							padding-bottom: 0;
+							margin-top: 0;
+						}
+					}
+
+					.galleys_links {
+						padding: 0;
+						margin-top: @triple;
+						margin-bottom: @double;
+					}
+				}
+			}
 		}
 
-		@media (min-width: @screen-desktop) {
-			padding-left: @triple;
-			padding-right: @triple;
-		}
-
-		>p:first-child {
-			margin-top: 0;
-		}
-
-		>p:last-child {
-			margin-bottom: 0;
-		}
-	}
-
-	@media(min-width: @screen-tablet) {
-
-		.cmp_announcements+.additional_content {
-			border-top: none;
+		.read-more {
+			grid-column-start: 1;
+			grid-column-end: 8;
+			grid-row: 6;
 		}
 	}
 }
+
 
 // Hero Image Condition
 .homepage_image when (@hero =true) {

@@ -150,7 +150,7 @@ class CedisTheme extends ThemePlugin {
     $this->addOption('baseSize', 'text', array(
       'label' => 'plugins.themes.cedistheme.option.cedisTheme.baseSizeLabel',
       'description' => 'plugins.themes.cedistheme.option.cedisTheme.baseSizeDescription',
-      'default' => '10px'
+      'default' => '8px'
     ));
 
     // Border Styles

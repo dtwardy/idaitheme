@@ -5,19 +5,23 @@
 	.current_issue,
 	.entry_details .item,
 	.issues_archive li {
-		border-bottom: 1px solid @contrastColour  !important;
+		border-bottom: 1px solid @contrastColour;
+	}
+
+	.issues_archive li:last-child {
+		border-bottom: none;
 	}
 
 	.page_announcements {
 		.cmp_announcements {
-			border: none !important;
+			//border: none !important;
 		}
 	}
 
 	@media (min-width: 768px) {
 		.obj_article_details .entry_details .item {
-			border-bottom: 1px solid @contrastColour  !important;
-			margin-right: 0 !important;
+			border-bottom: 1px solid @contrastColour;
+			margin-right: 0;
 		}
 	}
 

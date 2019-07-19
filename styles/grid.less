@@ -185,20 +185,31 @@ body {
 	.pkp_structure_main {
 		.gridSetup(7);
 		grid-auto-rows: minmax(min-content, max-content);
-		margin-top: @triple;
+		//margin-top: @triple;
 
-		div,
-		section {
+		.page,
+		.page_index_journal,
+		.page_about,
+		.page_announcement,
+		.page_announcements,
+		.page_article,
+		.page_contact,
+		.page_content_wrapper,
+		.page_editorial_team,
+		.page_issue,
+		.page_login,
+		.page_submissions {
 			grid-column-start: 1;
 			grid-column-end: 8;
 			width: 100%;
 			padding: 0;
 			margin: 0;
-			margin-top: @double;
-			padding-bottom: @double;
+			//margin-top: @double;
+			//padding-bottom: @double;
 		}
 
-		.page_title {
+
+		/*.page_title {
 			grid-column-start: 1;
 			grid-column-end: 8;
 			grid-row: 1;
@@ -249,7 +260,7 @@ body {
 
 		.additional_content {
 			grid-row: 6;
-		}
+		}*/
 	}
 
 	.pkp_structure_sidebar {
@@ -259,8 +270,17 @@ body {
 			padding: 0;
 			margin: 0;
 
-			margin-top: @quintuple;
-			padding-bottom: @quintuple;
+			margin-top: @triple;
+			padding-bottom: @triple;
+
+			.title,
+			.content {
+				padding-left: @base;
+				padding-right: @base;
+				padding-top: @base;
+				padding-bottom: @base;
+			}
+
 		}
 	}
 }
@@ -278,6 +298,8 @@ body {
 		grid-column-start: 1;
 		grid-column-end: 8;
 		grid-row: 1;
+
+		margin-top: @double;
 	}
 
 	.page_content_wrapper {
@@ -286,80 +308,6 @@ body {
 		grid-row: 2;
 	}
 }
-
-.page_issue {
-	.obj_issue_toc {
-		grid-column-start: 1;
-		grid-column-end: 8;
-		grid-row: 2;
-	}
-
-	.title,
-	.meta {
-		margin: 0 !important;
-		padding-top: @base  !important;
-		padding-bottom: @quarter  !important;
-	}
-
-	.authors {
-		margin: 0 0 @double 0 !important;
-	}
-
-	.obj_issue_toc {
-		padding-bottom: 0;
-	}
-}
-
-.page_issue_archive {
-	.issues_archive {
-		grid-column-start: 1;
-		grid-column-end: 8;
-		grid-row: 2;
-	}
-
-	.cmp_pagination {
-		grid-column-start: 6;
-		grid-column-end: 8;
-		grid-row: 3;
-	}
-}
-
-.page_article {
-	.obj_article_details {
-		display: contents;
-
-		.page_title {
-			grid-column-start: 1;
-			grid-column-end: 8;
-			grid-row: 2;
-		}
-
-		.subtitle {
-			grid-column-start: 1;
-			grid-column-end: 8;
-			grid-row: 3;
-		}
-
-		.row {
-			display: contents;
-
-			.main_entry {
-				grid-column-start: 1;
-				grid-column-end: 6;
-				grid-row-start: 4;
-				grid-row-end: 5;
-			}
-
-			.entry_details {
-				grid-column-start: 6;
-				grid-column-end: 8;
-				grid-row-start: 4;
-				grid-row-end: 5;
-			}
-		}
-	}
-}
-
 
 .page_announcements {
 	.cmp_announcements {
