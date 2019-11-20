@@ -1,16 +1,16 @@
 <?php
 /**********************************************************************/
-/* @file plugins/themes/idaitheme/IDaiTheme.inc.php *****************/
+/* @file plugins/themes/idaitheme/IDaiTheme.inc.php *******************/
 /**********************************************************************/
-/* Copyright (c) 2019 Free University of Berlin ***********************/
-/* Developed by Dennis Twardy (kontakt@dennistwardy.com) **************/
+/* Copyright (c) 2019 German Archaeological Institute *****************/
+/* Developed by Dennis Twardy (dennistwardy86@gmail.com) **************/
 /* Distributed under the GNU GPL v3. For full terms see LICENSE. ******/
 /**********************************************************************/
 /* Based on PKP's code (see github.com/pkp/ojs) by John Willinsky and */
 /* Simon Fraser University ********************************************/
 /**********************************************************************/
-/* @class IDaiTheme **************************************************/
-/* @ingroup plugins_themes_idaitheme *********************************/
+/* @class IDaiTheme ***************************************************/
+/* @ingroup plugins_themes_idaitheme **********************************/
 /**********************************************************************/
 
 import('lib.pkp.classes.plugins.ThemePlugin');

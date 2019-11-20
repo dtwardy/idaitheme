@@ -1,212 +1,91 @@
-/**
- * @file plugins/themes/default/styles/variables.less
- *
- * Copyright (c) 2014-2019 Simon Fraser University
- * Copyright (c) 2003-2019 John Willinsky
- * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
- *
- * @brief Common variables used through the the theme styles. They provide a
- *  fully separated interface for defining variables, so that changes desired on
- *  the frontend won't impact the backend.
- */
+/**********************************************************************/
+/* @file plugins/themes/idaitheme/styles/variables.less ***************/
+/**********************************************************************/
+/* Copyright (c) 2019 German Archaeological Institute *****************/
+/* Developed by Dennis Twardy (dennistwardy86@gmail.com) **************/
+/* Distributed under the GNU GPL v3. For full terms see LICENSE. ******/
+/**********************************************************************/
+/* @brief definition of LESS variables to be used througout theme *****/
+/**********************************************************************/
 
+//
+// General Variables
+//
+@DAIpubfiles ='';
 
-@pubFiles: '';
-
-
-@headlineFont: '';
-@bodyFont: '';
-
-& when (@headlineFont ='NotoSans'),
-(@bodyFont ='NotoSans') {
-	.loadFont('NotoSans', normal, normal);
-	.loadFont('NotoSans', normal, italic);
-	.loadFont('NotoSans', 700, normal);
-	.loadFont('NotoSans', 700, italic);
-}
-
-& when (@headlineFont ='NotoSerif'),
-(@bodyFont ='NotoSerif') {
-	.loadFont('NotoSerif', normal, normal);
-	.loadFont('NotoSerif', 700, normal);
-}
-
-& when (@headlineFont ='FiraSans'),
-(@bodyFont ='FiraSans') {
-	.loadFont('FiraSans', normal, normal);
-	.loadFont('FiraSans', 300, normal);
-	.loadFont('FiraSans', 700, normal);
-}
-
-& when (@headlineFont ='Merriweather'),
-(@bodyFont ='Merriweather') {
-	.loadFont('Merriweather', normal, normal);
-	.loadFont('Merriweather', 300, normal);
-	.loadFont('Merriweather', 700, normal);
-}
-
-& when (@headlineFont ='MerriweatherSans'),
-(@bodyFont ='MerriweatherSans') {
-	.loadFont('MerriweatherSans', normal, normal);
-	.loadFont('MerriweatherSans', 300, normal);
-	.loadFont('MerriweatherSans', 700, normal);
-}
-
-& when (@headlineFont ='SourceSansPro'),
-(@bodyFont ='SourceSansPro') {
-	.loadFont('SourceSansPro', normal, normal);
-	.loadFont('SourceSansPro', 600, normal);
-	.loadFont('SourceSansPro', 700, normal);
-}
 
 //
 // Colors
 //
+@DAIcolor_blueDark: #004c98;
+@DAIcolor_blueBright: #557ebb;
+@DAIcolor_greyDark: #605e59;
+@DAIcolor_greyMedium: #a9a8a4;
+@DAIcolor_greyBright: #d3d3cf;
 
-// Background
-@bg: #fff;
-@bg-shade: #ddd;
-@bg-base: #1E6292; // Accent color used in the header
 
-// Primary "anchor" color for links
-@primary: #007ab2;
-@primary-lift: lighten(@primary, 10%);
+//
+// Fonts
+//
+@DAIfont_headline: "OpenSansRegular";
+@DAIfont_body: "OpenSansRegular";
 
-// Yes/no, success/error, on/off, go/stop, etc. Typically green and red.
-@yes: #00b24e;
-@no: #ff4040;
+.loadFont(@DAIfont_headline, 300, regular);
+.loadFont(@DAIfont_headline, 300, italic);
+.loadFont(@DAIfont_headline, 400, regular);
+.loadFont(@DAIfont_headline, 400, italic);
+.loadFont(@DAIfont_headline, 700, regular);
+.loadFont(@DAIfont_headline, 700, italic);
 
-// Text
-@text: rgba(0, 0, 0, 0.87);
-@text-light: rgba(0, 0, 0, 0.54);
-@text-bg-base: #fff;
+.loadFont(@DAIfont_body, 300, regular);
+.loadFont(@DAIfont_body, 300, italic);
+.loadFont(@DAIfont_body, 400, regular);
+.loadFont(@DAIfont_body, 400, italic);
+.loadFont(@DAIfont_body, 700, regular);
+.loadFont(@DAIfont_body, 700, italic);
 
-// Border colors
-@bg-border-color: @bg-shade;
+
+//
+// Grid
+//
+@DAIgrid_columns: 12;
+@DAIgrid_half: @DAIgrid_half / 2;
+@DAIgrid_third: @DAIgrid_columns / 3;
+@DAIgrid_quarter: @DAIgrid_columns / 4;
 
 //
 // Spacing
 //
-// The baseline size should be used to achieve consistent vertical rhythm. All
-// vertical margins, padding, line-height and block heights should use a
-// multiple of this baseline (or half). Where appropriate, horizontal
-// spacings should also use this baseline. However, in some cases with inline
-// elements it is more appropriate to use an `em` spacing.
-//
-@base: 8px;
-@half: @base / 2;
-@quarter: @base / 4;
-@double: @base * 2;
-@triple: @base * 3;
-@quadruple: @base * 4;
-@quintuple: @base * 5;
+// NOTE: The baseline size should be used to achieve consistent rhythm. All
+//       vertical margins, paddings, line-heights and block-heights should use a
+//       multiple or fraction of this baseline. Where appropriate, horizontal
+//       spacings should also use this baseline. 
+// NOTE: Baseline size set to 50% of browser default in relative unit rem. This
+//       allows users with impaired vision to adjust base font size in a browser.
+//       If this proves to be too destructive change @DAIspacing_base to 8px;
+@DAIspacing_base: 0.5rem;
+@DAIspacing_half: @DAIspacing_base / 2;
+@DAIspacing_quarter: @DAIspacing_base / 4;
+@DAIspacing_double: @DAIspacing_base * 2;
+@DAIspacing_triple: @DAIspacing_base * 3;
+@DAIspacing_quadruple: @DAIspacing_base * 4;
+@DAIspacing_quintuple: @DAIspacing_base * 5;
 
-//
-// Typography
-//
-
-@font: @bodyFont, "Noto Sans",
-	-apple-system,
-	BlinkMacSystemFont,
-	"Segoe UI",
-	"Roboto",
-	"Oxygen-Sans",
-	"Ubuntu",
-	"Cantarell",
-	"Helvetica Neue",
-	sans-serif;
-
-.journal-description-above::before {
-	content: @font;
-}
-
-@font-heading: @headlineFont, @font;
-@font-site-title: @font-heading;
-
-@font-sml: 13px;
-@line-sml: @double;
-@font-base: 14px;
-@line-base: @double;
-@line-base-large: @line-base + 5; // large blocks of text
-@font-bump: 16px;
-@line-bump: @double;
-@font-lead: 18px;
-@line-lead: @triple;
-@font-header: 24px;
-@line-header: @triple;
-
-
-// Font weights
-@normal: 400;
-@bold: 700;
 
 //
 // Borders
 //
-@bg-border: 1px solid @bg-border-color;
-@form-border: 1px solid rgba(0, 0, 0, 0.4);
-@radius: 0px;
+@DAIborder_width: 1px;
+@DAIborder: @border-width solid @DAIcolor_blueDark;
+@DAIborder_form: 1px solid rgba(0, 0, 0, 0.4);
+@DAIborder_radius: 0px;
+@DAIborder_color: @DAIcolor_blueDark;
 
 
 //
-// Screen width breakpoints
-//
-@screen-phone: 480px;
-@screen-tablet: 768px;
-@screen-tablet-container: @screen-tablet - (@double * 2);
-@screen-desktop: 992px;
-@screen-desktop-container: @screen-desktop - (@double * 2);
-@screen-lg-desktop: 1200px;
-@screen-lg-desktop-container: @screen-lg-desktop - (@double * 2);
-
-// Fixed widths and heights
-@sidebar-width: 300px;
-@logo-height: @quadruple * 3;
-
-// Base URL
-// The base URL is set appropriately before the LESS stylesheet is compiled and
-// will point to the theme's base directory. The variable can be used to point
-// to image and font assets.
-@base-url: ''; // Leave empty
-
-
-// Colour Variables
-@highlightColour: #B56357;
-@shadedHighlightColour: lighten(@highlightColour, 33%);
-@contrastColour: #B4DBC0;
-@shadedContrastColour: lighten(@contrastColour, 33%);
-@neutralColour: #8D8E8A;
-@shadedLighterNeutralColour: lighten(@neutralColour, 66%);
-@shadedDarkerNeutralColour: darken(@neutralColour, 33%);
-@menuColour: #000;
-@footerColour: #FFF;
-
-
-// Header state
-@headerLogoState: 'logo';
-@headerBackground: 'none';
-
-// Header dark/light
-@headerLight: true;
-@headerHasLogo: false;
-
-// Hero Claim
-@hero: false;
-@heroClaimText: '';
-@heroBackground: '';
-@heroClaimColour: #FFF;
-@heroSize: 350px;
-
-// Description Text Position
-@descriptionTextAbove: false;
-@descriptionTextVisible: true;
-@descriptionTextState: 'above';
-
-// Sidebar position
-@sidebarPosition: '';
-
-// Grid variables
-@gridColumns: 12;
-
-// Structure Style variables
-@structureStyle: 'clean';
+// Breakpoints
+// 
+@DAIbreak_largeDesktop: 1800px;
+@DAIbreak_regularDesktop: 1024px;
+@DAIbreak_tablet: 768px;
+@DAIbreak_phone: 480px;
