@@ -2,7 +2,7 @@
 <!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
 
 <!--
-    plugins/themes/cedistheme/settings.xml
+    plugins/themes/idaitheme/settings.xml
 
     Copyright (c) 2019 by Free University of Berlin
     Developed by Dennis Twardy (kontakt@dennistwardy.com)
@@ -15,14 +15,14 @@
 -->
 
 <version>
-	<application>cedistheme</application>
+	<application>idaitheme</application>
 	<type>plugins.themes</type>
 	<release>0.0.0.1</release>
 	<date>2019-04-13</date>
 	<lazy-load>1</lazy-load>
-	<class>CedisTheme</class>
+	<class>IDaiTheme</class>
   <author>Dennis Twardy</author>
   <contact>kontakt@dennistwardy.com</contact>
-  <git>github.com/dtwardy/cedistheme</git>
+  <git>github.com/dtwardy/idaitheme</git>
   <description>A small dummy theme plugin to start with a basic structure</description>
 </version>

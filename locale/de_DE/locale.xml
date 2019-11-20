@@ -2,7 +2,7 @@
 <!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
 
 <!--
-  * plugins/themes/cedistheme/locale/de_DE/locale.xml ******************
+  * plugins/themes/idaitheme/locale/de_DE/locale.xml ******************
   **********************************************************************
   * Copyright (c) 2019 by Free University of Berlin ********************
   * developed by Dennis Twardy *****************************************
@@ -15,59 +15,58 @@
   -->
 
 <locale name="de_DE" full_name="Deutsch (Deutschland)">
-	<message key="plugins.themes.cedistheme.name">CeDiS Theme Plugin</message>
-	<message key="plugins.themes.cedistheme.description">Anpassbares CeDiS Theme Plugin</message>
-	<message key="plugins.themes.cedistheme.options.emptyTheme.label">CeDiS Theme Plugin</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.mainColourLabel">Primärfarbe</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.mainColourDescription">Primärfarbe für das Hauptdesign</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.secondColourLabel">Sekundärfarbe</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.secondColourDescription">Sekundärfarbe für das Hauptdesign</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.neutralColourLabel">Neutralfarbe</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.neutralColourDescription">Neutralfarbe für das Hauptdesign</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBrightLabel">Header hell/dunkel</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBrightDescription">Schaltet die Headerfarbgebung zwischen hell und dunkel</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBrightBright">Hell</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBrightDark">Dunkel</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBackgroundLabel">Header Logo Verhalten</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBackgroundDescription">Schaltet das Verhalten des hochgeladenen Headerbildes um</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBackgroundLogo">Logo</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.headerBackgroundBanner">Banner</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.heroLabel">Status Hero</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.heroDescription">Wandelt das hochgeladene Homepagebild zum Herobild</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.heroEnabled">Ein</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.heroDisabled">Aus</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.heroClaimLabel">Hero Claim</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.heroClaimDescription">Der Hero Claim würd über dem Herobild zentral angezeigt</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.heroClaimColourLabel">Hero Claim Farbe</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.heroClaimColourDescription">Definiert die Farbe des Hero Claims</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.heroSizeLabel">Hero Größe</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.heroSizeDescription">Definiert die Höhe des Herobildes, Angaben nur mit gültiger CSS Einheit(default: 350px)</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionLabel">Zeitschriftenbeschreibung</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionDescription">Schaltet zwischen den Anzeigeoptionen des Zeitschriftenbeschreibungstextes um</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionAbove">Über Announcements</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionBelow">Unter Announcements</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.jourdescriptionOff">Nicht anzeigen</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionLabel">Position der Seitenleiste</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionDescription">Schaltet die Position der Seitenleiste um</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionRight">Rechts</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.sidebarPositionLeft">Links</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontLabel">Schriftart für Überschriften</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.headlineFontDescription">Auswahl an Schriftart, die auf sämtliche Überschriften angewendet wird</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontLabel">Schriftarten für Fließtext</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.bodyFontDescription">Auswahl an Schriftarten, die auf Fließtexte angewendet wird</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.FontArial">Arial</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.FontGeorgia">Georgia</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.FontNotoSans">Noto Sans</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.FontNotoSerif">Noto Serif</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.FontFiraSans">Fira Sans</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.FontSourceSansPro">Source Sans Pro</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.FontMerriweather">Merriweather</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.FontMerriweatherSans">Merriweather Sans</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.baseSizeLabel">Basis Größe</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.baseSizeDescription">Beeinflusst die Basiseinheit, auf der das Layout beruht (default: 8px) </message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesLabel">Visuelle Strukturierung</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDescription">Schaltet zwischen den verschiedenen Optionen zur visuellen Struktur um</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesOff">Clean</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesHorizontal">Horizontale Trennlinien</message>
-  <message key="plugins.themes.cedistheme.option.cedisTheme.borderStylesDefault">Blöckefault</message>
+	<message key="plugins.themes.idaitheme.name">iDai Theme Plugin</message>
+	<message key="plugins.themes.idaitheme.description">iDai Theme Plugin entsprechend Style Guide</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.mainColourLabel">Primärfarbe</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.mainColourDescription">Primärfarbe für das Hauptdesign</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.secondColourLabel">Sekundärfarbe</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.secondColourDescription">Sekundärfarbe für das Hauptdesign</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.neutralColourLabel">Neutralfarbe</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.neutralColourDescription">Neutralfarbe für das Hauptdesign</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.headerBrightLabel">Header hell/dunkel</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.headerBrightDescription">Schaltet die Headerfarbgebung zwischen hell und dunkel</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.headerBrightBright">Hell</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.headerBrightDark">Dunkel</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.headerBackgroundLabel">Header Logo Verhalten</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.headerBackgroundDescription">Schaltet das Verhalten des hochgeladenen Headerbildes um</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.headerBackgroundLogo">Logo</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.headerBackgroundBanner">Banner</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroLabel">Status Hero</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroDescription">Wandelt das hochgeladene Homepagebild zum Herobild</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroEnabled">Ein</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroDisabled">Aus</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroClaimLabel">Hero Claim</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroClaimDescription">Der Hero Claim würd über dem Herobild zentral angezeigt</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroClaimColourLabel">Hero Claim Farbe</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroClaimColourDescription">Definiert die Farbe des Hero Claims</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroSizeLabel">Hero Größe</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroSizeDescription">Definiert die Höhe des Herobildes, Angaben nur mit gültiger CSS Einheit(default: 350px)</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionLabel">Zeitschriftenbeschreibung</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionDescription">Schaltet zwischen den Anzeigeoptionen des Zeitschriftenbeschreibungstextes um</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionAbove">Über Announcements</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionBelow">Unter Announcements</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionOff">Nicht anzeigen</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.sidebarPositionLabel">Position der Seitenleiste</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.sidebarPositionDescription">Schaltet die Position der Seitenleiste um</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.sidebarPositionRight">Rechts</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.sidebarPositionLeft">Links</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.headlineFontLabel">Schriftart für Überschriften</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.headlineFontDescription">Auswahl an Schriftart, die auf sämtliche Überschriften angewendet wird</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.bodyFontLabel">Schriftarten für Fließtext</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.bodyFontDescription">Auswahl an Schriftarten, die auf Fließtexte angewendet wird</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.FontArial">Arial</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.FontGeorgia">Georgia</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.FontNotoSans">Noto Sans</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.FontNotoSerif">Noto Serif</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.FontFiraSans">Fira Sans</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.FontSourceSansPro">Source Sans Pro</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.FontMerriweather">Merriweather</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.FontMerriweatherSans">Merriweather Sans</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.baseSizeLabel">Basis Größe</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.baseSizeDescription">Beeinflusst die Basiseinheit, auf der das Layout beruht (default: 8px) </message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.borderStylesLabel">Visuelle Strukturierung</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.borderStylesDescription">Schaltet zwischen den verschiedenen Optionen zur visuellen Struktur um</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.borderStylesOff">Clean</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.borderStylesHorizontal">Horizontale Trennlinien</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.borderStylesDefault">Blöckefault</message>
 </locale>
