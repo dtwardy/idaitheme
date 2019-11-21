@@ -30,7 +30,9 @@
 		grid-column-end: @DAIgrid_columns + 1;
 
 		background-color: @DAIcolor_blueBright;
-		padding: @DAIspacing_quadruple;
+		padding-top: @DAIspacing_quadruple;
+		padding-bottom: @DAIspacing_quadruple;
+		margin-bottom: @DAIspacing_quadruple;
 
 		display: grid;
 		grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
@@ -40,6 +42,16 @@
 			grid-row: 1;
 			grid-column-start: ((@DAIgrid_columns - @DAIgrid_third) / 2) + 1;
 			grid-column-end: @DAIgrid_columns - ((@DAIgrid_columns - @DAIgrid_third) / 2) + 1;
+
+
+			h2 {
+				//display: block;
+				text-align: center;
+				width: 100%;
+				border-bottom: @DAIborder_headline;
+
+				margin-bottom: @DAIspacing_double;
+			}
 
 		}
 
@@ -70,5 +82,78 @@
 				grid-column-end: 11;
 			}
 		}
+	}
+
+	.current_issue {
+		grid-column-start: 3;
+		grid-column-end: @DAIgrid_columns - 1;
+
+		margin-top: @DAIspacing_quadruple * 2;
+		margin-bottom: @DAIspacing_quadruple;
+		background-color: @DAIcolor_greyDark;
+		padding-top: @DAIspacing_quadruple;
+		padding-bottom: @DAIspacing_quadruple;
+
+		display: grid;
+		grid-template-columns: repeat(@DAIgrid_columns - 4, 100% / (@DAIgrid_columns - 4));
+		grid-auto-rows: minmax(min-content, max-content);
+
+		h2 {
+			grid-row: 1;
+			//grid-column-start: ((@DAIgrid_columns - @DAIgrid_third) / 2) + 1;
+			//grid-column-end: @DAIgrid_columns - ((@DAIgrid_columns - @DAIgrid_third) / 2) + 1;
+			grid-column-start: 3;
+			grid-column-end: @DAIgrid_columns - 4 - 1;
+
+			width: 100%;
+			text-align: center;
+			border-bottom: @DAIborder_headline;
+
+			margin-bottom: @DAIspacing_double;
+		}
+
+		.obj_issue_toc,
+		.heading {
+			display: contents;
+		}
+
+		.current_issue_title,
+		.published {
+			grid-column-start: 2;
+			grid-column-end: ((@DAIgrid_columns - 4) / 4) + 5;
+		}
+
+		.cover {
+			grid-column-start: 6;
+			grid-column-end: @DAIgrid_columns - ((@DAIgrid_columns - @DAIgrid_third) / 2);
+			grid-row-start: 2;
+			grid-row-end: 5;
+
+			overflow: hidden;
+			width: 100%;
+			height: 100%;
+			margin-top: @DAIspacing_quadruple;
+			max-height: @DAIspacing_quadruple * 6;
+
+			img {
+				width: 100%;
+			}
+
+		}
+
+		.current_issue_title {
+			grid-row: 2;
+			margin-top: @DAIspacing_quadruple;
+		}
+
+		.published {
+			grid-row: 3;
+		}
+
+		.read_more,
+		.sections {
+			display: none;
+		}
+
 	}
 }

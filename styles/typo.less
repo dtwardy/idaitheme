@@ -7,3 +7,151 @@
 /**********************************************************************/
 /* @brief typography rules for the entire theme ***********************/
 /**********************************************************************/
+
+.loadFontTTF(@DAIfont_body, 300, italic);
+.loadFontTTF(@DAIfont_body, 300, regular);
+.loadFontTTF(@DAIfont_body, 400, italic);
+.loadFontTTF(@DAIfont_body, 400, regular);
+.loadFontTTF(@DAIfont_body, 700, italic);
+.loadFontTTF(@DAIfont_body, 700, regular);
+
+.loadFontOTF(@DAIfont_headline, 300, regular);
+
+@DAIfonts_bodyFontFamilies: @DAIfont_body,
+	Helvetica,
+	Arial,
+	sans-serif;
+@DAIfonts_headlineFontFamilies: @DAIfont_headline,
+	Times,
+	serif;
+
+@DAIfonts_headlineColorBright: #fff;
+@DAIfonts_headlineColorDark: @DAIcolor_blueBright;
+@DAIfonts_bodyColor: #000;
+
+@DAIfonts_baseLineHeight: 1.5;
+@DAIfontsd_headlineLineHeight: 1.4;
+
+@DAIfonts_baseSize: 1rem;
+@DAIfonts_baseSmaller: 0.6 * @DAIfonts_baseSize;
+@DAIfonts_baseSmall: 0.8 * @DAIfonts_baseSize;
+@DAIfonts_baseLarge: 1.25 * @DAIfonts_baseSize;
+@DAIfonts_baseLarger: 1.5* @DAIfonts_baseSize;
+
+@DAIfonts_headline1: 2 * @DAIfonts_baseSize;
+@DAIfonts_headline2: 1.75 * @DAIfonts_baseSize;
+@DAIfonts_headline3: 1.5 * @DAIfonts_baseSize;
+@DAIfonts_headline4: 1.25 * @DAIfonts_baseSize;
+@DAIfonts_headline5: 1 * @DAIfonts_baseSize;
+@DAIfonts_headline6: 0.75 * @DAIfonts_baseSize;
+
+
+html {
+	font-size: @DAIfonts_baseSize;
+	line-height: @DAIfonts_baseLineHeight;
+}
+
+body {
+	font-family: @DAIfonts_bodyFontFamilies;
+	color: @DAIfonts_bodyColor;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: @DAIfonts_headlineFontFamilies;
+	font-weight: 300;
+	color: @DAIfonts_headlineColorBright;
+	line-height: @DAIfontsd_headlineLineHeight;
+
+	margin-top: @DAIspacing_double;
+	margin-bottom: @DAIspacing_base;
+}
+
+h1 {
+	font-size: @DAIfonts_headline1;
+}
+
+
+h2 {
+	font-size: @DAIfonts_headline2;
+}
+
+h3 {
+	font-size: @DAIfonts_headline3;
+}
+
+h4 {
+	font-size: @DAIfonts_headline4;
+}
+
+h5 {
+	font-size: @DAIfonts_headline5;
+}
+
+h6 {
+	font-size: @DAIfonts_headline6;
+	text-transform: uppercase;
+	letter-spacing: 0.01em;
+}
+
+h1+h2,
+h1+h3,
+h1+h4,
+h1+h5,
+h2+h3,
+h2+h4,
+h2+h5,
+h3+h4,
+h3+h5,
+h4+h5 {
+	margin-top: 0;
+}
+
+p,
+blockquote,
+hr,
+pre,
+ol,
+ul,
+dl,
+figure,
+address {
+	margin: 0 0 @DAIspacing_base 0;
+}
+
+ul,
+ol {
+	margin-left: 0;
+	padding-left: 0;
+	margin-right: @DAIspacing_base;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: @DAIcolor_blueBright;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: @DAIcolor_blueDark;
+}
+
+h1.pkp_site_name {
+	margin: 0;
+
+	a {
+		color: #fff;
+		font-size: @DAIfonts_baseSize * 4;
+	}
+}
+
+h1.pkp_site_name a:hover {
+	font-size: @DAIfonts_baseSize * 4.1;
+	transition: font-size 0.1s;
+	text-decoration: none;
+}

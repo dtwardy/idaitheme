@@ -12,7 +12,7 @@
 // font and typography related mixins
 //
 
-.loadFont(@fontName, @fontWeight, @fontStyle) {
+.loadFontTTF(@fontName, @fontWeight, @fontStyle) {
 	/* NOTE: ideally this method should be used for compatibility reasons, but fonts have to be available as
              *.eot, *.woff and *.ttf
     @font-face {
@@ -27,7 +27,16 @@
 
 	@font-face {
 		font-family: @fontName;
-		src: url('@{DAIpubfiles}daitheme/@{fontName}/@{fontName}-@{fontWeight}-@{fontStyle}.ttf') format('truetype');
+		src: url('@{DAIpubfiles}idai/fonts/@{fontName}/@{fontName}-@{fontWeight}-@{fontStyle}.ttf') format('truetype');
+		font-weight: @fontWeight;
+		font-style: @fontStyle;
+	}
+}
+
+.loadFontOTF(@fontName, @fontWeight, @fontStyle) {
+	@font-face {
+		font-family: @fontName;
+		src: url('@{DAIpubfiles}idai/fonts/@{fontName}/@{fontName}-@{fontWeight}-@{fontStyle}.otf') format('truetype');
 		font-weight: @fontWeight;
 		font-style: @fontStyle;
 	}

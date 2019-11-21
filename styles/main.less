@@ -23,16 +23,43 @@
 .pkp_navigation_user {
 	li {
 		display: inline-block;
+		color: #ffffff;
+	}
+
+	li a {
+		color: #ffffff;
 	}
 }
 
 .pkp_search {
+	margin: auto;
+
 	.search_controls {
 		display: inline-block;
 	}
 
 	button {
 		display: none;
+	}
+}
+
+.pkp_navigation_primary {
+	margin: 0;
+
+	li {
+		margin-top: @DAIspacing_base;
+
+		a {
+			padding-right: @DAIspacing_double;
+			margin: auto;
+
+			text-transform: uppercase;
+			color: #ffffff;
+		}
+	}
+
+	li a:hover {
+		text-decoration: underline;
 	}
 }
 
@@ -49,9 +76,16 @@
 }*/
 
 
+// TODO: dropdown menu function!!!
+
 .pkp_navigation_user .profile a+ul {
 	display: none;
 }
+
+.pkp_navigation_primary>li>ul>li {
+	display: none;
+}
+
 
 /*.pkp_navigation_user .profile a:hover {
 	+ul {

@@ -22,11 +22,11 @@
 
 	{call_hook name="Templates::Index::journal"}
 
-	{if $homepageImage}
+	{*{if $homepageImage}
 		<div class="homepage_image">
 			<img src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
 		</div>
-	{/if}
+	{/if}*}
 
 	{if $journalDescription}
 		<div class="journal_description">
@@ -85,18 +85,34 @@
 
 	{* Latest issue *}
 	{if $issue}
-		<div class="current_issue">
-			<h2>
-				{translate key="journal.currentIssue"}
-			</h2>
-			<div class="current_issue_title">
-				{$issue->getIssueIdentification()|strip_unsafe_html}
+		{if $homepageImage}
+			<div class="current_issue dai_has_image">
+				<h2>
+					{translate key="journal.currentIssue"}
+				</h2>
+				<div class="current_issue_title">
+					{$issue->getIssueIdentification()|strip_unsafe_html}
+				</div>
+				{include file="frontend/objects/issue_toc.tpl"}
+				<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}" class="read_more">
+					{translate key="journal.viewAllIssues"}
+				</a>
 			</div>
-			{include file="frontend/objects/issue_toc.tpl"}
-			<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}" class="read_more">
-				{translate key="journal.viewAllIssues"}
-			</a>
-		</div>
+
+		{else}
+			<div class="current_issue" style="">
+				<h2>
+					{translate key="journal.currentIssue"}
+				</h2>
+				<div class="current_issue_title">
+					{$issue->getIssueIdentification()|strip_unsafe_html}
+				</div>
+				{include file="frontend/objects/issue_toc.tpl"}
+				<a href="{url router=$smarty.const.ROUTE_PAGE page="issue" op="archive"}" class="read_more">
+					{translate key="journal.viewAllIssues"}
+				</a>
+			</div>
+		{/if}
 	{/if}
 
 	{* Additional Homepage Content *}

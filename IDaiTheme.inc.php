@@ -67,10 +67,10 @@ class IDaiTheme extends ThemePlugin {
     
 		// Load Bootsrap's dropdown
 		/*$this->addScript('popper', 'js/lib/popper/popper.js');
-		$this->addScript('bsUtil', 'js/lib/bootstrap/util.js');*/
-		$this->addScript('bsDropdown', 'js/lib/bootstrap/dropdown.js');
+		$this->addScript('bsUtil', 'js/lib/bootstrap/util.js');
+		$this->addScript('bsDropdown', 'js/lib/bootstrap/dropdown.js');*/
 		// Load custom JavaScript for this theme
-    $this->addScript('default', 'js/main.js');
+    //$this->addScript('default', 'js/main.js');
     
 		// Add navigation menu areas for this theme
 		$this->addMenuArea(array('primary', 'user'));
@@ -94,7 +94,7 @@ class IDaiTheme extends ThemePlugin {
     $pubFilesDir = BASE_SYS_DIR . '/'. $SysPubDir . '/' . 'journals/' . $currentJournal->getId();
     $SysPubUrl = $baseUrl . '/' . $SysPubDir . '/';
 
-    $additionalLessVariables[] = '@pubFiles: \'' . $SysPubUrl .'\';';
+    $additionalLessVariables[] = '@DAIpubfiles: \'' . $SysPubUrl .'\';';
 
     if (file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.png') ||
         file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.jpg') ||

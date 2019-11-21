@@ -13,6 +13,7 @@ body {
 	display: grid;
 	grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
 	grid-auto-rows: minmax(min-content, max-content);
+	;
 
 	.pkp_structure_page,
 	.pkp_structure_head,
@@ -61,10 +62,14 @@ body {
 				grid-column-end: @DAIgrid_columns - ((@DAIgrid_columns - @DAIgrid_third) / 2) + 1;
 
 				display: inline;
+				overflow: hidden;
 
 				.idai_world_logo {
-					margin: auto;
-					object-fit: fill;
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					margin-top: 16px;
+					height: 70%;
 				}
 			}
 		}
@@ -77,6 +82,7 @@ body {
 			height: @DAIgrid_hero;
 
 			display: grid;
+			overflow: hidden;
 			grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
 			grid-auto-rows: minmax(min-content, max-content);
 
@@ -129,7 +135,7 @@ body {
 
 		.pkp_navigation_user_wrapper {
 			grid-row: 1;
-			grid-column-start: @DAIgrid_columns - 1;
+			grid-column-start: @DAIgrid_columns;
 			grid-column-end: @DAIgrid_columns + 1;
 		}
 	}
@@ -172,6 +178,10 @@ body {
 
 		.pkp_brand_footer {
 			grid-row: 2;
+
+			img {
+				max-height: 75px;
+			}
 		}
 	}
 }
