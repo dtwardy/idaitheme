@@ -57,8 +57,8 @@ body {
 
 			.idai_world_logo_wrapper {
 				grid-row: 1;
-				grid-column-start: (@DAIgrid_columns / 2) - 1;
-				grid-column-end: (@DAIgrid_columns / 2) + 2;
+				grid-column-start: ((@DAIgrid_columns - @DAIgrid_third) / 2) + 1;
+				grid-column-end: @DAIgrid_columns - ((@DAIgrid_columns - @DAIgrid_third) / 2) + 1;
 
 				display: inline;
 
@@ -149,5 +149,29 @@ body {
 		grid-row: 5;
 		grid-column-start: 1;
 		grid-column-end: @DAIgrid_columns + 1;
+
+		padding-top: @DAIspacing_quadruple * 2;
+		padding-bottom: @DAIspacing_quadruple * 2;
+
+		display: grid;
+		grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
+		grid-auto-rows: minmax(min-content, max-content);
+
+		.pkp_footer_content,
+		.pkp_brand_footer {
+			grid-column-start: 3;
+			grid-column-end: @DAIgrid_columns - 1;
+
+			padding-top: @DAIspacing_double;
+			padding-bottom: @DAIspacing_double;
+		}
+
+		.pkp_footer_content {
+			grid-row: 1;
+		}
+
+		.pkp_brand_footer {
+			grid-row: 2;
+		}
 	}
 }

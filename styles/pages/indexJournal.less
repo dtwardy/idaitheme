@@ -16,10 +16,59 @@
 	grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
 	grid-auto-rows: minmax(min-content, max-content);
 
+	.journal_description,
 	.additional_content {
-		grid-column-start: 2;
-		grid-column-end: @DAIgrid_columns;
+		grid-column-start: 3;
+		grid-column-end: @DAIgrid_columns - 1;
 
-		margin: auto;
+		padding-top: @DAIspacing_quadruple * 2;
+		padding-bottom: @DAIspacing_quadruple * 2;
+	}
+
+	.cmp_announcements {
+		grid-column-start: 1;
+		grid-column-end: @DAIgrid_columns + 1;
+
+		background-color: @DAIcolor_blueBright;
+		padding: @DAIspacing_quadruple;
+
+		display: grid;
+		grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
+		grid-auto-rows: minmax(min-content, max-content);
+
+		.page-header {
+			grid-row: 1;
+			grid-column-start: ((@DAIgrid_columns - @DAIgrid_third) / 2) + 1;
+			grid-column-end: @DAIgrid_columns - ((@DAIgrid_columns - @DAIgrid_third) / 2) + 1;
+
+		}
+
+		.media-list {
+			display: contents;
+
+			article.obj_announcement_summary {
+				grid-row: 2;
+
+				background-color: @DAIcolor_greyBright;
+				margin-top: @DAIspacing_quadruple;
+				margin-bottom: @DAIspacing_quadruple;
+				padding: @DAIspacing_double;
+			}
+
+			article.obj_announcement_summary:nth-child(1) {
+				grid-column-start: 3;
+				grid-column-end: 5;
+			}
+
+			article.obj_announcement_summary:nth-child(2) {
+				grid-column-start: 6;
+				grid-column-end: 8;
+			}
+
+			article.obj_announcement_summary:nth-child(3) {
+				grid-column-start: 9;
+				grid-column-end: 11;
+			}
+		}
 	}
 }
