@@ -7,3 +7,58 @@
 /**********************************************************************/
 /* @brief grid rules for the entire theme *****************************/
 /**********************************************************************/
+
+body {
+	width: 100vh !important;
+	display: grid;
+	grid-template-columns: repeat(@DAIgrid_columns, 100vh / @DAIgrid_columns);
+	grid-auto-rows: minmax(min-content, max-content);
+
+	.pkp_structure_page,
+	.pkp_structure_head,
+	.pkp_head_wrapper,
+	.pkp_navigation_primary_row,
+	.pkp_structure_content,
+	.pkp_structure_footer_wrapper {
+		display: contents;
+		width: 100%;
+	}
+
+	.pkp_site_name_wrapper {
+		grid-row: 2;
+		grid-column-start: 1;
+		grid-column-end: @DAIgrid_columns + 1;
+	}
+
+	.pkp_navigation_primary_wrapper {
+		grid-row: 3;
+		grid-column-start: 1;
+		grid-column-end: @DAIgrid_columns + 1;
+
+		display: grid;
+		grid-template-columns: repeat(@DAIgrid_columns, 100vh / @DAIgrid_columns);
+		grid-template-rows: auto;
+	}
+
+	.pkp_navigation_user_wrapper {
+		grid-row: 1;
+		grid-column-start: @DAIgrid_columns - 1;
+		grid-column-end: @DAIgrid_columns + 1;
+	}
+
+	.pkp_structure_main {
+		grid-row: 4;
+		grid-column-start: 1;
+		grid-column-end: @DAIgrid_columns + 1;
+
+		display: grid;
+		grid-template-columns: repeat(@DAIgrid_columns, 100vh / @DAIgrid_columns);
+		grid-auto-rows: minmax(min-content, max-content);
+	}
+
+	.pkp_structure_footer {
+		grid-row: 5;
+		grid-column-start: 1;
+		grid-column-end: @DAIgrid_columns + 1;
+	}
+}
