@@ -36,9 +36,25 @@
 			<header class="pkp_structure_head" id="headerNavigationContainer" role="banner">
 				<div class="pkp_head_wrapper">
 
+					<div class="idai_world_nav_wrapper">
+						<div class="idai_world_nav">
+							<img class="idai_world_nav_logo" src="{$baseUrl}/public/idai/kleinergreif.png"/>
+							<iframe src="https://idai.world/config/idai-nav.html" frameborder="0" style="height: 100vh; width: 200px;"></iframe>	
+						</div>
+
+						<div class="idai_world_logo_wrapper">
+							<img class="idai_world_logo" src="{$baseUrl}/public/idai/idai_logo.png"/>
+						</div>
+					</div>
+
 					<div class="pkp_site_name_wrapper">
 						{* Logo or site title. Only use <h1> heading on the homepage.
 						Otherwise that should go to the page title. *}
+						
+						{if $displayPageHeaderLogo}
+							<img class="dai_hero_img" src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" width="{$displayPageHeaderLogo.width|escape}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{else}alt="{translate key="common.pageHeaderLogo.altText"}"{/if} />
+						{/if}
+
 						{if $requestedOp == 'index'}
 							<h1 class="pkp_site_name">
 						{else}
@@ -51,6 +67,9 @@
 									{url context="index" router=$smarty.const.ROUTE_PAGE}
 								{/if}
 							{/capture}
+
+							<a href="{$homeUrl}" class="is_text">{$displayPageHeaderTitle}</a>
+							{*
 							{if $displayPageHeaderLogo && is_array($displayPageHeaderLogo)}
 								<a href="{$homeUrl}" class="is_img">
 									<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" width="{$displayPageHeaderLogo.width|escape}" height="{$displayPageHeaderLogo.height|escape}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{else}alt="{translate key="common.pageHeaderLogo.altText"}"{/if} />
@@ -65,7 +84,7 @@
 								<a href="{$homeUrl}" class="is_img">
 									<img src="{$baseUrl}/templates/images/structure/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" width="180" height="90" />
 								</a>
-							{/if}
+							{/if}*}
 						{if $requestedOp == 'index'}
 							</h1>
 						{else}

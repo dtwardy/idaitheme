@@ -7,3 +7,19 @@
 /**********************************************************************/
 /* @brief styles for the footer object ********************************/
 /**********************************************************************/
+
+.page_index_journal {
+	grid-column-start: 1;
+	grid-column-end: @DAIgrid_columns + 1;
+
+	display: grid;
+	grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
+	grid-auto-rows: minmax(min-content, max-content);
+
+	.additional_content {
+		grid-column-start: 2;
+		grid-column-end: @DAIgrid_columns;
+
+		margin: auto;
+	}
+}

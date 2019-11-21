@@ -11,7 +11,7 @@
 //
 // General Variables
 //
-//@DAIpubfiles = '';
+//@DAIpubfiles ='';
 
 
 //
@@ -19,6 +19,7 @@
 //
 @DAIcolor_blueDark: #004c98;
 @DAIcolor_blueBright: #557ebb;
+@DAIcolor_greenBright: rgba(106, 164, 184, 0.95);
 @DAIcolor_greyDark: #605e59;
 @DAIcolor_greyMedium: #a9a8a4;
 @DAIcolor_greyBright: #d3d3cf;
@@ -29,29 +30,16 @@
 //
 @DAIfont_headline: "OpenSansRegular";
 @DAIfont_body: "OpenSansRegular";
-/*
-.loadFont(@DAIfont_headline, 300, regular);
-.loadFont(@DAIfont_headline, 300, italic);
-.loadFont(@DAIfont_headline, 400, regular);
-.loadFont(@DAIfont_headline, 400, italic);
-.loadFont(@DAIfont_headline, 700, regular);
-.loadFont(@DAIfont_headline, 700, italic);
 
-.loadFont(@DAIfont_body, 300, regular);
-.loadFont(@DAIfont_body, 300, italic);
-.loadFont(@DAIfont_body, 400, regular);
-.loadFont(@DAIfont_body, 400, italic);
-.loadFont(@DAIfont_body, 700, regular);
-.loadFont(@DAIfont_body, 700, italic);
-*/
 
 //
 // Grid
 //
 @DAIgrid_columns: 12;
-@DAIgrid_half: @DAIgrid_half / 2;
+@DAIgrid_half: @DAIgrid_columns / 2;
 @DAIgrid_third: @DAIgrid_columns / 3;
 @DAIgrid_quarter: @DAIgrid_columns / 4;
+@DAIgrid_hero: 450px;
 
 //
 // Spacing
@@ -63,7 +51,7 @@
 // NOTE: Baseline size set to 50% of browser default in relative unit rem. This
 //       allows users with impaired vision to adjust base font size in a browser.
 //       If this proves to be too destructive change @DAIspacing_base to 8px;
-@DAIspacing_base: 0.5rem;
+@DAIspacing_base: 8px;
 @DAIspacing_half: @DAIspacing_base / 2;
 @DAIspacing_quarter: @DAIspacing_base / 4;
 @DAIspacing_double: @DAIspacing_base * 2;
@@ -76,7 +64,7 @@
 // Borders
 //
 @DAIborder_width: 1px;
-@DAIborder: @border-width solid @DAIcolor_blueDark;
+@DAIborder: @DAIborder_width solid @DAIcolor_blueDark;
 @DAIborder_form: 1px solid rgba(0, 0, 0, 0.4);
 @DAIborder_radius: 0px;
 @DAIborder_color: @DAIcolor_blueDark;
