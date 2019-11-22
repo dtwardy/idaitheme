@@ -34,14 +34,23 @@
 	h1 {
 		grid-column-start: 3;
 		grid-column-end: @DAIgrid_columns - 1;
-		margin-bottom: @DAIspacing_quadruple;
+
+		.makeSeparatorHeadline();
 	}
 
 	p {
 		grid-column-start: 3;
 		grid-column-end: @DAIgrid_columns - 1;
 
-		margin-bottom: @DAIspacing_quadruple;
+		margin: @DAIspacing_base 0;
+	}
+
+	p:first-of-type {
+		margin-top: @DAIspacing_quadruple;
+	}
+
+	p:last-child {
+		margin-bottom: @DAIspacing_quadruple * 2;
 	}
 
 }
