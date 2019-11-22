@@ -253,18 +253,23 @@
 // Site Name over Hero
 //
 
-h1.pkp_site_name {
+.pkp_site_name {
 	margin: 0;
 
 	a {
+		font-family: @DAIfonts_headlineFontFamilies;
 		color: #fff;
 		font-size: @DAIfonts_baseSize * 4;
 		text-transform: capitalize;
 	}
 }
 
-h1.pkp_site_name a:hover {
+.pkp_site_name a:hover {
 	font-size: @DAIfonts_baseSize * 4.1;
 	transition: font-size 0.2s;
 	text-decoration: none;
+}
+
+.cmp_edit_link {
+	display: none;
 }

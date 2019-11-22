@@ -8,7 +8,7 @@
 /* @brief styles for the footer object ********************************/
 /**********************************************************************/
 
-.page_about {
+.page_submissions {
 	grid-column-start: 1;
 	grid-column-end: @DAIgrid_columns + 1;
 
@@ -20,7 +20,7 @@
 		grid-column-start: 2;
 		grid-column-end: @DAIgrid_columns;
 		margin-top: @DAIspacing_quadruple;
-		display: inline;
+		display: inline-block;
 
 		ol {
 			display: inline-block;
@@ -34,14 +34,67 @@
 	h1 {
 		grid-column-start: 3;
 		grid-column-end: @DAIgrid_columns - 1;
-		margin-bottom: @DAIspacing_quadruple;
+
+		.makeSeparatorHeadline();
 	}
 
-	p {
+	.cmp_notification {
+		.makeSmallBox();
+
+		text-align: center;
+
+		a {
+			.makeButton();
+			margin: 0 @DAIspacing_double;
+		}
+
+		a:hover {
+			.makeButtonHover();
+		}
+	}
+
+	.submission_checklist {
+		.makeWideBox();
+
+		h2 {
+			text-align: center;
+			margin-bottom: @DAIspacing_quadruple;
+		}
+
+		ul {
+			display: block;
+			margin: @DAIspacing_double ((100% / (@DAIgrid_columns - 4)) * 1);
+			padding: @DAIspacing_double ((100% / (@DAIgrid_columns - 4)) * 1);
+
+			background: @DAIcolor_greyBright;
+			list-style-type: square;
+
+			color: #000000;
+
+			li {
+				padding-top: @DAIspacing_double;
+			}
+
+			li:last-child {
+				padding-bottom: @DAIspacing_double;
+			}
+		}
+
+	}
+
+
+
+	.privacy_statement {
 		grid-column-start: 3;
 		grid-column-end: @DAIgrid_columns - 1;
 
 		margin-bottom: @DAIspacing_quadruple;
+
+		h2 {
+			color: @DAIcolor_blueBright;
+			text-align: center;
+			margin-bottom: @DAIspacing_quadruple;
+		}
 	}
 
 }
