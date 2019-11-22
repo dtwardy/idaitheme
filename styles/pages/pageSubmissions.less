@@ -17,18 +17,7 @@
 	grid-auto-rows: minmax(min-content, max-content);
 
 	.cmp_breadcrumbs {
-		grid-column-start: 2;
-		grid-column-end: @DAIgrid_columns;
-		margin-top: @DAIspacing_quadruple;
-		display: inline-block;
-
-		ol {
-			display: inline-block;
-
-			li {
-				display: inline-block;
-			}
-		}
+		.makeBreadcrumbs();
 	}
 
 	h1 {
