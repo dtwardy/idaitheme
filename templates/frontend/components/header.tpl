@@ -39,7 +39,7 @@
 					<div class="idai_world_nav_wrapper">
 						<div class="idai_world_nav">
 							<img class="idai_world_nav_logo" src="{$baseUrl}/public/idai/kleinergreif.png"/>
-							<iframe src="https://idai.world/config/idai-nav.html" frameborder="0" style="height: 100vh; width: 200px;"></iframe>	
+							<iframe src="https://idai.world/config/idai-nav.html" frameborder="0"></iframe>	
 						</div>
 
 						<div class="idai_world_logo_wrapper">

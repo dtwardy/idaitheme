@@ -8,17 +8,63 @@
 /* @brief basic rules for the generic structure of OJS ****************/
 /**********************************************************************/
 
-.idai_world_nav {
-	iframe {
-		display: none;
-	}
-}
-
+//
+// Hide Quick Links
+//
 .cmp_skip_to_content {
 	display: none;
 }
 
 
+//
+// Search Bar Details
+//
+.pkp_search {
+	margin: 0;
+
+	.search_controls {
+		padding: (@DAIspacing_double + @DAIspacing_half);
+		margin: 0 !important;
+		//padding: 0 (@DAIspacing_double + @DAIspacing_half);
+		display: inline-block;
+		text-align: right !important;
+
+		a.search_prompt {
+			font-size: @DAIspacing_triple;
+			color: #ffffff;
+			line-height: @DAIspacing_triple;
+		}
+	}
+
+	.search_controls:hover {
+		//text-decoration: underline;
+		background-color: @DAIcolor_greyBright;
+		transition: background-color 0.2s;
+
+		a.search_prompt {
+			color: @DAIcolor_greyDark;
+			text-decoration: none;
+			transition: color 0.2s;
+		}
+	}
+
+	input {
+		margin: (@DAIspacing_double + @DAIspacing_half) 0;
+		padding: 0 (@DAIspacing_double + @DAIspacing_half) 0 0;
+		float: left;
+
+		height: @DAIspacing_triple;
+	}
+
+	button {
+		display: none;
+	}
+}
+
+
+// 
+// Menu Settings
+//
 .pkp_navigation_primary,
 .pkp_navigation_user {
 	li {
@@ -31,68 +77,194 @@
 	}
 }
 
-.pkp_search {
-	margin: auto;
 
-	.search_controls {
-		display: inline-block;
-	}
-
-	button {
-		display: none;
-	}
-}
-
+//
+// Main Menu Hover Effects
+//
 .pkp_navigation_primary {
 	margin: 0;
+	z-index: 10;
 
 	li {
-		margin-top: @DAIspacing_base;
+		margin: 0;
+		padding-top: @DAIspacing_double + @DAIspacing_half;
+		height: @DAIspacing_triple * 2;
 
 		a {
-			padding-right: @DAIspacing_double;
-			margin: auto;
+			margin: (@DAIspacing_double + @DAIspacing_half) 0;
+			padding: 0 (@DAIspacing_double + @DAIspacing_half);
 
-			text-transform: uppercase;
+
+			font-size: @DAIspacing_triple;
+			line-height: @DAIspacing_triple;
 			color: #ffffff;
 		}
 	}
 
-	li a:hover {
-		text-decoration: underline;
-	}
-}
+	li:hover {
+		background-color: @DAIcolor_greyBright;
+		transition: background-color 0.2s;
 
-/*.idai_world_nav_wrapper {
-	position: sticky;
-	z-index: 10;
-	top: 0;
-}
-
-.pkp_navigation_user_wrapper {
-	position: sticky;
-	z-index: 10;
-	top: 0;
-}*/
-
-
-// TODO: dropdown menu function!!!
-
-.pkp_navigation_user .profile a+ul {
-	display: none;
-}
-
-.pkp_navigation_primary>li>ul>li {
-	display: none;
-}
-
-
-/*.pkp_navigation_user .profile a:hover {
-	+ul {
-		display: block;
-
-		li {
-			display: block;
+		a {
+			color: @DAIcolor_greyDark;
+			text-decoration: none;
+			transition: color 0.2s;
 		}
 	}
-}*/
+}
+
+
+
+
+//
+// User Navigation
+//
+.pkp_navigation_user {
+	//margin: @DAIspacing_quadruple;
+	margin: 0;
+	padding-bottom: @DAIspacing_quadruple;
+
+	height: @DAIspacing_quadruple * 2;
+	text-align: right;
+
+	.profile {
+		display: contents;
+
+		a {
+			margin: @DAIspacing_quadruple;
+			padding-top: @DAIspacing_quadruple;
+			margin-left: 0%;
+			width: 100%;
+			height: 100%;
+
+
+			font-size: @DAIspacing_triple;
+		}
+
+		a:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+
+//
+// Drop Down menus
+//
+.idai_world_nav {
+	overflow-y: hidden;
+
+	iframe {
+		display: block;
+		position: absolute;
+
+		z-index: 15;
+
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0.4s, opacity 0.4s;
+	}
+}
+
+.idai_world_nav:hover>iframe,
+.idai_world_nav>iframe:hover {
+	visibility: visible;
+	opacity: 1;
+	transition: visibility 0.4s, opacity 0.4s;
+}
+
+.pkp_navigation_primary>li>ul {
+	display: block;
+	position: absolute;
+	top: (@DAIspacing_double * 4) + (@DAIspacing_quadruple * 4) + @DAIgrid_hero;
+
+	z-index: 5;
+
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0.4s, opacity 0.4s;
+
+	li {
+		display: block;
+		background-color: @DAIcolor_greyDark;
+
+		a {
+			color: @DAIcolor_greyBright;
+		}
+	}
+
+	;
+}
+
+.pkp_navigation_primary>li>ul:hover,
+.pkp_navigation_primary>li:hover>ul {
+	//height: @DAIspacing_quadruple * 8 !important;
+
+	visibility: visible;
+	opacity: 1;
+	transition: visibility 0.4s, opacity 0.4s;
+
+	li {
+		background-color: @DAIcolor_greyDark;
+
+		a {
+			color: @DAIcolor_greyBright;
+		}
+	}
+
+	li:hover {
+		background-color: @DAIcolor_greyBright;
+
+		a {
+			color: @DAIcolor_greyDark;
+		}
+	}
+}
+
+.pkp_navigation_user .profile a+ul {
+	display: block;
+	position: absolute;
+
+	top: @DAIspacing_quadruple * 4;
+	width: (100vh / @DAIgrid_columns) * 2;
+
+	visibility: hidden;
+	opacity: 0;
+}
+
+.pkp_navigation_user .profile:hover>a+ul,
+.pkp_navigation_user .profile>a:hover+ul,
+.pkp_navigation_user .profile>a+ul:hover {
+	visibility: visible;
+	opacity: 1;
+
+	li {
+		display: inline-block;
+		background-color: @DAIcolor_greyDark;
+
+		a {
+			color: #ffffff;
+		}
+	}
+}
+
+
+//
+// Site Name over Hero
+//
+
+h1.pkp_site_name {
+	margin: 0;
+
+	a {
+		color: #fff;
+		font-size: @DAIfonts_baseSize * 4;
+		text-transform: capitalize;
+	}
+}
+
+h1.pkp_site_name a:hover {
+	font-size: @DAIfonts_baseSize * 4.1;
+	transition: font-size 0.2s;
+	text-decoration: none;
+}

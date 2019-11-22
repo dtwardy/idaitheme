@@ -9,13 +9,16 @@
 /**********************************************************************/
 
 body {
-	width: 100% !important;
-	display: grid;
-	grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
-	grid-auto-rows: minmax(min-content, max-content);
-	;
+	width: 100%;
 
-	.pkp_structure_page,
+
+
+	.pkp_structure_page {
+		display: grid;
+		grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
+		grid-auto-rows: minmax(min-content, max-content);
+	}
+
 	.pkp_structure_head,
 	.pkp_navigation_primary_row,
 	.pkp_structure_content,
@@ -39,6 +42,8 @@ body {
 			grid-column-start: 1;
 			grid-column-end: @DAIgrid_columns + 1;
 
+			height: @DAIspacing_quadruple * 4;
+
 			display: grid;
 			grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
 			grid-auto-rows: minmax(min-content, max-content);
@@ -48,11 +53,19 @@ body {
 				grid-column-start: 1;
 				grid-column-end: 2;
 
-				display: inline;
+				//display: inline;
+				height: @DAIspacing_quadruple * 4;
 
 				.idai_world_nav_logo {
-					top: 50%;
+					//top: 50%;
+					height: @DAIspacing_quadruple * 2;
 					margin: @DAIspacing_quadruple;
+				}
+
+				iframe {
+					height: @DAIgrid_hero + 2px;
+					width: 100% / @DAIgrid_columns * 2;
+					top: @DAIspacing_quadruple * 4 - 2px;
 				}
 			}
 
@@ -61,15 +74,17 @@ body {
 				grid-column-start: ((@DAIgrid_columns - @DAIgrid_third) / 2) + 1;
 				grid-column-end: @DAIgrid_columns - ((@DAIgrid_columns - @DAIgrid_third) / 2) + 1;
 
-				display: inline;
+				//display: inline;
 				overflow: hidden;
+				height: @DAIspacing_quadruple * 4;
+				margin: 0;
 
 				.idai_world_logo {
 					display: block;
 					margin-left: auto;
 					margin-right: auto;
-					margin-top: 16px;
-					height: 70%;
+					margin-top: @DAIspacing_quadruple;
+					height: @DAIspacing_quadruple * 2;
 				}
 			}
 		}
@@ -90,6 +105,7 @@ body {
 				grid-row: 1;
 				grid-column-start: 1;
 				grid-column-end: @DAIgrid_columns + 1;
+				min-width: 100%;
 			}
 
 			.pkp_site_name {
@@ -112,6 +128,8 @@ body {
 			grid-column-start: 1;
 			grid-column-end: @DAIgrid_columns + 1;
 
+			height: @DAIspacing_double * 4;
+
 			display: grid;
 			grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
 			grid-template-rows: auto;
@@ -130,6 +148,10 @@ body {
 				grid-column-end: @DAIgrid_columns;
 
 				display: inline-block;
+				margin: 0 @DAIspacing_double;
+				padding-top: 0;
+				text-align: right;
+				height: @DAIspacing_quadruple * 2;
 			}
 		}
 
