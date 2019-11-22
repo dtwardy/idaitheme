@@ -1,5 +1,5 @@
 /**********************************************************************/
-/* @file plugins/themes/idaitheme/styles/pages/contact.less ***********/
+/* @file plugins/themes/idaitheme/styles/pages/pageContact.less *******/
 /**********************************************************************/
 /* Copyright (c) 2019 German Archaeological Institute *****************/
 /* Developed by Dennis Twardy (dennistwardy86@gmail.com) **************/
@@ -7,3 +7,27 @@
 /**********************************************************************/
 /* @brief styles for the footer object ********************************/
 /**********************************************************************/
+
+.page_contact {
+	grid-column-start: 1;
+	grid-column-end: @DAIgrid_columns + 1;
+
+	display: grid;
+	grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
+	grid-auto-rows: minmax(min-content, max-content);
+
+	.cmp_breadcrumbs {
+		.makeBreadcrumbs();
+	}
+
+	h1 {
+		grid-column-start: 3;
+		grid-column-end: @DAIgrid_columns - 1;
+
+		.makeSeparatorHeadline();
+	}
+
+	.contact_section {
+		.makeRegularSection();
+	}
+}
