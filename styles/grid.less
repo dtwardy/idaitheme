@@ -36,7 +36,7 @@ body {
 
 		display: grid;
 		grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
-		grid-auto-rows: minmax(min-content, max-content);
+		grid-template-rows: (@DAIspacing_quadruple * 4) @DAIgrid_hero (@DAIspacing_double * 4);
 
 		.idai_world_nav_wrapper {
 			grid-row: 1;
@@ -100,7 +100,7 @@ body {
 			display: grid;
 			overflow: hidden;
 			grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
-			grid-auto-rows: minmax(min-content, max-content);
+			grid-auto-rows: @DAIgrid_hero;
 
 			.dai_hero_img {
 				grid-row: 1;
