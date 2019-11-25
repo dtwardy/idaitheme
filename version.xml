@@ -19,12 +19,12 @@
 <version>
 	<application>idaitheme</application>
 	<type>plugins.themes</type>
-	<release>0.0.0.1</release>
-	<date>2019-04-13</date>
+	<release>0.1.0.0</release>
+	<date>2019-11-25</date>
 	<lazy-load>1</lazy-load>
 	<class>IDaiTheme</class>
-  <author>Dennis Twardy</author>
-  <contact>idai.publications@dainst.de</contact>
-  <git>github.com/dtwardy/idaitheme</git>
-  <description>A small dummy theme plugin to start with a basic structure</description>
+	<author>Dennis Twardy</author>
+	<contact>idai.publications@dainst.de</contact>
+	<git>github.com/dtwardy/idaitheme</git>
+	<description>iDAI style guide abiding theme plugin</description>
 </version>
