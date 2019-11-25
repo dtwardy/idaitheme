@@ -19,7 +19,7 @@
 <version>
 	<application>idaitheme</application>
 	<type>plugins.themes</type>
-	<release>0.1.0.0</release>
+	<release>0.2.0.0</release>
 	<date>2019-11-25</date>
 	<lazy-load>1</lazy-load>
 	<class>IDaiTheme</class>
