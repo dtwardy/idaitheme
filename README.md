@@ -8,3 +8,6 @@ ln -s plugins/themes/idaitheme/idai public/idai
 ```
 
 After installation and activation you need to choose the "iDai Theme Plugin" from the dropdown menu from the Appearance settings pane within the Website Settings and apply these changes. This is also necessary when the plugin received an update due to the fact that OJS only calls the LESS-Compiler during that process. Once the Compiler successfully compiled the LESS styles, OJS will solely rely on the compiled CSS stylesheet.
+
+## Note
+This theme does not implement sidebars. Even if sidebar blocks are being enabled via the backend, the theme will set their visibility to none.
