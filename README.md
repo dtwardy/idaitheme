@@ -1,4 +1,4 @@
-# idaitheme
+# iDai Theme Plugin
 
 ## Installation
 In order to install the theme, download or clone it into the "plugins/themes/" folder. You need to make sure that the "idai" folder within the plugin is either being copied or linked to the public folder of your OJS installation. Linking is the preferred method as it allows updates to be available directly without copying or modifying the files within the public folder.

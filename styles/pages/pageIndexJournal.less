@@ -98,14 +98,16 @@
 			grid-row: 1;
 			//grid-column-start: ((@DAIgrid_columns - @DAIgrid_third) / 2) + 1;
 			//grid-column-end: @DAIgrid_columns - ((@DAIgrid_columns - @DAIgrid_third) / 2) + 1;
-			grid-column-start: 3;
-			grid-column-end: @DAIgrid_columns - 4 - 1;
+			grid-column-start: 2;
+			grid-column-end: @DAIgrid_columns - 4;
 
 			width: 100%;
 			text-align: center;
 			border-bottom: @DAIborder_headline;
 
 			margin-bottom: @DAIspacing_double;
+
+			.makeSeparatorHeadline();
 		}
 
 		.obj_issue_toc,
@@ -123,13 +125,13 @@
 			grid-column-start: 6;
 			grid-column-end: @DAIgrid_columns - ((@DAIgrid_columns - @DAIgrid_third) / 2);
 			grid-row-start: 2;
-			grid-row-end: 5;
+			grid-row-end: 6;
 
 			overflow: hidden;
 			width: 100%;
 			height: 100%;
 			margin-top: @DAIspacing_quadruple;
-			max-height: @DAIspacing_quadruple * 6;
+			//max-height: @DAIspacing_quadruple * 6;
 
 			img {
 				width: 100%;
@@ -140,10 +142,62 @@
 		.current_issue_title {
 			grid-row: 2;
 			margin-top: @DAIspacing_quadruple;
+
+			font-size: @DAIfonts_headline2;
+			text-align: left;
+		}
+
+		.description {
+			grid-column-start: 2;
+			grid-column-end: 6;
+			grid-row: 4;
+			padding-right: @DAIspacing_quadruple;
 		}
 
 		.published {
 			grid-row: 3;
+			font-style: italic;
+			margin-bottom: @DAIspacing_double;
+		}
+
+		.galleys {
+			grid-column-start: 2;
+			grid-column-end: 5;
+			grid-row: 5;
+			bottom: 0;
+
+			display: inline;
+
+			h2 {
+				font-size: @DAIfonts_headline3;
+				text-align: center;
+				border: none;
+				text-align: left;
+				padding-bottom: @DAIspacing_double;
+				color: @DAIcolor_blueDark;
+
+				display: inline;
+			}
+
+			ul {
+				display: inline;
+
+				li {
+					display: inline;
+					margin-left: @DAIspacing_quadruple;
+
+					a {
+						.makeButton();
+
+						padding-left: @DAIspacing_quadruple;
+						padding-right: @DAIspacing_quadruple;
+					}
+
+					a:hover {
+						.makeButtonHover();
+					}
+				}
+			}
 		}
 
 		.read_more,
