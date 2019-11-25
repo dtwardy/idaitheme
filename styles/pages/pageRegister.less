@@ -1,5 +1,5 @@
 /**********************************************************************/
-/* @file plugins/themes/idaitheme/styles/pages/pageAnnouncement.less **/
+/* @file plugins/themes/idaitheme/styles/pages/pageRegister.less ******/
 /**********************************************************************/
 /* Copyright (c) 2019 German Archaeological Institute *****************/
 /* Developed by Dennis Twardy (dennistwardy86@gmail.com) **************/
@@ -8,7 +8,8 @@
 /* @brief styles for the footer object ********************************/
 /**********************************************************************/
 
-.page_announcement {
+
+.page_register {
 	grid-column-start: 1;
 	grid-column-end: @DAIgrid_columns + 1;
 
@@ -20,40 +21,25 @@
 		.makeBreadcrumbs();
 	}
 
-	.obj_announcement_full {
-		display: contents;
-	}
-
 	h1 {
 		grid-column-start: 3;
 		grid-column-end: @DAIgrid_columns - 1;
 
-		margin-bottom: @DAIspacing_double;
+		.makeSeparatorHeadline();
 	}
 
-	.date {
-		grid-column-start: 3;
-		grid-column-end: @DAIgrid_columns - 1;
+	.register {
+		grid-column-start: 4;
+		grid-column-end: @DAIgrid_columns - 2;
 
-		font-style: italic;
-	}
-
-	.description {
-		display: contents;
-	}
-
-	p {
-		grid-column-start: 3;
-		grid-column-end: @DAIgrid_columns - 1;
-
-		margin: @DAIspacing_base 0;
-	}
-
-	p:first-of-type {
-		margin-top: @DAIspacing_double;
-	}
-
-	p:last-of-type {
 		margin-bottom: @DAIspacing_quadruple * 2;
+
+		fieldset {
+			margin-bottom: @DAIspacing_quadruple;
+		}
+
+		fieldset.consent {
+			margin-top: @DAIspacing_quadruple * 3;
+		}
 	}
 }
