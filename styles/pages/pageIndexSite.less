@@ -1,0 +1,123 @@
+/**********************************************************************/
+/* @file plugins/themes/idaitheme/styles/pages/pageIndexSite.less *****/
+/**********************************************************************/
+/* Copyright (c) 2019 German Archaeological Institute *****************/
+/* Developed by Dennis Twardy (dennistwardy86@gmail.com) **************/
+/* Distributed under the GNU GPL v3. For full terms see LICENSE. ******/
+/**********************************************************************/
+/* @brief styles for the footer object ********************************/
+/**********************************************************************/
+
+.page_index_site {
+	grid-column-start: 1;
+	grid-column-end: @DAIgrid_columns + 1;
+
+	display: grid;
+	grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
+	grid-auto-rows: minmax(min-content, max-content);
+
+	.about_site {
+		grid-column-start: 3;
+		grid-column-end: @DAIgrid_columns - 1;
+
+		margin-bottom: @DAIspacing_quadruple;
+	}
+
+	.journals {
+		.makeWideBox();
+
+		display: grid;
+		grid-template-columns: repeat(@DAIgrid_columns - @DAIgrid_third, 100% / (@DAIgrid_columns - @DAIgrid_third));
+		grid-auto-rows: minmax(min-content, max-content);
+
+		margin-bottom: 0;
+
+		h2 {
+			grid-column-start: 2;
+			grid-column-end: @DAIgrid_columns - @DAIgrid_third;
+
+			.makeSeparatorHeadline();
+
+			color: #ffffff;
+			border-color: #ffffff;
+		}
+
+		ul {
+			margin: 0;
+			display: contents;
+
+			li {
+				grid-column-start: 1;
+				grid-column-end: @DAIgrid_columns - @DAIgrid_third + 1;
+
+				background-color: @DAIcolor_greyBright;
+				margin: @DAIspacing_quadruple 0;
+
+				.thumb {
+					display: inline-block;
+					float: right;
+
+					position: relative;
+					width: (100% / (@DAIgrid_columns - @DAIgrid_third)) * 2;
+					right: (100% / (@DAIgrid_columns - @DAIgrid_third));
+
+					overflow: hidden;
+
+					margin-top: auto;
+					margin-bottom: auto;
+
+					padding: @DAIspacing_quadruple 0;
+
+					img {
+						max-width: 100%;
+					}
+
+				}
+
+				.body {
+					display: inline-block;
+					float: left;
+
+					position: relative;
+
+					width: (100% / (@DAIgrid_columns - @DAIgrid_third)) * 4;
+					left: (100% / (@DAIgrid_columns - @DAIgrid_third));
+
+					h3 {
+						text-align: left;
+
+						margin-top: 0;
+						padding-top: @DAIspacing_quadruple;
+						padding-right: @DAIspacing_quadruple;
+					}
+
+					.description,
+					.links {
+						padding-right: @DAIspacing_quadruple;
+					}
+
+					.description {
+						color: @DAIcolor_greyDark;
+					}
+
+					.links {
+						display: inline-block;
+
+						li {
+							display: inline-block;
+							margin-left: @DAIspacing_quadruple;
+							margin-top: @DAIspacing_double;
+
+							.makeButton();
+						}
+
+						li:hover {
+							.makeButtonHover();
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
