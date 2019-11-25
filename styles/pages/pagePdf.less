@@ -1,0 +1,158 @@
+/**********************************************************************/
+/* @file plugins/themes/idaitheme/styles/pages/pagePdf.less ***********/
+/**********************************************************************/
+/* Copyright (c) 2019 German Archaeological Institute *****************/
+/* Developed by Dennis Twardy (dennistwardy86@gmail.com) **************/
+/* Distributed under the GNU GPL v3. For full terms see LICENSE. ******/
+/**********************************************************************/
+/* @brief styles for the footer object ********************************/
+/**********************************************************************/
+
+
+.pkp_page_article {
+	/*
+	.header_view {
+		z-index: 2;
+		position: relative;
+		background: @DAIcolor_greyBright;
+
+		a {
+			line-height: @DAIfonts_baseLarger;
+			text-decoration: none;
+		}
+
+		.return {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: @DAIfonts_baseLarger;
+			height: @DAIfonts_baseLarger;
+			line-height: @DAIfonts_baseLarger;
+			background: @DAIcolor_greyBright;
+			color: @DAIcolor_blueBright;
+			text-align: center;
+
+			&:before {
+				.fa();
+				content: @fa-var-arrow-left;
+			}
+
+			&:hover,
+			&:focus {
+				background: @DAIcolor_blueBright;
+				color: #fff;
+			}
+		}
+
+		.title {
+			display: block;
+			padding-left: @DAIfonts_baseLarger + @DAIspacing_base;
+			max-width: 100%;
+			overflow-x: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			//font-size: @font-sml;
+			color: #fff;
+
+			&:hover,
+			&:focus {
+				background: @DAIcolor_blueBright;
+				color: #fff;
+			}
+		}
+
+		.download {
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: @DAIfonts_baseLarger;
+			background: @DAIcolor_greyBright;
+			text-align: center;
+
+			&:hover,
+			&:focus {
+				background: @DAIcolor_blueBright;
+				color: #fff;
+			}
+
+			&:before {
+				.fa();
+				content: @fa-var-download;
+			}
+
+			.label {
+				display: none;
+			}
+		}
+	}
+
+	.galley_view {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: hidden;
+
+		iframe {
+			width: 100%;
+			height: 100%;
+			padding-top: @DAIspacing_triple;
+			border: none;
+		}
+	}*/
+
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+
+	header.header_view {
+		z-index: 10;
+		width: 100%;
+		height: @DAIspacing_quadruple;
+		display: inline-block;
+
+		.return,
+		.title,
+		.download {
+			position: absolute;
+
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+
+		.return {
+			float: left;
+			left: @DAIspacing_quadruple;
+		}
+
+		.title {
+			left: auto;
+			right: auto;
+			text-align: center;
+			width: 100%;
+		}
+
+		.download {
+			float: right;
+			right: @DAIspacing_quadruple;
+		}
+	}
+
+	.galley_view#pdfCanvasContainer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: hidden;
+
+		iframe {
+			width: 100%;
+			height: 100%;
+			padding-top: @DAIspacing_quadruple;
+			border: none;
+		}
+	}
+}
