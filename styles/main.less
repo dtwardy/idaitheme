@@ -128,22 +128,28 @@
 	text-align: right;
 
 	.profile {
-		display: contents;
+		display: inline-block;
+		width: 100%;
+		height: @DAIspacing_quadruple * 4;
 
-		a {
+
+		>a {
 			margin: @DAIspacing_quadruple;
 			padding-top: @DAIspacing_quadruple;
 			margin-left: 0%;
 			width: 100%;
-			height: 100%;
+			height: @DAIspacing_quadruple * 4;
 
 
 			font-size: @DAIspacing_triple;
 		}
 
-		a:hover {
+		>a:hover {
 			text-decoration: none;
+			color: @DAIcolor_greyMedium;
 		}
+
+
 	}
 }
 
@@ -221,15 +227,39 @@
 	}
 }
 
-.pkp_navigation_user .profile a+ul {
-	display: block;
-	position: absolute;
+.pkp_navigation_user .profile {
+	ul {
+		height: @DAIgrid_hero;
+		display: block;
+		position: absolute;
+		right: 0;
+		margin-right: 0;
+		background-color: @DAIcolor_greyMedium;
 
-	top: @DAIspacing_quadruple * 4;
-	width: (100vh / @DAIgrid_columns) * 2;
+		li {
+			display: block;
+			height: @DAIspacing_quadruple * 2;
 
-	visibility: hidden;
-	opacity: 0;
+			a {
+				height: @DAIfonts_baseLarger;
+				color: @DAIcolor_greyDark;
+
+				margin-top: auto;
+				margin-bottom: auto;
+			}
+		}
+	}
+
+	a+ul {
+		display: block;
+		position: absolute;
+
+		top: @DAIspacing_quadruple * 4;
+		width: (100vh / @DAIgrid_columns) * 2;
+
+		visibility: hidden;
+		opacity: 0;
+	}
 }
 
 .pkp_navigation_user .profile:hover>a+ul,
@@ -238,12 +268,17 @@
 	visibility: visible;
 	opacity: 1;
 
+	transition: visibility 0.4s, opacity 0.4s;
+
 	li {
 		display: inline-block;
+	}
+
+	li:hover {
 		background-color: @DAIcolor_greyDark;
 
 		a {
-			color: #ffffff;
+			color: @DAIcolor_greyBright;
 		}
 	}
 }
