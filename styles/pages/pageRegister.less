@@ -34,12 +34,129 @@
 
 		margin-bottom: @DAIspacing_quadruple * 2;
 
+		button#connect-orcid-button {
+			grid-column-start: @DAIgrid_columns / 4;
+			grid-column-end: @DAIgrid_columns / 4 + 2;
+
+			margin-bottom: @DAIspacing_double;
+		}
+
+		>a {
+			grid-column-start: @DAIgrid_columns / 4;
+			grid-column-end: @DAIgrid_columns / 4 + 2;
+			text-align: center;
+		}
+
 		fieldset {
 			margin-bottom: @DAIspacing_quadruple;
+
+			div.fields>div.context_optin {
+				display: contents;
+
+				>ul.contexts {
+					display: contents;
+
+					>li.context {
+						display: contents;
+
+						div.name,
+						fieldset.roles,
+						div.context_privacy {
+							grid-column-start: 2;
+							grid-column-end: @DAIgrid_columns / 2;
+
+							margin: @DAIspacing_double;
+							margin-bottom: 0;
+						}
+
+						fieldset.roles,
+						div.context_privacy {
+							margin-bottom: 0;
+						}
+
+						div.context_privacy {
+							margin-bottom: @DAIspacing_quadruple;
+						}
+					}
+				}
+
+			}
+
+			div.fields>div.optin-privacy>label,
+			div.fields>div.optin-email>label,
+			div.fields>div#reviewerOptinGroup>label {
+				grid-column-start: 2;
+				grid-column-end: @DAIgrid_columns / 2;
+
+				display: block;
+
+				>input {
+
+					float: left;
+				}
+			}
+
+			div.fields>div#reviewerInterests {
+				display: none;
+			}
 		}
 
 		fieldset.consent {
 			margin-top: @DAIspacing_quadruple * 3;
 		}
+
+		fieldset.reviewer_nocontext_interests {
+			display: none;
+		}
+
+		>div.fields {
+			grid-column-start: 1;
+			grid-column-end: @DAIgrid_columns / 2 + 1;
+			text-align: center;
+			margin-top: @DAIspacing_quadruple;
+		}
+
+		>div.buttons {
+
+			display: contents;
+
+			margin-top: @DAIspacing_double;
+
+
+			button.submit {
+				grid-column-start: 3;
+				grid-column-end: @DAIgrid_columns / 4 + 1;
+
+				text-align: right;
+				margin-right: @DAIspacing_double;
+			}
+
+			a.login {
+
+				grid-column-start: @DAIgrid_columns / 4 + 1;
+				grid-column-end: @DAIgrid_columns / 2 - 1;
+
+				text-align: left;
+				margin-left: @DAIspacing_double;
+			}
+
+
+			button.submit,
+			a.login {
+				.makeButton();
+				//margin-left: @DAIspacing_quadruple;
+
+				margin-top: @DAIspacing_quadruple;
+			}
+
+			button.submit:hover,
+			a.login:hover {
+				.makeButtonHover();
+			}
+
+		}
 	}
+
+
+
 }

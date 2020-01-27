@@ -22,11 +22,18 @@
 		.makeBreadcrumbsBright();
 	}
 
-	h1 {
+	h1,
+	>p {
 		grid-column-start: 3;
 		grid-column-end: @DAIgrid_columns - 1;
 
 		margin-bottom: @DAIspacing_double;
+	}
+
+	>p {
+		text-align: center;
+
+		margin: @DAIspacing_double 0 @DAIspacing_quadruple 0;
 	}
 
 	.issues_archive {

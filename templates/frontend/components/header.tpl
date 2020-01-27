@@ -43,7 +43,7 @@
 						</div>
 
 						<div class="idai_world_logo_wrapper">
-							<img class="idai_world_logo" src="{$baseUrl}/public/idai/idai_logo.png"/>
+							<a href="https://www.idai.world/what/publications"><img class="idai_world_logo" src="{$baseUrl}/public/idai/idai_logo.png"/></a>
 						</div>
 					</div>
 

@@ -34,6 +34,14 @@
 
 	}
 
+	h2.subtitle {
+		grid-column-start: 3;
+		grid-column-end: @DAIgrid_columns - 3;
+
+		text-align: left;
+		padding-top: @DAIspacing_double;
+	}
+
 	.main_entry {
 		grid-column-start: 3;
 		grid-column-end: @DAIgrid_columns - 3;
@@ -67,6 +75,19 @@
 			width: 100%;
 			overflow: hidden;
 
+		}
+
+		div.galleys>ul.galleys_links>li {
+			margin: @DAIspacing_quadruple 0 @DAIspacing_double 0;
+			display: block;
+
+			>a {
+				.makeButton();
+			}
+
+			>a:hover {
+				.makeButtonHover();
+			}
 		}
 
 		.cover_image .sub_item a {
