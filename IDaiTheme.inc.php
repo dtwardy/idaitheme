@@ -85,7 +85,7 @@ class IDaiTheme extends ThemePlugin {
     
     // READING LESS VARIABLES AND SETTING THEM COMES HERE
     // $additionalLessVariables[] = '@variableName' . $this->getOption('optionName') . ';'
-    
+
     $baseUrl = $request->getBaseUrl();
     $SysPubDir = Config::getVar('files', 'public_files_dir');
     $SysPubUrl = $baseUrl . '/' . $SysPubDir . '/';
@@ -156,13 +156,13 @@ class IDaiTheme extends ThemePlugin {
     return __('plugins.themes.idaitheme.description');
   }
 
-  function debugToConsole($debugData) {
+  /*function debugToConsole($debugData) {
     $outputData = $debugData;
     if (is_array($outputData)) {
       $outputData = implode(',', $outputData);
     } else {
       echo "<script>console.log('DEBUG: " . $outputData . "');</script>";
     }
-  }
+  }*/
 }
 ?>
