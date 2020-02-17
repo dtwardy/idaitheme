@@ -85,14 +85,15 @@ class IDaiTheme extends ThemePlugin {
     
     // READING LESS VARIABLES AND SETTING THEM COMES HERE
     // $additionalLessVariables[] = '@variableName' . $this->getOption('optionName') . ';'
-    $currentJournal = $request->getJournal();
-    $primLocale = $currentJournal->getPrimaryLocale();
-    $pubFileManager = new PublicFileManager();
+    
     $baseUrl = $request->getBaseUrl();
-    $pubFilesUrl = $baseUrl . '/' . $pubFileManager->getJournalFilesPath($currentJournal->getId());
     $SysPubDir = Config::getVar('files', 'public_files_dir');
-   $pubFilesDir = BASE_SYS_DIR . '/'. $SysPubDir . '/' . 'journals/' . $currentJournal->getId();
     $SysPubUrl = $baseUrl . '/' . $SysPubDir . '/';
+    $pubFileManager = new PublicFileManager();
+    $currentContext = $request->getContext();
+    $primLocale = $currentContext->getPrimaryLocale();
+    $pubFilesUrl = $baseUrl . '/' . $pubFileManager->getJournalFilesPath($currentContext->getId());
+    $pubFilesDir = BASE_SYS_DIR . '/' . $SysPubDir . '/' . 'journals/' . $currentContext->getId();
 
     $additionalLessVariables[] = '@DAIpubfiles: \'' . $SysPubUrl .'\';';
 
@@ -153,6 +154,15 @@ class IDaiTheme extends ThemePlugin {
   }
   function getDescription() {
     return __('plugins.themes.idaitheme.description');
+  }
+
+  function debugToConsole($debugData) {
+    $outputData = $debugData;
+    if (is_array($outputData)) {
+      $outputData = implode(',', $outputData);
+    } else {
+      echo "<script>console.log('DEBUG: " . $outputData . "');</script>";
+    }
   }
 }
 ?>
