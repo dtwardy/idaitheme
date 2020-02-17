@@ -85,13 +85,13 @@ class IDaiTheme extends ThemePlugin {
     
     // READING LESS VARIABLES AND SETTING THEM COMES HERE
     // $additionalLessVariables[] = '@variableName' . $this->getOption('optionName') . ';'
-    //$currentJournal = $request->getJournal();
-    //$primLocale = $currentJournal->getPrimaryLocale();
-    //$pubFileManager = new PublicFileManager();
+    $currentJournal = $request->getJournal();
+    $primLocale = $currentJournal->getPrimaryLocale();
+    $pubFileManager = new PublicFileManager();
     $baseUrl = $request->getBaseUrl();
-    //$pubFilesUrl = $baseUrl . '/' . $pubFileManager->getJournalFilesPath($currentJournal->getId());
+    $pubFilesUrl = $baseUrl . '/' . $pubFileManager->getJournalFilesPath($currentJournal->getId());
     $SysPubDir = Config::getVar('files', 'public_files_dir');
-   // $pubFilesDir = BASE_SYS_DIR . '/'. $SysPubDir . '/' . 'journals/' . $currentJournal->getId();
+   $pubFilesDir = BASE_SYS_DIR . '/'. $SysPubDir . '/' . 'journals/' . $currentJournal->getId();
     $SysPubUrl = $baseUrl . '/' . $SysPubDir . '/';
 
     $additionalLessVariables[] = '@DAIpubfiles: \'' . $SysPubUrl .'\';';
@@ -127,11 +127,11 @@ class IDaiTheme extends ThemePlugin {
       
     $descriptionTextPosition = $this->getOption('jourdescription');
     if (empty($descriptionTextPosition) || $descriptionTextPosition === 'above') {
-      $additionalLessVariables[] = '@descriptionTextState: \'above\';';
+      $additionalLessVariables[] = '@DAIdescriptionTextState: \'above\';';
     } elseif ($descriptionTextPosition === 'below') {
-      $additionalLessVariables[] = '@descriptionTextState: \'below\';';  
+      $additionalLessVariables[] = '@DAIdescriptionTextState: \'below\';';  
     } else {
-      $additionalLessVariables[] = '@descriptionTextState: \'off\';';
+      $additionalLessVariables[] = '@DAIdescriptionTextState: \'off\';';
     }
 
     // ---

@@ -29,7 +29,7 @@
 	{/if}*}
 
 	{if $journalDescription}
-		<div class="journal_description">
+		<div class="journalDescriptionAbove journal-description">
 			{$journalDescription}
 		</div>
 	{/if}
@@ -119,6 +119,12 @@
 	{if $additionalHomeContent}
 		<div class="additional_content">
 			{$additionalHomeContent}
+		</div>
+	{/if}
+
+	{if $journalDescription}
+		<div class="journalDescriptionBelow journal-description">
+			{$journalDescription}
 		</div>
 	{/if}
 </div><!-- .page -->
