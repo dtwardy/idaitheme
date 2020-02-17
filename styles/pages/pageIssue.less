@@ -112,7 +112,12 @@
     .sections {
         grid-column-start: (@DAIgrid_third / 2) + 1;
         grid-column-end: (@DAIgrid_columns - (@DAIgrid_third / 2) + 1) - @DAIgrid_quarter;
-        grid-row: 3;
+        grid-row-start: 2;
+        grid-row-end: 6;
+
+        .section>h2 {
+            text-align: left;
+        }
 
         a.obj_galley_link {
             .makeButton();
@@ -120,6 +125,10 @@
 
         a.obj_galley_link:hover {
             .makeButtonHover();
+        }
+
+        ul.articles li {
+            margin-bottom: @DAIspacing_double;
         }
     }
 
