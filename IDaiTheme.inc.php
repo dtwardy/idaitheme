@@ -86,14 +86,35 @@ class IDaiTheme extends ThemePlugin {
     // READING LESS VARIABLES AND SETTING THEM COMES HERE
     // $additionalLessVariables[] = '@variableName' . $this->getOption('optionName') . ';'
 
+    $pubFilesDir = '';
+    $pubFilesUrl = '';
+    $SysPubDir = '';
+    $SysPubUrl = '';
+    $baseUrl = '';
+
     $baseUrl = $request->getBaseUrl();
     $SysPubDir = Config::getVar('files', 'public_files_dir');
     $SysPubUrl = $baseUrl . '/' . $SysPubDir . '/';
     $pubFileManager = new PublicFileManager();
-    $currentContext = $request->getContext();
-    $primLocale = $currentContext->getPrimaryLocale();
-    $pubFilesUrl = $baseUrl . '/' . $pubFileManager->getJournalFilesPath($currentContext->getId());
-    $pubFilesDir = BASE_SYS_DIR . '/' . $SysPubDir . '/' . 'journals/' . $currentContext->getId();
+
+    if ($request) {
+      $currentContext = $request->getContext();
+      if (isset($currentContext)) {
+        $primLocale = $currentContext->getPrimaryLocale();
+        $pubFilesUrl = $baseUrl . '/' . $pubFileManager->getJournalFilesPath($currentContext->getId());
+        $pubFilesDir = BASE_SYS_DIR . '/' . $SysPubDir . '/' . 'journals/' . $currentContext->getId();
+      } else {
+        $currentContext = $request->getSite();
+        if (isset($currentContext)) {
+          $primLocale = $currentContext->getPrimaryLocale();
+          $pubFilesDir = BASE_SYS_DIR . '/' . $SysPubDir . '/' . 'site';
+        }
+      }
+
+      
+    } 
+    
+    
 
     $this->getContents($request);
 
