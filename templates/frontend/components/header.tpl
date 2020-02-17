@@ -45,6 +45,19 @@
 						<div class="idai_world_logo_wrapper">
 							<a href="https://www.idai.world/what/publications"><img class="idai_world_logo" src="{$baseUrl}/public/idai/idai_logo.png"/></a>
 						</div>
+
+						<div class="idai_language_switch_wrapper">
+							<span>{translate key="common.language"}</span>
+							<ul class="idai_language_switch">
+								{foreach from=$languageToggleLocales item=localeName key=localeKey}
+									<li class="locale_{$localeKey|escape}{if $localeKey == $currentLocale} current{/if}" lang="{$localeKey|escape}">
+										<a href="{url router=$smarty.const.ROUTE_PAGE page="user" op="setLocale" path=$localeKey source=$smarty.server.REQUEST_URI}">
+											{$localeName}
+										</a>
+									</li>
+								{/foreach}
+							</ul>
+						</div>
 					</div>
 
 					<div class="pkp_site_name_wrapper">

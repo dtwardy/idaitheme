@@ -95,6 +95,8 @@ class IDaiTheme extends ThemePlugin {
     $pubFilesUrl = $baseUrl . '/' . $pubFileManager->getJournalFilesPath($currentContext->getId());
     $pubFilesDir = BASE_SYS_DIR . '/' . $SysPubDir . '/' . 'journals/' . $currentContext->getId();
 
+    $this->getContents($request);
+
     $additionalLessVariables[] = '@DAIpubfiles: \'' . $SysPubUrl .'\';';
 
     if (file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.png') ||
@@ -156,13 +158,41 @@ class IDaiTheme extends ThemePlugin {
     return __('plugins.themes.idaitheme.description');
   }
 
-  /*function debugToConsole($debugData) {
+
+  function getContents(/*$templateMgr,*/ $request = null) {
+    $templateMgr = TemplateManager::getManager($request);
+		$templateMgr->assign('isPostRequest', $request->isPost());
+		if (!defined('SESSION_DISABLE_INIT')) {
+			$journal = $request->getJournal();
+			if (isset($journal)) {
+				$locales = $journal->getSupportedLocaleNames();
+
+			} else {
+				$site = $request->getSite();
+				$locales = $site->getSupportedLocaleNames();
+			}
+		} else {
+			$locales = AppLocale::getAllLocales();
+			$templateMgr->assign('languageToggleNoUser', true);
+		}
+
+		if (isset($locales) && count($locales) > 1) {
+			$templateMgr->assign('enableLanguageToggle', true);
+      $templateMgr->assign('languageToggleLocales', $locales);
+		}
+
+    //debugToConsole($locales);
+
+		return $templateMgr;
+  }
+  
+  function debugToConsole($debugData) {
     $outputData = $debugData;
     if (is_array($outputData)) {
       $outputData = implode(',', $outputData);
     } else {
       echo "<script>console.log('DEBUG: " . $outputData . "');</script>";
     }
-  }*/
+  }
 }
 ?>
