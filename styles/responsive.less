@@ -1,0 +1,84 @@
+//
+// Responsiveness
+//
+
+@media (max-width: 1550px) {
+    #headerNavigationContainer>div>nav.pkp_navigation_primary_row>div>form {
+        grid-column-start: 8;
+        grid-column-end: 12;
+    }
+}
+
+
+@media (max-width: 1200px) {
+
+    .idai_world_nav {
+        grid-column-end: 3 !important;
+        width: 100%;
+
+        .idai_world_nav_logo {}
+
+        iframe {
+            width: 100% / @DAIgrid_columns * 3 !important;
+        }
+    }
+
+    #headerNavigationContainer>div>nav.pkp_navigation_primary_row>div>form>input {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .idai_world_nav {
+        display: none;
+    }
+
+    .idai_language_switch_wrapper {
+        grid-column-start: 1 !important;
+        grid-column-end: 2 !important;
+
+        width: 100%;
+        height: 100%;
+        font-size: 80%;
+
+        left: 0 !important;
+        margin-left: @DAIspacing_quadruple;
+
+        ul.idai_language_switch {
+            left: 0 !important;
+            overflow: hidden;
+            //width: 100% / @DAIgrid_columns * 4;
+
+            li {
+                width: 100%;
+            }
+        }
+    }
+
+    .pkp_navigation_user_wrapper {
+        font-size: 80%;
+        grid-column-start: @DAIgrid_columns - 2;
+
+        ul {
+            width: 100%;
+
+            li.profile ul {
+                width: 100vh / @DAIgrid_columns * 3;
+            }
+        }
+
+    }
+
+    #headerNavigationContainer>div>nav.pkp_navigation_primary_row>div>form.pkp_search {
+        display: none;
+    }
+
+    #headerNavigationContainer>div>div.pkp_site_name_wrapper>h1>a {
+        font-size: @DAIfonts_headline1;
+    }
+
+    #pkp_content_main>div>div.current_issue>div.obj_issue_toc>div.heading>div.description,
+    #pkp_content_main>div>div.current_issue>div.obj_issue_toc>div.heading>a {
+        display: none;
+    }
+}
