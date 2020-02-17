@@ -22,7 +22,7 @@ Additional static sites can be created through the backend by adding a new navig
 </div>
 ```
 
-Do not add another `<h1></h1>`! Any website should only have one headline of that level which can be found within the header. The layout *will break* if the custom site is note being set up accordingly!
+Do not add another `<h1></h1>`! Any website should only have one headline of that level which will automatically be added by OJS. Remember the '<div>' container! The layout *will break* if the custom site is note being set up accordingly!
 
 ## Note
 This theme does not implement sidebars. Even if sidebar blocks are being enabled in the backend, the theme will set their visibility to none. The theme is not meant for usage with the announcement system. Keep it deactivated.

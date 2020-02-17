@@ -8,28 +8,32 @@
 /* @brief styles for the footer object ********************************/
 /**********************************************************************/
 
-.page {
-	grid-column-start: 1;
-	grid-column-end: @DAIgrid_columns + 1;
 
-	display: grid;
-	grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
-	grid-auto-rows: minmax(min-content, max-content);
 
-	.cmp_breadcrumbs {
-		.makeBreadcrumbs();
-	}
 
-	h1 {
-		grid-column-start: 3;
-		grid-column-end: @DAIgrid_columns - 1;
+#pkp_content_main>nav.cmp_breadcrumbs {
+    .makeBreadcrumbs();
+    grid-row: 1;
+}
 
-		.makeSeparatorHeadline();
-	}
+#pkp_content_main>h1.page_title {
+    grid-column-start: 3;
+    grid-column-end: @DAIgrid_columns - 1;
+    grid-row: 2;
+    .makeSeparatorHeadline();
+}
 
-	* {
-		grid-column-start: 3;
-		grid-column-end: @DAIgrid_columns;
-		margin-top: @DAIspacing_quadruple;
-	}
+#pkp_content_main>div.page {
+    grid-column-start: 1;
+    grid-column-end: @DAIgrid_columns + 1;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
+    grid-auto-rows: minmax(min-content, max-content);
+
+    * {
+        grid-column-start: 3;
+        grid-column-end: @DAIgrid_columns - 1;
+        margin-top: @DAIspacing_quadruple;
+    }
 }
