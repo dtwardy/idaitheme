@@ -73,12 +73,46 @@
         display: none;
     }
 
-    #headerNavigationContainer>div>div.pkp_site_name_wrapper>h1>a {
-        font-size: @DAIfonts_headline1;
+    #headerNavigationContainer>div>div.pkp_site_name_wrapper>h1>a,
+    #headerNavigationContainer>div>div.pkp_site_name_wrapper>div>a {
+        font-size: @DAIfonts_headline1  !important;
     }
 
     #pkp_content_main>div>div.current_issue>div.obj_issue_toc>div.heading>div.description,
     #pkp_content_main>div>div.current_issue>div.obj_issue_toc>div.heading>a {
         display: none;
+    }
+
+    .page * {
+        grid-column-start: 2 !important;
+        grid-column-end: @DAIgrid_columns  !important;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #pkp_content_main>div>div>div.heading>a {
+        display: none;
+    }
+
+    #pkp_content_main>div>ul>li>div>a.cover>img {
+        display: none;
+    }
+
+    #pkp_content_main>div>ul>li>div {
+        grid-column-start: 1 !important;
+        grid-column-end: 9 !important;
+
+        //margin: @DAIspacing_quadruple auto;
+    }
+
+    #navigationPrimary {
+        grid-column-start: 2;
+        grid-column-end: @DAIgrid_columns;
+
+        >li>a,
+        >li>ul>li>a {
+            font-size: @DAIfonts_headline5  !important;
+
+        }
     }
 }
