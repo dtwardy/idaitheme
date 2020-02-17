@@ -38,7 +38,7 @@
 
     .search_controls:hover {
         //text-decoration: underline;
-        background-color: @DAIcolor_greyBright;
+        background-color: @DAIcolor_greyMedium;
         transition: background-color 0.2s;
 
         a.search_prompt {
@@ -346,6 +346,8 @@
     ul.idai_language_switch {
         visibility: visible;
         opacity: 1;
+
+        transition: visibility 0.4s, opacity 0.4s;
 
         >li:hover {
             background-color: @DAIcolor_greyDark;

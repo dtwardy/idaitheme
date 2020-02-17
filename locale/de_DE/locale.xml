@@ -19,16 +19,9 @@
 <locale name="de_DE" full_name="Deutsch (Deutschland)">
 	<message key="plugins.themes.idaitheme.name">iDai Theme Plugin</message>
 	<message key="plugins.themes.idaitheme.description">iDai Theme Plugin entsprechend Style Guide</message>
-
-  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroLabel">Status Hero</message>
-  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroDescription">Wandelt das hochgeladene Homepagebild zum Herobild</message>
-  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroEnabled">Ein</message>
-  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroDisabled">Aus</message>
-  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroClaimLabel">Hero Claim</message>
-  <message key="plugins.themes.idaitheme.option.iDaiTheme.heroClaimDescription">Der Hero Claim würd über dem Herobild zentral angezeigt</message>
   <message key="plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionLabel">Zeitschriftenbeschreibung</message>
   <message key="plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionDescription">Schaltet zwischen den Anzeigeoptionen des Zeitschriftenbeschreibungstextes um</message>
-  <message key="plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionAbove">Über Announcements</message>
-  <message key="plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionBelow">Unter Announcements</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionAbove">Über aktueller Ausgabe</message>
+  <message key="plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionBelow">Unter aktueller Ausgabe</message>
   <message key="plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionOff">Nicht anzeigen</message>
 </locale>

@@ -9,111 +9,106 @@
 /**********************************************************************/
 
 .page_search {
-	grid-column-start: 1;
-	grid-column-end: @DAIgrid_columns + 1;
+    grid-column-start: 1;
+    grid-column-end: @DAIgrid_columns + 1;
 
-	display: grid;
-	grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
-	grid-auto-rows: minmax(min-content, max-content);
+    display: grid;
+    grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
+    grid-auto-rows: minmax(min-content, max-content);
 
-	.cmp_breadcrumbs {
-		.makeBreadcrumbs();
-	}
+    .cmp_breadcrumbs {
+        .makeBreadcrumbs();
+    }
 
-	h1 {
-		grid-column-start: 3;
-		grid-column-end: @DAIgrid_columns - 1;
+    h1 {
+        grid-column-start: 3;
+        grid-column-end: @DAIgrid_columns - 1;
 
-		.makeSeparatorHeadline();
-	}
+        .makeSeparatorHeadline();
+    }
 
-	.search_results {
-		grid-column-start: 3;
-		grid-column-end: @DAIgrid_columns - 1;
+    .search_results {
+        grid-column-start: 3;
+        grid-column-end: @DAIgrid_columns - 1;
 
-		margin-top: @DAIspacing_quadruple;
-	}
+        margin-top: @DAIspacing_quadruple;
+    }
 
-	.cmp_notification.notice {
-		.makeSmallBox();
+    .cmp_notification.notice {
+        .makeSmallBox();
 
-		margin-bottom: @DAIspacing_quadruple * 2;
+        margin-bottom: @DAIspacing_quadruple * 2;
 
-		background-color: @DAIcolor_blueBright;
-		text-align: center;
-		color: #ffffff;
-		font-style: italic;
-	}
+        background-color: @DAIcolor_blueBright;
+        text-align: center;
+        color: #ffffff;
+        font-style: italic;
+    }
 
-	>form.cmp_form {
-		grid-column-start: 4;
-		grid-column-end: @DAIgrid_columns - 2;
+    >form.cmp_form {
+        grid-column-start: 4;
+        grid-column-end: @DAIgrid_columns - 2;
 
-		margin-top: @DAIspacing_quadruple;
+        margin-top: @DAIspacing_quadruple;
 
-		div.search_input {
-			display: contents;
+        div.search_input {
+            display: contents;
 
-			>label.pkp_screen_reader {
-				display: none;
-			}
+            >label.pkp_screen_reader {
+                display: none;
+            }
 
-			>input.query {
-				grid-column-start: 1;
-				grid-column-end: @DAIgrid_columns / 2 + 1;
-				padding: 0 @DAIspacing_quadruple;
-			}
-		}
+            >input.query {
+                grid-column-start: 1;
+                grid-column-end: @DAIgrid_columns / 2 + 1;
+                padding: 0 @DAIspacing_quadruple;
+            }
+        }
 
-		>div.submit {
-			grid-column-start: 1;
-			grid-column-end: @DAIgrid_columns / 2 + 1;
+        >div.submit {
+            grid-column-start: 1;
+            grid-column-end: @DAIgrid_columns / 2 + 1;
 
-			text-align: center;
+            text-align: center;
 
-			margin-top: @DAIspacing_quadruple;
+            margin-top: @DAIspacing_quadruple;
 
-			>button {
-				width: 100% / @DAIgrid_columns * 2;
-			}
-		}
+            >button {
+                width: 100% / @DAIgrid_columns * 2;
+            }
+        }
 
-		>fieldset.search_advanced {
-			padding-bottom: @DAIspacing_quadruple;
+        >fieldset.search_advanced {
+            grid-column-start: 1;
+            grid-column-end: @DAIgrid_columns / 2+1;
 
-			>div {
-				display: contents;
+            padding: @DAIspacing_double @DAIspacing_quadruple @DAIspacing_quadruple @DAIspacing_quadruple;
 
-				>div:first-child {
-					margin-top: @DAIspacing_quadruple;
-				}
+            display: grid;
+            grid-template-columns: repeat(6, 100% / 6);
+            grid-auto-rows: minmax(min-content, max-content);
 
-				>div {
-					grid-column-start: 1;
-					grid-column-end: @DAIgrid_columns / 2 + 1;
+            div.date_range {
+                display: contents;
 
-					*:first-child {
-						padding-left: @DAIspacing_quadruple;
-					}
+                div.from,
+                div.to {
+                    grid-column-start: 2;
+                    grid-column-end: 4;
 
-					select:first-child {
-						margin-left: 100% / @DAIgrid_columns / 2;
-					}
-				}
+                    margin-right: 100% / 6 * 3;
+                    text-align: right;
+                }
+            }
 
-				grid-column-start: 1;
-				grid-column-end: @DAIgrid_columns / 2+1;
+            div.author {
+                grid-column-start: 2;
+                grid-column-end: 4;
+                //display: inline-block;
 
-				padding: @DAIspacing_double @DAIspacing_quadruple 0 @DAIspacing_quadruple;
-			}
-
-
-			>div.author {
-				grid-column-start: 1;
-				grid-column-end: @DAIgrid_columns / 2 + 1;
-				display: inline-block;
-
-			}
-		}
-	}
+                margin-right: 100% / 6 * 3;
+                text-align: right;
+            }
+        }
+    }
 }

@@ -29,14 +29,7 @@ class IDaiTheme extends ThemePlugin {
   public function init() {
     // Register options
 
-    // Hero Option
-    $this->addOption('heroClaim', 'text', array(
-        'label' => 'plugins.themes.idaitheme.option.iDaiTheme.heroClaimLabel',
-        'description' => 'plugins.themes.idaitheme.option.iDaiTheme.heroClaimDescription'
-    ));
- 
-
-    // Journal Description Position Option
+     // Journal Description Position Option
     $this->addOption('jourdescription', 'radio', array(
         'label' => 'plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionLabel',
         'description' => 'plugins.themes.idaitheme.option.iDaiTheme.jourdescriptionDescription',
@@ -113,8 +106,6 @@ class IDaiTheme extends ThemePlugin {
 
       
     } 
-    
-    
 
     $this->getContents($request);
 
@@ -128,25 +119,6 @@ class IDaiTheme extends ThemePlugin {
       
     } else {
       $additionalLessVariables[] = '@headerHasLogo: false;';
-    }
-
-    $heroClaimText = $this->getOption('heroClaim');
-    if (!empty($heroClaimText)) {
-      $additionalLessVariables[] = '@heroClaimText: \'' . $heroClaimText . '\';';
-    } else {
-      $additionalLessVariables[] = '@heroClaimText: \' \';';
-    }
-    $heroColour = $this->getOption('heroClaimColour');
-    if (!empty($heroColour)) {
-      $additionalLessVariables[] = '@heroClaimColour: ' . $heroColour . ';';
-    } else {
-      $additionalLessVariables[] = '@heroClaimColour: #FFF;';
-    }
-    $heroSizeOpt = $this->getOption('heroSize');
-    if (!empty($heroSizeOpt)) {
-      $additionalLessVariables[] = '@heroSize: ' . $heroSizeOpt  . ';';
-    } else {
-      $additionalLessVariables[] = '@heroSize: 350px;';
     }
       
     $descriptionTextPosition = $this->getOption('jourdescription');
@@ -202,18 +174,16 @@ class IDaiTheme extends ThemePlugin {
       $templateMgr->assign('languageToggleLocales', $locales);
 		}
 
-    //debugToConsole($locales);
-
 		return $templateMgr;
   }
   
-  function debugToConsole($debugData) {
+  /*function debugToConsole($debugData) {
     $outputData = $debugData;
     if (is_array($outputData)) {
       $outputData = implode(',', $outputData);
     } else {
       echo "<script>console.log('DEBUG: " . $outputData . "');</script>";
     }
-  }
+  }*/
 }
 ?>
