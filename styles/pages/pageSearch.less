@@ -116,6 +116,7 @@
             grid-column-end: @DAIgrid_columns / 2+1;
 
             display: flex;
+            flex-direction: column;
             padding: @DAIspacing_quadruple (100% / 5) @DAIspacing_quadruple 0;
 
             >div.date_range {
@@ -144,6 +145,14 @@
                 input {
                     max-height: @DAIfonts_baseLineHeight;
 
+                }
+
+                select.dateFromDay::after {
+                    content: "<br></br>";
+                }
+
+                select.dateToDay::after {
+                    content: "<br></br>";
                 }
             }
         }
