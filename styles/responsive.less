@@ -32,6 +32,17 @@
     #headerNavigationContainer>div>nav.pkp_navigation_primary_row>div>form>input {
         display: none;
     }
+
+
+    .page_register {
+        div.buttons button.submit {
+            grid-column-start: 2 !important;
+        }
+
+        div.buttons a.login {
+            grid-column-end: 6 !important;
+        }
+    }
 }
 
 @media (max-width: 900px) {
@@ -52,7 +63,7 @@
         font-size: 80%;
 
         left: 0 !important;
-        margin-left: @DAIspacing_quadruple;
+        padding-left: @DAIspacing_quintuple;
 
         ul.idai_language_switch {
             left: 0 !important;
@@ -67,13 +78,13 @@
 
     .pkp_navigation_user_wrapper {
         font-size: 80%;
-        grid-column-start: @DAIgrid_columns - 2;
+        grid-column-start: @DAIgrid_columns - 3 !important;
 
         ul {
             width: 100%;
 
             li.profile ul {
-                width: 100vh / @DAIgrid_columns * 3;
+                width: 100vh / @DAIgrid_columns * 4;
             }
         }
 
