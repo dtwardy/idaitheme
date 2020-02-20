@@ -78,7 +78,7 @@
             }
         }
 
-        >fieldset.search_advanced {
+        /*>fieldset.search_advanced {
             grid-column-start: 1;
             grid-column-end: @DAIgrid_columns / 2+1;
 
@@ -108,6 +108,37 @@
 
                 margin-right: 100% / 6 * 3;
                 text-align: right;
+            }
+        }*/
+
+        fieldset.search_advanced {
+            grid-column-start: 1;
+            grid-column-end: @DAIgrid_columns / 2+1;
+
+            display: flex;
+            padding: @DAIspacing_quadruple (100% / 4) @DAIspacing_quadruple 0;
+
+            >div.date_range {
+                display: contents;
+            }
+
+            div.from,
+            div.to,
+            >div.author {
+                flex: 0 0 auto;
+
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+
+                //padding: 0 (@DAIspacing_quintuple * 4);
+
+                >* {
+                    flex: 0.2 0.2 auto;
+                    margin-left: @DAIspacing_base;
+                    margin-bottom: @DAIspacing_base;
+                }
             }
         }
     }
