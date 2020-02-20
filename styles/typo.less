@@ -18,12 +18,12 @@
 .loadFontOTF(@DAIfont_headline, 300, regular);
 
 @DAIfonts_bodyFontFamilies: @DAIfont_body,
-	Helvetica,
-	Arial,
-	sans-serif;
+    Helvetica,
+    Arial,
+    sans-serif;
 @DAIfonts_headlineFontFamilies: @DAIfont_headline,
-	Times,
-	serif;
+    Times,
+    serif;
 
 @DAIfonts_headlineColorBright: #fff;
 @DAIfonts_headlineColorDark: @DAIcolor_blueBright;
@@ -47,13 +47,13 @@
 
 
 html {
-	font-size: @DAIfonts_baseSize;
-	line-height: @DAIfonts_baseLineHeight;
+    font-size: @DAIfonts_baseSize;
+    line-height: @DAIfonts_baseLineHeight;
 }
 
 body {
-	font-family: @DAIfonts_bodyFontFamilies;
-	color: @DAIfonts_bodyColor;
+    font-family: @DAIfonts_bodyFontFamilies;
+    color: @DAIfonts_bodyColor;
 }
 
 h1,
@@ -62,43 +62,46 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: @DAIfonts_headlineFontFamilies;
-	font-weight: 300;
-	color: @DAIfonts_headlineColorBright;
-	line-height: @DAIfontsd_headlineLineHeight;
+    font-family: @DAIfonts_headlineFontFamilies;
+    font-weight: 300;
+    color: @DAIfonts_headlineColorBright;
+    line-height: @DAIfontsd_headlineLineHeight;
 
-	margin-top: @DAIspacing_double;
-	margin-bottom: @DAIspacing_base;
+    margin-top: @DAIspacing_double;
+    margin-bottom: @DAIspacing_base;
 }
 
 h1 {
-	font-size: @DAIfonts_headline1;
-	text-align: center;
+    font-size: @DAIfonts_headline1;
+    text-align: center;
 }
 
 
 h2 {
-	font-size: @DAIfonts_headline2;
-	text-align: center;
+    font-size: @DAIfonts_headline2;
+    text-align: center;
 }
 
 h3 {
-	font-size: @DAIfonts_headline3;
-	text-align: center;
+    font-size: @DAIfonts_headline3;
+    text-align: center;
 }
 
 h4 {
-	font-size: @DAIfonts_headline4;
+    font-size: @DAIfonts_headline4;
+    color: @DAIcolor_greyDark;
 }
 
 h5 {
-	font-size: @DAIfonts_headline5;
+    font-size: @DAIfonts_headline5;
+    color: @DAIcolor_greyDark;
 }
 
 h6 {
-	font-size: @DAIfonts_headline6;
-	text-transform: uppercase;
-	letter-spacing: 0.01em;
+    font-size: @DAIfonts_headline6;
+    color: @DAIcolor_greyDark;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
 }
 
 h1+h2,
@@ -111,7 +114,7 @@ h2+h5,
 h3+h4,
 h3+h5,
 h4+h5 {
-	margin-top: 0;
+    margin-top: 0;
 }
 
 p,
@@ -123,23 +126,23 @@ ul,
 dl,
 figure,
 address {
-	margin: 0 0 @DAIspacing_base 0;
+    margin: 0 0 @DAIspacing_base 0;
 }
 
 ul,
 ol {
-	margin-left: 0;
-	padding-left: 0;
-	margin-right: @DAIspacing_base;
-	list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: @DAIspacing_base;
+    list-style: none;
 }
 
 a {
-	text-decoration: none;
-	color: @DAIcolor_blueBright;
+    text-decoration: none;
+    color: @DAIcolor_blueBright;
 }
 
 a:hover {
-	text-decoration: underline;
-	color: @DAIcolor_blueDark;
+    text-decoration: underline;
+    color: @DAIcolor_blueDark;
 }
