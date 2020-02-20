@@ -12,6 +12,12 @@
 
 @media (max-width: 1200px) {
 
+    #headerNavigationContainer>div>div.pkp_site_name_wrapper>h1>a,
+    #headerNavigationContainer>div>div.pkp_site_name_wrapper>div>a {
+        font-size: 3rem !important;
+        line-height: 3rem !important;
+    }
+
     .idai_world_nav {
         grid-column-end: 3 !important;
         width: 100%;
@@ -31,6 +37,10 @@
 @media (max-width: 900px) {
     .idai_world_nav {
         display: none;
+    }
+
+    fieldset.search_advanced {
+        padding-right: 100% / 6 !important;
     }
 
     .idai_language_switch_wrapper {
@@ -75,7 +85,8 @@
 
     #headerNavigationContainer>div>div.pkp_site_name_wrapper>h1>a,
     #headerNavigationContainer>div>div.pkp_site_name_wrapper>div>a {
-        font-size: @DAIfonts_headline1  !important;
+        font-size: 2rem !important;
+        line-height: 2rem !important;
     }
 
     #pkp_content_main>div>div.current_issue>div.obj_issue_toc>div.heading>div.description,
@@ -83,7 +94,7 @@
         display: none;
     }
 
-    .page * {
+    .page>* {
         grid-column-start: 2 !important;
         grid-column-end: @DAIgrid_columns  !important;
         margin-left: 0;
@@ -113,6 +124,65 @@
         >li>ul>li>a {
             font-size: @DAIfonts_headline5  !important;
 
+        }
+    }
+
+    .page_issue {
+        div.sections {
+            grid-column-start: 2;
+            grid-column-end: 12;
+        }
+
+        div.heading {
+            grid-column-start: 2;
+            grid-column-end: 7;
+            padding-right: @DAIspacing_triple;
+        }
+
+        div.galleys {
+            grid-column-start: 7;
+            grid-column-end: 12;
+            padding-left: @DAIspacing_triple ;
+
+            h2 {
+                margin-top: 0;
+            }
+        }
+    }
+
+
+    .page_article {
+        .cover_image {
+            display: none;
+        }
+
+        div.main_entry,
+        div.entry_details {
+            grid-column-start: 2;
+            grid-column-end: 12;
+        }
+    }
+
+    .page_issue_archive {
+        ul.issues_archive {
+            grid-column-start: 1 !important;
+            grid-column-end: 13 !important;
+
+            a.title,
+            div.series {
+                grid-column-start: 1 !important;
+                grid-column-end: 7 !important;
+
+                padding-left: @DAIspacing_double;
+                padding-right: @DAIspacing_double;
+            }
+        }
+    }
+
+    .page_index_journal {
+        .current_issue {
+            grid-column-start: 1;
+            grid-column-end: 13;
         }
     }
 }

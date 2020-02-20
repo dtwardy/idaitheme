@@ -9,81 +9,81 @@
 /**********************************************************************/
 
 .page_submissions {
-	grid-column-start: 1;
-	grid-column-end: @DAIgrid_columns + 1;
+    grid-column-start: 1;
+    grid-column-end: @DAIgrid_columns + 1;
 
-	display: grid;
-	grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
-	grid-auto-rows: minmax(min-content, max-content);
+    display: grid;
+    grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
+    grid-auto-rows: minmax(min-content, max-content);
 
-	.cmp_breadcrumbs {
-		.makeBreadcrumbs();
-	}
+    .cmp_breadcrumbs {
+        .makeBreadcrumbs();
+    }
 
-	h1 {
-		grid-column-start: 3;
-		grid-column-end: @DAIgrid_columns - 1;
+    h1 {
+        grid-column-start: 3;
+        grid-column-end: @DAIgrid_columns - 1;
 
-		.makeSeparatorHeadline();
-	}
+        .makeSeparatorHeadline();
+    }
 
-	.cmp_notification {
-		.makeSmallBox();
+    .cmp_notification {
+        .makeSmallBox();
 
-		text-align: center;
+        text-align: center;
 
-		a {
-			.makeButton();
-			margin: 0 @DAIspacing_double;
-		}
+        a {
+            .makeButton();
+            margin: 0 @DAIspacing_double @DAIspacing_double @DAIspacing_double;
+        }
 
-		a:hover {
-			.makeButtonHover();
-		}
-	}
+        a:hover {
+            .makeButtonHover();
+        }
+    }
 
-	.submission_checklist {
-		.makeWideBox();
+    .submission_checklist {
+        .makeWideBox();
 
-		h2 {
-			text-align: center;
-			margin-bottom: @DAIspacing_quadruple;
-		}
+        h2 {
+            text-align: center;
+            margin-bottom: @DAIspacing_quadruple;
+        }
 
-		ul {
-			display: block;
-			margin: @DAIspacing_double ((100% / (@DAIgrid_columns - 4)) * 1);
-			padding: @DAIspacing_double ((100% / (@DAIgrid_columns - 4)) * 1);
+        ul {
+            display: block;
+            margin: @DAIspacing_double ((100% / (@DAIgrid_columns - 4)) * 1);
+            padding: @DAIspacing_double ((100% / (@DAIgrid_columns - 4)) * 1);
 
-			background: @DAIcolor_greyBright;
-			list-style-type: square;
+            background: @DAIcolor_greyBright;
+            list-style-type: square;
 
-			color: #000000;
+            color: #000000;
 
-			li {
-				padding-top: @DAIspacing_double;
-			}
+            li {
+                padding-top: @DAIspacing_double;
+            }
 
-			li:last-child {
-				padding-bottom: @DAIspacing_double;
-			}
-		}
+            li:last-child {
+                padding-bottom: @DAIspacing_double;
+            }
+        }
 
-	}
+    }
 
 
 
-	.privacy_statement {
-		grid-column-start: 3;
-		grid-column-end: @DAIgrid_columns - 1;
+    .privacy_statement {
+        grid-column-start: 3;
+        grid-column-end: @DAIgrid_columns - 1;
 
-		margin-bottom: @DAIspacing_quadruple;
+        margin-bottom: @DAIspacing_quadruple;
 
-		h2 {
-			color: @DAIcolor_blueBright;
-			text-align: center;
-			margin-bottom: @DAIspacing_quadruple;
-		}
-	}
+        h2 {
+            color: @DAIcolor_blueBright;
+            text-align: center;
+            margin-bottom: @DAIspacing_quadruple;
+        }
+    }
 
 }

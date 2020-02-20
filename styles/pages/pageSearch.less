@@ -116,7 +116,7 @@
             grid-column-end: @DAIgrid_columns / 2+1;
 
             display: flex;
-            padding: @DAIspacing_quadruple (100% / 4) @DAIspacing_quadruple 0;
+            padding: @DAIspacing_quadruple (100% / 5) @DAIspacing_quadruple 0;
 
             >div.date_range {
                 display: contents;
@@ -135,9 +135,15 @@
                 //padding: 0 (@DAIspacing_quintuple * 4);
 
                 >* {
-                    flex: 0.2 0.2 auto;
+                    flex: 0.1 1 auto;
                     margin-left: @DAIspacing_base;
                     margin-bottom: @DAIspacing_base;
+                }
+
+                select,
+                input {
+                    max-height: @DAIfonts_baseLineHeight;
+
                 }
             }
         }
