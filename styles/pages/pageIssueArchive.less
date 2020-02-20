@@ -56,18 +56,24 @@
 
             .obj_issue_summary {
 
-                grid-column-start: 1;
-                grid-column-end: 9;
+                //grid-column-start: 1;
+                //grid-column-end: 9;
+
+                .makeMediumBox();
+                grid-column-start: 2;
+                grid-column-end: 8;
+
+                padding: @DAIspacing_quadruple 0;
 
                 display: grid;
-                grid-template-columns: repeat(@DAIgrid_columns - 4, 100% / (@DAIgrid_columns - 4));
+                grid-template-columns: repeat(6, 100% / 6);
                 grid-auto-rows: minmax(min-content, max-content);
 
-                padding-bottom: @DAIspacing_quadruple;
+                margin-bottom: @DAIspacing_double;
 
                 .cover {
-                    grid-column-start: 3;
-                    grid-column-end: 4;
+                    grid-column-start: 2;
+                    grid-column-end: 3;
                     grid-row-start: 1;
                     grid-row-end: 4;
 
@@ -75,6 +81,7 @@
 
                     img {
                         max-width: 100%;
+                        max-height: @DAIspacing_quintuple * 3;
                         object-fit: cover;
 
                         display: flex;
@@ -90,7 +97,7 @@
                 .title,
                 .series,
                 .description {
-                    grid-column-start: 4;
+                    grid-column-start: 3;
                     grid-column-end: 7;
 
                     padding-left: @DAIspacing_quadruple;
@@ -117,8 +124,6 @@
             }
 
             //padding: @DAIspacing_quadruple;
-
-
         }
 
         /*li:nth-child(2n+2) {
