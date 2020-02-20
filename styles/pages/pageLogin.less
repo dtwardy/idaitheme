@@ -10,73 +10,177 @@
 
 
 .page_login {
-	grid-column-start: 1;
-	grid-column-end: @DAIgrid_columns + 1;
+    grid-column-start: 1;
+    grid-column-end: @DAIgrid_columns + 1;
 
-	display: grid;
-	grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
-	grid-auto-rows: minmax(min-content, max-content);
+    display: grid;
+    grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
+    grid-auto-rows: minmax(min-content, max-content);
 
-	.cmp_breadcrumbs {
-		.makeBreadcrumbs();
-	}
+    .cmp_breadcrumbs {
+        .makeBreadcrumbs();
+    }
 
-	h1 {
-		grid-column-start: 3;
-		grid-column-end: @DAIgrid_columns - 1;
+    h1 {
+        grid-column-start: 3;
+        grid-column-end: @DAIgrid_columns - 1;
 
-		.makeSeparatorHeadline();
-	}
+        .makeSeparatorHeadline();
+    }
 
-	.login {
-		grid-column-start: 4;
-		grid-column-end: @DAIgrid_columns - 2;
+    .login {
+        grid-column-start: 4;
+        grid-column-end: @DAIgrid_columns - 2;
 
-		margin: @DAIspacing_quadruple 0 (@DAIspacing_quadruple * 2) 0;
+        margin: @DAIspacing_quadruple 0 (@DAIspacing_quadruple * 2) 0;
 
-		fieldset.fields {
-			display: grid;
-			grid-template-columns: repeat(@DAIgrid_columns / 2, 100% / (@DAIgrid_columns / 2));
-			grid-auto-rows: minmax(min-content, max-content);
+        fieldset.fields {
+            display: grid;
+            grid-template-columns: repeat(@DAIgrid_columns / 2, 100% / (@DAIgrid_columns / 2));
+            grid-auto-rows: minmax(min-content, max-content);
 
-			padding: @DAIspacing_quadruple 0;
+            padding: @DAIspacing_quadruple 0;
 
-			>div {
-				display: contents;
+            >div {
+                grid-column-start: 2;
+                grid-column-end: 6;
 
-				>label {
-					display: contents;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: center;
 
-					>span.label {
-						grid-column-start: 1;
-						grid-column-end: 3;
+                >label {
+                    flex: 0 0 auto;
+                    align-self: center;
+                    width: 100% / 6 * 4;
 
-						display: inline-block;
+                    /*display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    //padding-right: 100% / 6;
 
-						padding-left: @DAIspacing_double;
-						padding-right: @DAIspacing_quadruple;
+                    >span.label,
+                    >input {
+                        flex: 0 0 auto;
+                        margin-bottom: @DAIspacing_double;
+                        justify-self: flex-end;
+
+                    }
+
+                    >input {
+                        margin-right: @DAIspacing_quadruple;
+					}*/
+
+                    display: grid;
+                    grid-template-columns: repeat(4, 100% / 4);
+                    grid-auto-rows: minmax(min-content, max-content);
 
 
-						text-align: right;
+                    >span.label,
+                    >input,
+                    >a {
+                        margin-bottom: @DAIspacing_double;
+                    }
 
-						.required {
-							color: @DAIcolor_blueDark;
-						}
+                    >span.label {
+                        grid-column-start: 1;
+                        grid-column-end: 3;
+                        text-align: right;
 
-						.pkp_screen_reader {
-							display: none;
-						}
+                        margin-right: @DAIspacing_quadruple;
+                    }
 
-					}
+                    >input {
+                        grid-column-start: 3;
+                        grid-column-end: 5;
 
-					input {
-						//width: 100%;
-						//height: @DAIspacing_double;
-						grid-column-start: 3;
-						grid-column-end: @DAIgrid_columns / 2;
-					}
-				}
-			}
-		}
-	}
+                        float: left;
+                        width: 66%;
+
+                    }
+
+                    >a {
+                        grid-column-start: 3;
+                        grid-column-end: 5;
+
+                        text-align: left;
+
+                    }
+                }
+
+                >button.submit,
+                >a.register {
+                    flex: 0.2 0.2 auto;
+                    align-self: center;
+
+                    margin-top: @DAIspacing_quadruple
+                }
+
+                >a.register {
+                    .makeButton();
+                    margin-left: @DAIspacing_double;
+                }
+
+                >a.register:hover {
+                    .makeButtonHover();
+                }
+
+                .pkp_screen_reader {
+                    display: none;
+                }
+            }
+
+            >div.remember.checkbox label input#remember,
+            >div.remember.checkbox label span.label {
+                grid-row: 1;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+
+            >div.remember.checkbox label input#remember {
+                grid-column-end: 4;
+            }
+
+
+            /*>div {
+                display: contents;
+
+                >label {
+                    display: contents;
+
+                    >span.label {
+                        grid-column-start: 2;
+                        grid-column-end: 4;
+
+                        display: inline-block;
+
+                        padding-left: @DAIspacing_double;
+                        padding-right: @DAIspacing_quadruple;
+
+
+                        text-align: left;
+
+                        .required {
+                            color: @DAIcolor_blueDark;
+                        }
+
+                        .pkp_screen_reader {
+                            display: none;
+                        }
+
+                    }
+
+                    input {
+                        //width: 100%;
+                        //height: @DAIspacing_double;
+                        display: inline-block;
+                        grid-column-start: 4;
+                        grid-column-end: 6;
+                    }
+                }
+            }*/
+        }
+    }
 }

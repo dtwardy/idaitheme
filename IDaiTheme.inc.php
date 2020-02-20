@@ -90,35 +90,54 @@ class IDaiTheme extends ThemePlugin {
     $SysPubUrl = $baseUrl . '/' . $SysPubDir . '/';
     $pubFileManager = new PublicFileManager();
 
+    //ebugToConsole("SysPubDir + SysPubURL");
+    //debugToConsole($SysPubDir);
+    //debugToConsole($SysPubUrl);
+
+
     if ($request) {
       $currentContext = $request->getContext();
       if (isset($currentContext)) {
         $primLocale = $currentContext->getPrimaryLocale();
+        
+        //debugToConsole("currentContext is not null");
+        //debugToConsole($primLocale);
+
         $pubFilesUrl = $baseUrl . '/' . $pubFileManager->getJournalFilesPath($currentContext->getId());
         $pubFilesDir = BASE_SYS_DIR . '/' . $SysPubDir . '/' . 'journals/' . $currentContext->getId();
+
+        //debugToConsole($pubFilesUrl);
+        //debugToConsole($pubFilesDir);
       } else {
+        //debugToConsole("currentContext is null, go for getSite");
         $currentContext = $request->getSite();
         if (isset($currentContext)) {
+          //debugToConsole("currentContext from getSite is not null");
           $primLocale = $currentContext->getPrimaryLocale();
+          //debugToConsole($primLocale);
           $pubFilesDir = BASE_SYS_DIR . '/' . $SysPubDir . '/' . 'site';
+          //debugToConsole($pubFilesDir);
         }
       }
-
-      
     } 
 
+    // Language Toggle
     $this->getContents($request);
 
     $additionalLessVariables[] = '@DAIpubfiles: \'' . $SysPubUrl .'\';';
+
+    //debugToConsole("Checking now for Header");
+    //debugToConsole($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.png');
 
     if (file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.png') ||
         file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.jpg') ||
         file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.webp') ||
         file_exists($pubFilesDir . '/pageHeaderLogoImage_' . $primLocale . '.svg')) {
       $additionalLessVariables[] = '@headerHasLogo: true;';
-      
+      //debugToConsole("Header image found");
     } else {
       $additionalLessVariables[] = '@headerHasLogo: false;';
+      //debugToConsole("Header image not found");
     }
       
     $descriptionTextPosition = $this->getOption('jourdescription');
@@ -177,13 +196,13 @@ class IDaiTheme extends ThemePlugin {
 		return $templateMgr;
   }
   
-  /*function debugToConsole($debugData) {
+  function debugToConsole($debugData) {
     $outputData = $debugData;
     if (is_array($outputData)) {
       $outputData = implode(',', $outputData);
     } else {
       echo "<script>console.log('DEBUG: " . $outputData . "');</script>";
     }
-  }*/
+  }
 }
 ?>

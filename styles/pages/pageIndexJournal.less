@@ -36,7 +36,8 @@
 
 
     .cmp_announcements {
-        grid-column-start: 1;
+        display: none;
+        /*grid-column-start: 1;
         grid-column-end: @DAIgrid_columns + 1;
 
         background-color: @DAIcolor_blueBright;
@@ -91,7 +92,7 @@
                 grid-column-start: 9;
                 grid-column-end: 11;
             }
-        }
+        }*/
     }
 
     .current_issue {
@@ -132,7 +133,7 @@
         .current_issue_title,
         .published {
             grid-column-start: 2;
-            grid-column-end: ((@DAIgrid_columns - 4) / 4) + 5;
+            grid-column-end: ((@DAIgrid_columns - 4) / 4) + 4;
         }
 
         .cover {
@@ -159,6 +160,10 @@
 
             font-size: @DAIfonts_headline2;
             text-align: left;
+
+            >a {
+                display: inline;
+            }
         }
 
         .description {
@@ -187,18 +192,25 @@
                 text-align: center;
                 border: none;
                 text-align: left;
-                padding-bottom: @DAIspacing_double;
+                padding-bottom: @DAIspacing_quadruple;
                 color: @DAIcolor_blueDark;
 
                 display: inline;
             }
 
-            ul {
-                display: inline;
+            ul.galleys_links {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-items: flex-start;
+                justify-content: flex-start;
+
 
                 li {
                     display: inline;
-                    margin-left: @DAIspacing_quadruple;
+                    flex: 0 0 auto;
+                    margin-right: @DAIspacing_quadruple;
+                    margin-bottom: @DAIspacing_double;
 
                     a {
                         .makeButton();

@@ -1,0 +1,31 @@
+.page_register_complete {
+    grid-column-start: 1;
+    grid-column-end: @DAIgrid_columns + 1;
+
+    display: grid;
+    grid-template-columns: repeat(@DAIgrid_columns, 100% / @DAIgrid_columns);
+    grid-auto-rows: minmax(min-content, max-content);
+
+
+    .cmp_breadcrumbs {
+        .makeBreadcrumbs();
+    }
+
+    h1 {
+        grid-column-start: 3;
+        grid-column-end: @DAIgrid_columns - 1;
+
+        .makeSeparatorHeadline();
+    }
+
+    ul.registration_complete_actions {
+        .makeSmallBox();
+
+        margin-top: @DAIspacing_quadruple;
+        margin-bottom: @DAIspacing_quintuple;
+
+        li {
+            text-align: center;
+        }
+    }
+}

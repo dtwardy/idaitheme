@@ -21,8 +21,33 @@
 //
 .pkp_search {
     margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
 
-    .search_controls {
+    input,
+    div.search_controls {
+        flex: 0 0 auto;
+
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    input {
+        height: @DAIspacing_triple;
+        margin-right: @DAIspacing_double;
+    }
+
+    div.search_controls {
+        a.search_prompt {
+            font-size: @DAIspacing_triple;
+            color: #ffffff;
+            line-height: @DAIspacing_triple;
+        }
+    }
+
+    /*.search_controls {
         padding: (@DAIspacing_double + @DAIspacing_half);
         margin: 0 !important;
         //padding: 0 (@DAIspacing_double + @DAIspacing_half);
@@ -54,7 +79,7 @@
         float: left;
 
         height: @DAIspacing_triple;
-    }
+    }*/
 
     button {
         display: none;
@@ -234,45 +259,61 @@
     }
 }
 
-.pkp_navigation_user .profile {
-    ul {
-        height: @DAIgrid_hero;
-        display: block;
-        position: absolute;
-        right: 0;
-        margin-right: 0;
-        background-color: @DAIcolor_greyMedium;
-        width: 100% / @DAIgrid_columns * 2;
+.pkp_navigation_user {
 
-        li {
+
+    .profile {
+        display: flex;
+        flex-direction: column;
+        justify-items: left;
+        align-items: center;
+
+        >a {
+            flex: 0 0 auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-right: @DAIspacing_quadruple * 2;
+        }
+
+        ul {
+            height: @DAIgrid_hero;
             display: block;
-            height: @DAIspacing_quadruple * 2;
+            position: absolute;
+            right: 0;
+            margin-right: 0;
+            background-color: @DAIcolor_greyMedium;
+            width: 100% / @DAIgrid_columns * 2;
 
-            text-align: left;
+            li {
+                display: block;
+                height: @DAIspacing_quadruple * 2;
 
-            a {
-                height: @DAIfonts_baseLarger;
-                color: @DAIcolor_greyDark;
-                width: 100%;
-                margin: auto;
+                text-align: left;
 
-                padding-left: @DAIspacing_double;
-                padding-top: @DAIspacing_double;
-                //margin-bottom: auto;
+                a {
+                    height: @DAIfonts_baseLarger;
+                    color: @DAIcolor_greyDark;
+                    width: 100%;
+                    margin: auto;
+
+                    padding-left: @DAIspacing_double;
+                    padding-top: @DAIspacing_double;
+                    //margin-bottom: auto;
+                }
             }
         }
-    }
 
-    a+ul {
-        display: block;
-        position: absolute;
+        a+ul {
+            display: block;
+            position: absolute;
 
-        top: @DAIspacing_quadruple * 4;
-        //width: (100vh / @DAIgrid_columns) * 2;
+            top: @DAIspacing_quadruple * 4;
+            //width: (100vh / @DAIgrid_columns) * 2;
 
 
-        visibility: hidden;
-        opacity: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
     }
 }
 
@@ -303,19 +344,27 @@
 //
 
 .idai_language_switch_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
 
     >span {
         color: #ffffff;
-        margin-top: @DAIspacing_double;
+        //margin-top: @DAIspacing_double;
 
         font-size: @DAIspacing_triple;
+        margin-top: auto;
+        margin-bottom: auto;
+        flex: 0 0 auto;
     }
 
     ul.idai_language_switch {
         background-color: @DAIcolor_greyMedium;
         position: absolute;
         top: @DAIspacing_quadruple * 4;
-        right: 0;
+        left: 0;
         width: 100% / @DAIgrid_columns * 3;
         height: @DAIgrid_hero;
         margin: 0;
@@ -325,7 +374,7 @@
         opacity: 0;
 
         >li {
-            width: 100%;
+            //width: 100%;
             padding-left: @DAIspacing_double;
             padding-bottom: @DAIspacing_quadruple - @DAIspacing_half;
 
@@ -334,6 +383,8 @@
 
             a {
                 color: @DAIcolor_greyDark;
+                width: 100%;
+                height: 100%;
             }
         }
     }

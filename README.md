@@ -12,17 +12,18 @@ After installation and activation you need to choose the "iDai Theme Plugin" fro
 ## Usage
 The Theme is setup to make use of hero images. The website logos are being reused for this purpose and can be uploaded in the backend. UI languages are automatically being added to the language picker. 
 
+## Hardcoded hyperlinks to iDAI pages
+The header template has been modified in order to link directly to other iDAI sites. You can find this template under `templates/frontend/components/header.tpl`.
+
+
 ## Adding static sites
+Additional static sites can be created through the backend by adding a new navigation entry with a new site. Do not use the static pages plugin as the HTML structure will be different. The template that is being used by adding custom menu entry pages has been modified to fit the layout.
 
-Additional static sites can be created through the backend by adding a new navigation entry with a new site. Make sure to embed custom sites within HTML tags as follows:
+Do not use the Static Pages Plugin!
 
-```
-<div class=page page_custom>
-    <--- Your content here with HTML tags --->
-</div>
-```
-
-Do not add another `<h1></h1>`! Any website should only have one headline of that level which will automatically be added by OJS. Remember the '<div>' container! The layout *will break* if the custom site is note being set up accordingly!
+Do not add another `<h1></h1>`! Any website should only have one headline of that level which will automatically be added by OJS.
 
 ## Note
-This theme does not implement sidebars. Even if sidebar blocks are being enabled in the backend, the theme will set their visibility to none. The theme is not meant for usage with the announcement system. Keep it deactivated.
+This theme does not implement sidebars. Even if sidebar blocks are being enabled in the backend, the theme will set their visibility to none. The theme is not meant for usage with the announcement system. Keep it deactivated. Announcements have been deliberately deactivated as they have not been fully tested at this point and are not being used by iDAI.
+
+Some Buttons may have strange translated captions that might break the button layout as they differ vastly in length in comparison to the original English captions (i.e. the register button in German). You may need to apply modifications.
